@@ -7,6 +7,7 @@ import BlogTile from '../component/BlogTile';
 import BreadHero from '../component/BreadHero'
 
 
+
 export default function Blog(props) {
 
   useEffect(() => {
@@ -15,31 +16,33 @@ export default function Blog(props) {
   return (
     <>
       <Head>
-        <title>Blog - Airlingster</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.usairling.com/blog'} />
+      <title>Blog - Travelflys</title>
+            <meta name="description" content="" />
+            <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/blog'} />
       </Head>
 
       <Header />
 
       <div className='blogadda'>
 
-        <div className="page-title page-title--small page-title--blog align-left" >
-          <div className="container">
-            <div className="page-title__content">
-              <h1 className="page-title__name">Blog </h1>
-              <p className="page-title__slogan">Let our experts inspire you</p>
+      <div className="page-title page-title--small page-title--blog text-center" >
+            <div className="container">
+              <div className="page-title__content">
+                <h1 className="page-title__name">Blog </h1>
+                <p className="page-title__slogan">Let our experts inspire you</p>
+              </div> 
             </div>
-
+            <BreadHero linkhtml={<><ul className='bradcum'> <li  > <Link href="/">Home</Link> </li> 
+            <li className='mr-2'>/</li>
+            <li aria-current="page">Blog</li> </ul></>} />
           </div>
-          <BreadHero linkhtml={<><ul className='bradcum'> <li>
-            <Link href="/">Home</Link> </li> <li aria-current="page">Blog</li> </ul></>} />
-        </div>
+
 
         <div className='popular-destination blogaddalist full-w'>
           <BlogTile allbloglist={props.allbloglist} />
         </div>
+ 
       </div>
 
       <Footer />
@@ -66,7 +69,7 @@ export async function getServerSideProps() {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "145",
+    "siteId": "143",
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -84,8 +87,7 @@ export async function getServerSideProps() {
     body: raw,
     redirect: 'follow'
   };
-
-  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
+  const res = await  fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {
     props: { allbloglist: json.response }

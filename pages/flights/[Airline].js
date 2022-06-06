@@ -27,36 +27,38 @@ export default function Airline(props) {
               <title>{props.singleflight[0].metaTitle}</title>
               <meta name="description" content={props.singleflight[0].metaDesc} />
               <meta name="keywords" content={props.singleflight[0].metaKeyword} />
-              <link rel="canonical" href={`https://www.usairling.com/flights/${props.singleflight[0].url}-${props.singleflight[0].pageValue}`} />
+              <link rel="canonical" href={`https://www.travelflys.com/flights/${props.singleflight[0].url}-${props.singleflight[0].pageValue}`} />
             </Head>
 
          
             <div className='blogadda'>
 
-              <div className="page-title page-title--small page-title--blog align-left" >
-                <div className="container">
-                  <div className="page-title__content">
-                    <h1 className="page-title__name">{props.singleflight[0].metaTitle} </h1>
-                    <BreadHero linkhtml={<>
-                      <ul className='bradcum'>
-                        <li> <Link href="/">Home</Link> </li>
-                        <li className='breadcrumb-item active' aria-current="page">{props.singleflight[0].metaTitle}</li>
-                      </ul>
-                    </>} />
+              
+            <div className="page-title page-title--small page-title--blog text-center">
+            <div className="container">
+                    <div className="page-title__content">
+                      <h1 className="page-title__name">{props.singleflight[0].metaTitle}</h1>
+                       <BreadHero linkhtml={<>
+                        <ul className='bradcum'>
+                          <li> <Link href="/">Home</Link> </li>
+                          <li className='mr-2'>/</li> 
+                          <li> <Link href="/flights">FLIGHTS</Link> </li>
+                          <li className='mr-2'>/</li> 
+                           <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
+                    </div>
                   </div>
-
-                </div>
-
               </div>
+
+ 
               <div className='popular-destination blogaddalist details full-w'>
                 <Container>
-                <div className='blogaddalist-round about-uspage privacy__policy full-w pyblock-80 mb-5'>
-                      <div className='blogaddalist-inner'>
+                <div className='blogaddalist-round'>
+                      <div className='blogaddalist-inner'> 
                         <div className="blog-inner-box2">
                         {props.singleflight[0].contentData.length == 0 ?
                           <p className='pb-2'>No Content found</p>
                           :
-                          <div dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
+                          <div  className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
                         }
                         </div>
                       </div>
@@ -84,7 +86,7 @@ export async function getServerSideProps(context) {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
+ 
   var raw = JSON.stringify({
     "contentId": "",
     "pageType": "Airline",
@@ -99,7 +101,7 @@ export async function getServerSideProps(context) {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "145",
+    "siteId": "143",
     "status": "",
     "count": "",
     "url": actualURLParts[0] + '-' + actualURLParts[1],

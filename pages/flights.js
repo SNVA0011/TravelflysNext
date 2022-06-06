@@ -15,12 +15,12 @@ export default function Flights(props) {
   }, [])
 
   return (
-    <> 
+    <>
       <Head>
-        <title>Usairling | Check Best and Cheap Flight With us Online</title>
-        <meta name="description" content="Usairling is a reliable source for flight deals where your can book flights for all destinations across South America or world at the lowest airfares with us. " />
-        <meta name="keywords" content="Usairling, cheap flight booking website, best place to book flight, online flight booking" />
-        <link rel="canonical" href={'https://www.usairling.com/flights'} />
+        <title>Fights - Travelflys</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/flights'} />
       </Head>
 
 
@@ -28,30 +28,35 @@ export default function Flights(props) {
 
       <div className='blogadda'>
 
-        <div className="page-title page-title--small page-title--blog align-left" >
+        <div className="page-title page-title--small page-title--blog text-center" >
           <div className="container">
             <div className="page-title__content">
               <h1 className="page-title__name">Flight </h1>
               <p className="page-title__slogan">Check Best Flight With us </p>
             </div>
           </div>
-          <BreadHero linkhtml={<><ul className='bradcum'> <li > <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page">Flights</li> </ul></>} />
+          <BreadHero linkhtml={<><ul className='bradcum '>
+            <li><Link href="/" className=''>Home</Link> </li>
+            <li className='mr-2'>/</li>
+            <li className='breadcrumb-item active ' aria-current="page">Flights</li> </ul></>} />
         </div>
 
 
-        <div className='popular-destination blogaddalist full-w m-0 pb-2'>
+
+        <div className='popular-destination blogaddalist full-w'>
           <Container>
-            <Row className='about-uspage privacy__policy full-w pyblock-80 my-5' id="content" >
+
+            <Row className='content' id="content" >
               <Col md="12" >
                 <h2>Be wise to get best flight deals quickly</h2>
                 <p>A flight is required to book in advance when you need to get massive deals and offers to secure your booking to various destinations. If you wish to choose the best flight to book to your required destination, you can search for the best flights with reward points that you can use to get best flight deals at your suitable time. If you are curious to save more and looking for guidance to secure your booking, you need to know the essential trick you can find with the best customer representative team to assist you soo</p>
 
 
-                <h2 className='mt-5 mb-2'>How to get the best deal on flight?</h2>
+                <h2>How to get the best deal on flight?</h2>
                 <p>If you are willing to get the cheapest deal for the flight you have selected for the booking, you need to go through the trick provided by the professional team. If you are willing to get best deals on flights, you can achieve the safest deal to manage your flight that you can book at the lowest rate smoothly.</p>
 
 
-                <h2 className='mt-5 mb-2'>Go through the ways to get the best deal on flight:</h2>
+                <h2>Go through the ways to get the best deal on flight:</h2>
 
                 <ul>
                   <li> First, keep your searches secret and ensure you can find the best flight with the deals and offers.</li>
@@ -66,53 +71,54 @@ export default function Flights(props) {
 
                   <li>Ensure you can find the cheapest place to fly where you can imagine getting the best deals on flight after discussing your trip with the agent smoothly.</li>
                 </ul>
-                <br />
+
                 <p>If you wish to get further details and valid information to get best flight deals, get in touch with the best customer representative team to assist you at your convenient time smoothly.</p>
 
               </Col>
             </Row>
-          </Container>
-        </div>
-      </div>
 
 
+            <hr className='my-5'></hr>
+            <h4 className='title title-border-bottom align-center offset-item animate font-weight-bold'>Top Flights Deals</h4>
 
-      <section className="top_airlines_area">
-        <Container>
-          <Row className='justify-content-center'>
-            <Col xs={12} md={12}>
-              <h2 className="title title-border-bottom align-center offset-item animate">Popular Airlines</h2>
-      
-      
-      
-              {
+
+            {
               props.allflights.length > 0 ?
 
-                <Row className='alldeals-vi justify-content-center'>
-                  {props.allflights.filter((items) => items.pageType === 'Airline').map((items, i) => (
-                    <Col xs={12} lg={4} sm={6} className="mb-4">
-                      <Link href={`/flights/${items.url}-${items.pageValue}`}>
-                        <a className="airplane-iconbx sm d-flex align-items-center h-100">
-                        <div className="cities__thumb hover__box__thumb">
-                        <Image src="/images/airplane-icon.png" alt="airlineone" width={58} height={58} layout='responsive'/>
-                          
+                <Row className='alldeals-vi'>
+                  {props.allflights.filter((items) => items.pageType === "Airline").map((items, i) => (
+                    <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
+                      <div className='blogaddalist-inner border p-3 departurevg'>
+                        <div className='media'>
+                          <i className="fa-solid fa-plane-departure"></i>
+                          <div className='media-body'>
+                            <h3 className='h4 title'>{items.pageName}-{items.pageValue}</h3>
+                            <hr className="mx-row-hr" />
+                            <Link href={`/flights/${items.url}-${items.pageValue}`}>
+                              <a className='btn btn-site ripple-effbtn btn-40'>
+                                <span>Read more</span>
+                              </a>
+                            </Link>
+                          </div>
                         </div>
-                        <div className="cities__info flex-grow-1">
-                          <h3 className="cities__capital">{items.pageName}-{items.pageValue}</h3>
-                        </div>
-                        </a>
-                      </Link>
+
+
+                      </div>
                     </Col>
                   ))}
-                </Row> 
+                </Row>
                 : 'No items found !'
             }
-            </Col>
- 
+          </Container>
+        </div>
 
-          </Row>
-        </Container>
-      </section>
+
+
+
+
+
+
+      </div>
 
       <Footer />
 
@@ -144,7 +150,7 @@ export async function getServerSideProps() {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "145",
+    "siteId": "143",
     "status": "",
     "count": "",
     "url": "",
@@ -158,7 +164,6 @@ export async function getServerSideProps() {
     body: raw,
     redirect: 'follow'
   };
-
   const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {

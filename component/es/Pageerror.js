@@ -19,7 +19,7 @@ export default function Pageerror() {
                     <div className="col-md-12 text-center">
                         <span className="display-1 d-block">404</span>
                         <div className="mb-4 lead">No se encontró la página que está buscando.</div>
-                        <Link to="/es/" className="btn btn-site ripple-effbtn btn-40"><span>De vuelta a casa</span></Link>
+                        <Link href="/"><a className="btn btn-site ripple-effbtn btn-40"><span>De vuelta a casa</span></a></Link>
                     </div>
                 </div>
             </div>

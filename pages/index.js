@@ -8,14 +8,14 @@ import Link from "next/link"
 
 export default function Home(props) {
   return (
-    <>
+    <div className='homepage'>
 
       <Head>
-        <title>Usairling | Book Low Fares Flights Tickets & Rental Cars</title>
-        <meta name="description" content="Explore cheap airline tickets with Usairling. We offer cheap flight tickets, hotels and car rental deals for South America. Book now and travel the world for less." />
-        <meta name="keywords" content="Low Fares Flights Tickets, Low Fares Car Rental, Book Low fare hotels" />
-        <link rel="canonical" href={'https://www.usairling.com/'} />
-        <link rel="alternate" href={'https://www.usairling.com/'} />
+        <title>Travelflys | Travel Agency | Flight Booking | Ticket cancellation | Online Reservation</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/'} />
+        <link rel="alternate" href={'https://www.travelflys.com/'} />
       </Head>
 
 
@@ -25,34 +25,32 @@ export default function Home(props) {
         <main id="main" className="site-main overflow">
           <Enginebox />
 
-          {/* PopularDestinations */}
           <PopularDestinations />
 
-          {/* <Testimonial/> */}
-
           <div className="blogs">
-            <div className="container">
+            <div className="container p-0">
               <h2 className="title title-border-bottom align-center offset-item animate">From Our Blog</h2>
-            </div>
-            <div className="news__content offset-item animate">
-              <BlogTile allbloglist={props.allbloglist} showitem={3} />
-            </div>
-            <div className='container'>
-              <div className="align-center button-wrap mt-3">
-                <Link href={`/blog`}>
-                  <a className="btn btn-border btn-lg-readmore">View more</a>
-                </Link>
+              <div className="news__content offset-item animate">
+                <BlogTile allbloglist={props.allbloglist} showitem={3}  nulltopsp='true' />
+                <div className="align-center button-wrap mt-4">
+                  <Link href="/blog">
+                    <a className="btn btn-border btn-lg-readmore">
+                      View more
+                    </a>
+                  </Link>
                 </div>
+              </div>
             </div>
-
           </div>
 
+
         </main>
+
       </div>
 
       <Footer />
 
-    </>
+    </div>
 
   )
 }
@@ -75,7 +73,7 @@ export async function getServerSideProps() {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "145",
+    "siteId": "143",
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -93,7 +91,6 @@ export async function getServerSideProps() {
     body: raw,
     redirect: 'follow'
   };
-
   const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   return {

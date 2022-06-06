@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Dropdown from 'react-bootstrap/Dropdown'
-import Nav from 'react-bootstrap/Nav'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -28,7 +27,7 @@ export default function ChangeCountryMenu() {
     }, [location.events]);
 
     return (
-        <DropdownButton title={<><span> {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 btnlang'>
+        <DropdownButton title={<><span> {lang} </span> </>} variant="outline-secondary"  className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
             <div className='curr-block px-2'>
                 <h5 className='mb-3'>Select Language</h5>
                 {loadingpage ?
@@ -40,15 +39,15 @@ export default function ChangeCountryMenu() {
                     :
                     <Row>
                         <Col xs="12" md="12" className='mb-2'>
-                            <Dropdown.Item as={Link} href="/" onClick={(e) => { setLang('EN') }}>
+                            <Dropdown.Item as={Link} href="/">
                                 <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item active'}>
                                     <span>English</span>
                                 </a>
                             </Dropdown.Item>
                         </Col>
                         <Col xs="12" md="12">
-                            <Dropdown.Item as={Link} href="/es" locale="es" onClick={(e) => { setLang('ES') }}>
-                                <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item '}>
+                            <Dropdown.Item as={Link} href="/es" locale="es">
+                                <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item bg-secondary'}>
                                     <span>Spanish</span>
                                 </a>
                             </Dropdown.Item>

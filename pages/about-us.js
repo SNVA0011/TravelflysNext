@@ -11,44 +11,73 @@ import BreadHero from "../component/BreadHero";
 export default function AboutUs() {
 
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Usairling | About Us | Usairling The Only Way To Go & Fly!</title>
-        <meta name="description" content="Usairling vision has always been to develop and enhance the latest technologies into scalable travel solutions for today's savvy traveler.  " />
-        <meta name="keywords" content="Usairling, cheap flight booking website, best place to book flight, online flight booking" />
-        <link rel="canonical" href={'https://www.usairling.com/about-us'} />
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>About us - Travelflys</title>
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <link rel="canonical" href={'https://www.travelflys.com/about-us'} />
+            </Head>
 
-      <Header />
+            <Header />
 
-      <div className="page-title page-title--small align-left" >
-        <div className="container">
-          <div className="page-title__content">
-            <h1 className="page-title__name">About Us</h1>
-           </div>
-        </div>
-        <BreadHero linkhtml={<><ul className='bradcum'> <li> 
-          <Link href="/">Home</Link> </li> <li className='breadcrumb-item active' aria-current="page"> ABOUT US </li> </ul></>} />
-      </div>
+            <div className="page-title page-title--small text-center" >
+                <div className="container">
+                    <div className="page-title__content">
+                        <h1 className="page-title__name">About Us</h1>
+                     </div>
+                </div>
+                <BreadHero linkhtml={<><ul className='bradcum'>
+                    <li><Link href="/">Home</Link></li>
+                    <li className='mr-2'>/</li>
+                    <li className='breadcrumb-item active' aria-current="page">ABOUT US</li>
+                </ul></>} />
+            </div>
 
-      <div className='about-uspage full-w pyblock-80'> 
-        <Container>
-          <Row>
-            <Col xs={12} xl={12} className='about-font-18 mb-5 font-medium'> 
-              <p className='mb-4'>Traveling is an activity that anybody may enjoy, and it is the source of joy for some people who appreciate visiting new areas. To make their vacation a success, most people contact a number of travel agencies so that everything may be organised properly. USAirling is dedicated to providing consumers with high-quality travel arrangements at the greatest possible price. We collaborate with you to manage all aspects of travel in a timely, ethical, and cost-effective manner. Our customers receive expert service, and they ensure that the customer benefits from the experience and the distinctive manner of catering our services that we offer.</p>
-              <p>USAirling was founded with the goal of providing luxury vacations and unparalleled escorted tours. We not only provide you with a variety of exotic vacation packages, but we also modify them to meet your specific needs. The skilled team that we have takes pride in your careful planning of your vacation. We figure out how to make your vacation extra exceptional and then assist you in planning your ideal vacation. So come talk to us about your goals and desired destinations, and you'll see why our clients come back to us time and time again.</p>
-            </Col>
 
-          </Row>
-        </Container>
-      </div>
 
-      <Footer />
-    </>
-  );
+            <div className='about-uspage full-w pyblock-80'>
+                <Container>
+                    <Row>
+                        <Col xs={12} xl={12} className='about-font-18 mb-4 about_area'>
+                            <p>Air Travel can be a necessity or a leisure activity depending upon the passenger.
+                                However, in the whole process, the protagonist of the story is the passenger or
+                                the customer itself, and keeping the passenger happy is what matters the most.
+                                The aviation industry itself believes in providing transparent guidance and
+                                support to its passengers, and <strong>Travelflys</strong> is the platform that helps in filling up
+                                the bridge between the passengers and the airline.</p>
+                            <p>In the growing Internet era, we all tend to do effective work in the least possible
+                                time, and that is why we at <strong>Travelflys</strong> allow you to make, manage and get the
+                                required assistance from a single web page.</p>
+                            <p>We know situations can somehow turn out to be against your situation. It can be
+                                hard to make a successful booking or manage your booking accordingly; we
+                                have a dedicated team of support professionals working throughout to provide
+                                the best assistance to our customers.</p>
+                            <p>If you are thinking about your next trip, do not give it a second thought and give
+                                us a chance to make your experience more thrilling and mesmerizing. You can
+                                take us by our word because we promise to provide a transparent commitment of
+                                services while you choose us for your next international or domestic trip.</p>
+                            <p>The choice is up to you, you can surf through our website and check different
+                                deals and complete packages, or if you wish to get a new offer or you are flying
+                                with us for the first time, you can call our customer support team and get a
+                                customized offer to have a delightful and significant trip. Please hurry up and
+                                move through the booking section to get the best in the market prices through
+                                our platform <strong>Travelflys</strong> for your instant convenience and have a matchless
+                                experience by flying through us to your desired destinations.</p>
+
+
+                        </Col>
+
+                    </Row>
+                </Container>
+            </div>
+
+            <Footer />
+        </>
+    );
 }
