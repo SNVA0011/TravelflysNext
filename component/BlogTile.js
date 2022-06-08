@@ -8,7 +8,8 @@ import Link from "next/link"
 export default function Blog(props) {
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, []) 
+  
   return (
     <>
       <div className='blogadda'>
@@ -20,7 +21,7 @@ export default function Blog(props) {
                 <Row>
 
                   {props.showitem ?
-                    props.allbloglist.slice(0, props.showitem).map((items, i) => (
+                    props.allbloglist.slice(0, props.showitem).filter((items) => items.status === 'Active').map((items, i) => (
                       <Col xs={12} md={6} xl={4} key={i} className="mb-4">
                         <div className='post hover__box bog-border h-100 d-flex flex-column'>
                           <div className='wrapper'></div>
@@ -45,7 +46,7 @@ export default function Blog(props) {
                       </Col>
                     ))
                     :
-                    props.allbloglist.map((items, i) => (
+                    props.allbloglist.filter((items) => items.status === 'Active').map((items, i) => (
                       <Col xs={12} md={6} xl={4} key={i} className="mb-4">
                       <div className='post hover__box bog-border h-100 d-flex flex-column'>
                         <div className='wrapper'></div>
