@@ -9,6 +9,8 @@ export default function Blog(props) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  console.log(' props.allbloglist-', props.allbloglist)
   
   return (
     <>

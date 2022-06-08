@@ -61,22 +61,22 @@ export default function Footer() {
 									<ul>
 										<li className="facebook">
 											<a target='_blank' title="Facebook" href="https://www.facebook.com/travelflys">
-												<i className="fa-brands fa-facebook"></i>
+                      <i className="bi bi-facebook"></i>
 											</a>
 										</li>
 										<li className="twitter">
 											<a target='_blank' title="Twitter" href="https://twitter.com/travelflys">
-												<i className="fa-brands fa-twitter"></i>
+                      <i className="bi bi-twitter"></i>
 											</a>
 										</li>
 										<li className="youtube">
 											<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
-												<i className="fa-brands fa-instagram"></i>
+                      <i className="bi bi-pinterest"></i>
 											</a>
 										</li>
 										<li className="instagram">
 											<a target='_blank' title="Pinterest" href="https://www.pinterest.com/travelflys">
-												<i className="fa-brands fa-pinterest"></i>
+                      <i className="bi bi-instagram"></i>
 											</a>
 										</li>
 									</ul>

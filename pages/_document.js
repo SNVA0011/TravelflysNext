@@ -14,8 +14,6 @@ class MyDocument extends Document {
       <Html lang={lang}>         
         <Head>
 
-        <script src="https://kit.fontawesome.com/a692cf9fd8.js" crossorigin="anonymous"></script>
-
           {/* <!-- Google Tag Manager --> */}
           <script dangerouslySetInnerHTML={{
             __html: `(function (w, d, s, l, i) {
