@@ -13,7 +13,7 @@ export default function PopularDestinations() {
 					<div className="cities__contentt ">
 						<div className="row">
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/southwest-airlines-WN">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="southwest Airlines" width={640} height={427}/>
@@ -26,7 +26,7 @@ export default function PopularDestinations() {
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/delta-airlines-dl">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="Delta Airlines" width={640} height={427}/>
@@ -41,7 +41,7 @@ export default function PopularDestinations() {
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/united-airlines-UA">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="Aer Lingus" width={640} height={427}/>
@@ -56,37 +56,32 @@ export default function PopularDestinations() {
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/copa-airlines-CM">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
-											<Image src="/images/airlineone.jpg" alt="airlineone" width={640} height={427}/>
-
-										</div>
-
+											<Image src="/images/airlineone.jpg" alt="airlineone" width={640} height={427}/> 
+										</div> 
 										<div className="cities__info">
-											<h3 className="cities__capital">Copa Airlines</h3>
-
+											<h3 className="cities__capital">Copa Airlines</h3> 
 										</div>
 									</a>
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/alaska-airlines-AS">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="Aer Lingus" width={640} height={427}/>
-
 										</div>
 
 										<div className="cities__info">
 											<h3 className="cities__capital">Alaska Airlines</h3>
-
 										</div>
 									</a>
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="#">
+								<Link href="/flights/british-airways-BA">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="Aer Lingus" width={640} height={427}/>
