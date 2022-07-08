@@ -37,7 +37,7 @@ export default function Footer() {
 										<li><Link href="/es/sobre-nosotras"  >Sobre nosotros</Link></li>
 										<li><Link href="/es/articulos"  >Artículos</Link></li>
 										<li><Link href="/es/contacto">Contacto</Link></li>
-										<li className="d-none"><Link href="/"><a>Home</a></Link></li> 
+										<li className="d-none"><Link href="/"><a>Home</a></Link></li>
 										<li className="d-none"><Link href="/es"><a>Casa</a></Link></li>
 									</ul>
 								</aside>
@@ -61,23 +61,23 @@ export default function Footer() {
 									<ul>
 										<li className="facebook">
 											<a target='_blank' title="Facebook" href="https://www.facebook.com/travelflys">
-                      <i className="bi bi-facebook"></i>
+												<i className="bi bi-facebook"></i>
 											</a>
 										</li>
 										<li className="twitter">
 											<a target='_blank' title="Twitter" href="https://twitter.com/travelflys">
-                      <i className="bi bi-twitter"></i>
+												<i className="bi bi-twitter"></i>
 											</a>
 										</li>
 										<li className="youtube">
-											<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
-                      <i className="bi bi-pinterest"></i>
+										<a target='_blank' title="Pinterest" href="https://www.pinterest.com/travelflys">
+												<i className="bi bi-pinterest"></i>
 											</a>
 										</li>
 										<li className="instagram">
-											<a target='_blank' title="Pinterest" href="https://www.pinterest.com/travelflys">
-                      <i className="bi bi-instagram"></i>
-											</a>
+										<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
+												<i className="bi bi-instagram"></i>
+											</a> 
 										</li>
 									</ul>
 								</aside>

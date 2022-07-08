@@ -9,137 +9,322 @@
 
 <url>
   <loc>https://www.travelflys.com/</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/about-us</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/flights</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/blog</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/contact</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/blog/alaska-airline-cancellation-&amp;-refund-policy-information</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/flights/southwest-airlines-WN</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/blog/southwest-airlines-cancellation-and-refund-policy</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/flights/delta-airlines-dl</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/blog/delta-airlines-cancellation-policy</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.travelflys.com/es</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.travelflys.com/privacy</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.travelflys.com/terms</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/flights/united-airlines-UA</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/flights/copa-airlines-CM</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/flights/alaska-airlines-AS</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/flights/british-airways-BA</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/how-can-you-request-a-call-back-from-klm</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/can-you-cancel-flights-due-to-covid</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/is-copa-a-safe-and-good-airline</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/privacy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/terms</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/how-do-i-know-my-flight-is-refundable</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/flights/delta-airlines-dl</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/blog/alaska-airlines-date-change-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/flights/southwest-airlines-WN</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/blog/klm-online-check-in-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/how-to-find-a-reservation-on-copa-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/refund-cancellation-policy-of-swiss-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/british-airways-cancellation-and-refund-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/how-to-get-delta-flight-refund</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/get-a-refund-from-delta-ecredit</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/klm-flight-cancellation-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/alaska-airline-cancellation-&amp;-refund-policy-information</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/southwest-airlines-cancellation-and-refund-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/blog/delta-airlines-cancellation-policy</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/sobre-nosotras</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/vuelos</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/articulos</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/contacto</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/es/articulos/sobre-la-politica-de-cancelacion-y-reembolso-de-southwest-airlines</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/es/vuelos/delta-airlines-dl</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/es/articulos/quiere-saber-la-politica-de-cancelacion-y-reembolso-en-delta-airlines</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/es/vuelos/united-airlines-UA</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/es/articulos/cual-es-la-politica-de-cancelacion-de-vuelos-de-klm-airlines-klm</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.travelflys.com/es/privacidad</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.travelflys.com/es/terminos</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <loc>https://www.travelflys.com/es/vuelos/copa-airlines-CM</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/vuelos/alaska-airlines-AS</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/vuelos/british-airways-BA</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/vuelos/klm-airlines-KL</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.travelflys.com/es/vuelos/copa-airlines-cm</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://www.travelflys.com/es/articulos/se-puede-facturar-por-internet-con-copa-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-se-pueden-cancelar-vuelos-debido-a-covid</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/politica-de-check-in-de-las-aerolineas-delta</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/privacidad</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/terminos</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.travelflys.com/es/articulos/politica-de-cancelacion-de-copa-airlines</loc>
-  <lastmod>2022-06-08T09:11:38+00:00</lastmod>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/vuelos/delta-airlines-DL</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-cambiar-fecha-de-vuelo-con-copa-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-puedo-cambiar-la-fecha-de-mi-vuelo</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-puedo-cambiar-mi-vuelo-de-delta</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-encontrar-una-reserva-en-las-aerolineas-copa</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/donde-esta-mi-delta-ecredit</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-cambiar-un-vuelo-en-copa-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/obtener-un-reembolso-por-la-cancelacion-de-su-vuelo</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/puede-obtener-un-reembolso-de-british-airways</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-cambiar-un-vuelo-sin-pagar</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/politica-cancelacion-reembolso-british-airways</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-cancelar-un-vuelo-de-swiss-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-conseguir-el-reembolso-de-delta-ecredit</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/como-reservo-un-vuelo-de-delta-con-un-cupon</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/politica-de-cancelacion-y-reembolso-de-united-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/politica-de-cancelacion-de-alaska-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/sobre-la-politica-de-cancelacion-y-reembolso-de-southwest-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/quiere-saber-la-politica-de-cancelacion-y-reembolso-en-delta-airlines</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.travelflys.com/es/articulos/cual-es-la-politica-de-cancelacion-de-vuelos-de-klm-airlines-klm</loc>
+  <lastmod>2022-07-08T06:01:42+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 

@@ -62,14 +62,14 @@ export default function Footer() {
 											</a>
 										</li>
 										<li className="youtube">
-											<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
-                      <i className="bi bi-pinterest"></i>
+										<a target='_blank' title="Pinterest" href="https://www.pinterest.com/travelflys">
+												<i className="bi bi-pinterest"></i>
 											</a>
 										</li>
 										<li className="instagram">
-											<a target='_blank' title="Pinterest" href="https://www.pinterest.com/travelflys">
-                      <i className="bi bi-instagram"></i>
-											</a>
+										<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
+												<i className="bi bi-instagram"></i>
+											</a> 
 										</li>
 									</ul>
 								</aside>
