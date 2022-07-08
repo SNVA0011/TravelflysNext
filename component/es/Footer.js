@@ -75,7 +75,7 @@ export default function Footer() {
 											</a>
 										</li>
 										<li className="instagram">
-										<a target='_blank' title="Instagram" href="https://www.instagram.com/travelflys">
+										<a target='_blank' title="Instagram" href="https://www.instagram.com/travel_flys">
 												<i className="bi bi-instagram"></i>
 											</a> 
 										</li>
