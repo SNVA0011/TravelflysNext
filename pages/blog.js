@@ -16,7 +16,7 @@ export default function Blog(props) {
   return (
     <>
       <Head>
-      <title>Blog - Travelflys</title>
+         <title>Blog - Travelflys</title>
             <meta name="description" content="" />
             <meta name="keywords" content="" />
         <link rel="canonical" href={'https://www.travelflys.com/blog'} />
@@ -33,9 +33,12 @@ export default function Blog(props) {
                 <p className="page-title__slogan">Let our experts inspire you</p>
               </div> 
             </div>
-            <BreadHero linkhtml={<><ul className='bradcum'> <li  > <Link href="/">Home</Link> </li> 
+            <BreadHero linkhtml={<><ul className='bradcum'>
+             <li><Link href="/">Home</Link></li> 
             <li className='mr-2'>/</li>
-            <li aria-current="page">Blog</li> </ul></>} />
+            <li aria-current="page">Blog</li>
+            </ul>
+            </>} />
           </div>
 
 
