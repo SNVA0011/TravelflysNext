@@ -34,9 +34,16 @@ export default function BlogDetails(props, router) {
     };
   }, [location.events]);
 
+
   return (
     <>
-      <Head>
+   
+
+      <Header />
+
+      {props.singleblog.length != 0 && props.singleblog[0].status === "Active" ? (
+       <>
+       <Head>
         <title>{props.singleblog[0].title}</title>
         <meta name="description" content={props.singleblog[0].description} />
         <meta name="keywords" content={props.singleblog[0].keywords} />
@@ -47,11 +54,8 @@ export default function BlogDetails(props, router) {
             props.singleblog[0].titleUrl
           }
         />
-      </Head>
-
-      <Header />
-
-      {props.singleblog[0] != "" ? (
+      </Head> 
+      
         <div className="blogadda">
           <div className="page-title page-title--small page-title--blog text-center">
             <div className="container">
@@ -120,7 +124,8 @@ export default function BlogDetails(props, router) {
                         Recent Posts
                       </h3>
                       {props.allblog?.length > 0 ? (
-                        <ul>
+                       <>
+                       <ul>
                           {props.allblog.slice(0, 5).map((items, i) => (
                             <li>
                               <div className="text-left float-left">
@@ -149,6 +154,7 @@ export default function BlogDetails(props, router) {
                             </li>
                           ))}
                         </ul>
+                       </>
                       ) : (
                         "No items found !"
                       )}
@@ -159,6 +165,7 @@ export default function BlogDetails(props, router) {
             </Container>
           </div>
         </div>
+       </>
       ) : (
         <Pageerror />
       )}
