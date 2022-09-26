@@ -33,7 +33,7 @@ export default function BlogDetails(props, router) {
       location.events.off("routeChangeError", () => setLoading(false));
     };
   }, [location.events]);
-  
+
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function BlogDetails(props, router) {
               }
             />
           </Head>
-          
+
           <div className="blogadda">
             <div className="page-title page-title--small page-title--blog text-center ">
               <div className="container">
@@ -136,7 +136,7 @@ export default function BlogDetails(props, router) {
                                     <a
                                       className={
                                         location.asPath ===
-                                        "/blog/" + items.titleUrl
+                                          "/blog/" + items.titleUrl
                                           ? "active"
                                           : "not-active"
                                       }
