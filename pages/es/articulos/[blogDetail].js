@@ -60,9 +60,9 @@ export default function BlogDetails(props, router) {
           <div className="page-title page-title--small page-title--blog text-center">
             <div className="container">
               <div className="page-title__content">
-                <h1 className="page-title__name"> 
+                <h2 className="page-title__name"> 
                   {loading ? "loading..." : props.singleblog[0].heading}
-                </h1>
+                </h2>
               </div>
             </div>
             <BreadHero
