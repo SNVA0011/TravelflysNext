@@ -237,7 +237,7 @@
  .right-header__button { background-color: #01567e; border-radius: 20px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); padding: 0 25px; color: #fff; }
  .right-header__button svg { vertical-align: -1px; margin-right: 2px; }
  .right-header__button a { color: #fff; font-weight: 500; font-family: Poppins, sans-serif; display: block; }
- .site-banner { height: 600px; /* background-color: #f5f5f5; background-repeat: no-repeat; background-position: right 30px bottom; */ }
+ .site-banner { height: 700px; /* background-color: #f5f5f5; background-repeat: no-repeat; background-position: right 30px bottom; */ }
  .site-banner .container { position: relative; height: 100%; z-index: 7; top: 45px; }
  .site-banner .site-banner__content { position: absolute; top: 50%; transform: translateY(-50%); -o-transform: translateY(-50%); -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -webkit-transform: translateY(-50%); left: 15px; right: 15px; padding-bottom: 70px; bottom: 640px; }
  .site-banner.layout-02 { background-position: bottom right; background-repeat: no-repeat; background-size: 50vw auto; height: 100vh; background-color: #f5f8fd; }
@@ -1009,7 +1009,7 @@
  .form-underline input::placeholder { font-size: 15px; font-style: normal; color: #8d8d8d; font-family: Poppins, sans-serif; }
  .form-underline input:-ms-input-placeholder { font-size: 15px; font-style: normal; color: #8d8d8d; font-family: Poppins, sans-serif; }
  .form-underline input::-ms-input-placeholder { font-size: 15px; font-style: normal; color: #8d8d8d; font-family: Poppins, sans-serif; }
- .form-underline input[type="submit"] { border-radius: 20px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); background-color: #01567e; color: #fff; margin-bottom: 0; cursor: pointer; border: 0; }
+ .form-underline input[type="submit"] { border-radius: 20px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); background-color: #01567e; color: #fff !important; margin-bottom: 0; cursor: pointer; border: 0; }
  .form-underline input[type="checkbox"] { width: auto; line-height: normal; height: auto; position: absolute; opacity: 0; visibility: hidden; }
  .form-underline .field-select { margin-bottom: 30px; }
  .form-underline .field-select .sl-icon { position: absolute; top: 6px; left: 0; }
@@ -2046,8 +2046,42 @@
  .xdsoft_datetimepicker.on .xdsoft_timepicker button { margin-left: auto; margin-right: auto; }
  .xdsoft_datetimepicker .xdsoft_calendar th { color: #2a2a2a; border: 0; background: 0; height: 37px; font-size: 15px; }
  .xdsoft_datetimepicker .xdsoft_calendar td { border: 0; background: 0; height: 37px; font-size: 15px; }
- .site-banner.discover-the-best { /* background-image: url("/static/images/top-banner.png"); */ background-image: url(/static/images/aucapina.jpg); background-position: bottom center; background-size: cover; padding-bottom: 75px; }
+ .site-banner.discover-the-best { /* background-image: url("/static/images/top-banner.png"); */ background-image: url(/static/images/aucapina.jpg); background-position: bottom center; background-size: cover; padding-bottom: 75px; position: relative;}
  .enginebanner_sctn { width: 100%; height: 100%; position: relative; }
+ .site-banner.discover-the-best::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background:url('/static/images/wave-search.png');
+   background-position: bottom -2px center;
+    background-size: 100% 250px;
+    background-repeat: no-repeat;
+    z-index: 4;
+ }
+ .site-banner.discover-the-best::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top:auto;
+  bottom: 0;
+  height: 70%;
+  width: 100%;
+  background: -o-linear-gradient(to bottom,  rgba(0,0,0,0) 0%, rgba(1,86,126,0.84) 100%);
+  background: -ms-linear-gradient(to bottom,  rgba(0,0,0,0) 0%, rgba(1,86,126,0.84) 100%);
+  background: -moz-linear-gradient(to bottom,  rgba(0,0,0,0) 0%, rgba(1,86,126,0.84) 100%);
+background: -webkit-linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(1,86,126,0.84) 100%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(1,86,126,0.84) 100%); 
+background-position: bottom center;
+    background-size:  100% 100%;
+    background-repeat: no-repeat;
+ }
+
+ .site-banner.discover-the-best .site-banner__title {
+  text-shadow: 5px 4px 4px rgb(0 0 0 / 40%)
+}
  .xdsoft_datetimepicker .xdsoft_calendar td > div { padding-right: 0; text-align: center; }
  .xdsoft_datetimepicker .xdsoft_calendar td:hover { background: #01567e !important; border-radius: 50%; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); }
  .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default { background: #01567e; box-shadow: #01567e 0 1px 3px 0 inset; border-radius: 50%; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); width: 32px; height: 32px; }
@@ -2100,44 +2134,81 @@
 .blog-inner-box2 .content-ullist ul, .blog-inner-box2 .content-ullist ol{padding-left: 18px;}
 .blogaddalist-inner h1, .blogaddalist-inner h2, .blogaddalist-inner h3, .blogaddalist-inner h4, .blogaddalist-inner h5, .blogaddalist-inner h6 {margin-bottom: 10px;}
 .blog-inner-box2 .content-ullist ol li strong, .blog-inner-box2 .content-ullist ul li strong {display: inline-block;vertical-align: top;}
+ 
+.form-underline textarea,
+.form-underline input { 
+  font-size: 16px !important;
+  color: #000 !important;
+}
 
+.form-underline textarea::-webkit-input-placeholder,
+.form-underline input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #8f8f8f !important;
+  font-size: 16px !important;
+}
+.form-underline textarea::-moz-placeholder,
+.form-underline input::-moz-placeholder { /* Firefox 19+ */
+  color: #8f8f8f !important;
+  font-size: 16px !important;
+}
+.form-underline textarea:-ms-input-placeholder,
+.form-underline input:-ms-input-placeholder { /* IE 10+ */
+  color: #8f8f8f !important;
+  font-size: 16px !important;
+}
+.form-underline textarea:-moz-placeholder,
+.form-underline input:-moz-placeholder { /* Firefox 18- */
+  color: #8f8f8f !important;
+  font-size: 16px !important;
+}
  /*-------- responsive --------*/
  @media (min-width: 992px) {
  .navbar-light .navbar-nav .nav-link.active { box-shadow: 0 -3px 1px -1px #00a0e3 inset; }
  }
  @media (min-width: 1200px) {
- .site-banner .site-banner__content { max-width: 1200px; text-align: center; }
+ .site-banner .site-banner__content { max-width: 1200px; text-align: center; padding-left: 15px;padding-right: 15px; }
+ .site-banner.discover-the-best .site-banner__title {
+  background: rgb(0 0 0 / 25%);
+  padding: 4px 22px;
+  border-radius: 2px;
+}
  }
  @media screen and (max-width: 1199px) {
- .site-banner .site-banner__content { top: 0%; position: none; transform: none; -o-transform: none; -ms-transform: none; -moz-transform: none; -webkit-transform: none; left: 15px; right: 15px; }
+ .site-banner .site-banner__content { top: 10px; position: none; transform: none; -o-transform: none; -ms-transform: none; -moz-transform: none; -webkit-transform: none; left: 15px; right: 15px; }
  .site-banner__title { text-align: center; }
- .site-banner.discover-the-best { padding-bottom: 35px; }
+ .site-banner.discover-the-best { padding-bottom: 35px; height: 550px; }
  .cities { padding: 35px 0; }
  .site-banner { min-height: 500px; padding: 0; }
  }
  @media (max-width: 991px) {
  .sunrealizar .wrapper.travel_airlinster { font-size: 18px; }
  .site-header .navbar-light .navbar-toggler { padding: 0; border: none; }
- .site-banner { position: relative; }
- .site-banner .container { position: relative; z-index: 2; }
- .discover-the-best .Engine-Discover-with { font-size: 45px; text-align: center; }
+ .site-banner { position: relative; } 
+ .discover-the-best .Engine-Discover-with { font-size: 36px; text-align: center; }
  .site-banner::after { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; /* background-color: rgb(245 245 245 / 94%); */ }
  .enginebanner_sctn .banner-shape-14.w-100, .shape-bottom.bigbanner-wgb svg { height: 60px; }
  .page-title--small .page-title__content p.page-title__slogan { margin-top: -5px; font-size: 15px; }
  .banner-contact .banner-inner h2 { font-size: 32px; }
  .site-header ul.navbar-nav { border-top: solid 1px #d7d6e7; padding-top: 6px; margin-top: 15px; }
  .page-title--small .page-title__content .page-title__name { font-size: 26px;line-height: 1.4;}
+ .site-banner.discover-the-best{
+  height: 550px;
+ }
+ 
  }
  @media (max-width: 767px) {
  .banner-contact .banner-inner h2 { font-size: 28px; text-align: center; }
  .sunrealizar .wrapper.travel_airlinster { margin-top: 0; position: relative; width: 100%; border-radius: 0 0 14px 14px; }
  .popular-destination.travellist.full-w.customizespace-75 .col-xl-4.col-lg-4.col-md-4.col-12 { margin-bottom: 30px !important; }
  .popular-destination.travellist.full-w.customizespace-75 .col-xl-4.col-lg-4.col-md-4.col-12:last-child { margin-bottom: 0 !important; }
- .site-banner .site-banner__content { top: 0%; padding: 15px; }
+ .site-banner .site-banner__content { top: 20px; padding: 15px; }
  .site-banner { height: 750px; }
  .page-title--small .page-title__content .page-title__name { font-size: 22px; }
 .blog-inner-box2 {font-size: 15px;}
 .blogaddalist-inner h1 {font-size: 22px;}
+.site-banner.discover-the-best{
+  height: 700px;
+ }
  }
  @media (max-width: 575px) {
  .departurevg .fa-plane-departure { height: 60px; width: 60px; line-height: 60px; font-size: 24px; } 
@@ -2175,22 +2246,70 @@
  .enginebanner_sctn .banner-shape-14.w-100, .popular-destination.travellist .ppt-clistaff.mt-shapeneed svg, .shape-bottom.bigbanner-wgb svg { height: 30px; }
  .top-title h2 { font-size: 28px; }
  .discover-the-best .Engine-Discover-with { font-size: 30px; }
+ .site-banner.discover-the-best{
+  height: 650px;
+ }
+ .site-banner .site-banner__content{
+  top: 10px;
+ }
  }
  @media (max-width: 425px) {
  .top-title h2 { font-size: 26px; }
  .alldeals-vi a { font-size: 16px; }
  }
- /*Engine New css*/ .Searching-area { background: 0 0; border-radius: 10px; /* margin-top: -30px; */ padding: 20px; background-color: #01567e; /* border-bottom: 5px solid #01567e; */ padding-bottom: 6px; }
+ /*Engine New css*/ .Searching-area { background: 0 0;   }
+
+
+
+
+.Searching-area ul li .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #8f8f8f !important;
+}
+.Searching-area ul li .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: #8f8f8f !important;
+}
+.Searching-area ul li .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #8f8f8f !important;
+}
+.Searching-area ul li .form-control:-moz-placeholder { /* Firefox 18- */
+  color: #8f8f8f !important;
+}
+form.Searching-area.search-place ul.row{
+  margin-left: -5px;
+  margin-right: -5px;
+}
+form.Searching-area.search-place ul.row .col-12{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
  .Searching-area ul { list-style: none; }
- .Searching-area ul li .form-control { display: block; width: 100%; height: 55px; /* padding: 0.375rem 0.75rem; */ font-size: 1rem; font-weight: 400; border-radius: 4px; font-style: normal; line-height: 1.5; color: #fff; background-color: #016797; background-clip: padding-box; border: none; box-shadow: none; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+ .Searching-area ul li .form-control { display: block; width: 100%; height: 55px; /* padding: 0.375rem 0.75rem; */ font-size: 1rem; font-weight: 400; border-radius: 4px; font-style: normal; line-height: 1.5;   background-clip: padding-box; border: none; box-shadow: none; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
  .Searching-area ul li .input-group { position: relative; display: inline-flex; flex-wrap: nowrap; align-items: stretch; width: 100%; }
  .Searching-area ul li .input-group .input-group-prepend { margin-right: -1px; }
- .Searching-area ul li .input-group .input-group-prepend .input-group-text { color: #01567e; text-align: center; white-space: nowrap; font-size: 16px; width: 41px; background-color: #72d1ff; border: 1px solid #0c6088; /* border-radius: 0.25rem; */ /* border-left: none; */ text-align: center; }
+ .Searching-area ul li .input-group .input-group-prepend .input-group-text {    color: #656565;
+  white-space: nowrap;
+  background-color: #efefef;
+  border: none;
+  padding-left: 17px;
+  padding-right: 17px;
+  font-size: 18px;}
  .btn-site { border-radius: 20px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); background-color: #01567e; min-height: 40px; height: auto; line-height: 1.2; font-weight: 500; padding: 9px 25px; color: #fff; outline: 0; outline-offset: 0; }
  .btn-site:hover { color: #fff; text-decoration: none; background-color: #01567e; }
- .search-place .btn-site { border-radius: 50px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); background-color: #fff; min-height: 40px; height: auto; line-height: 1.8; font-weight: 500; padding: 9px 25px; color: #01567e; outline: 0; outline-offset: 0; width: 100%; border-radius: 4px; height: 51px; }
- .search-place .btn-site:hover { background-color: #01567e; color: #ffff; opacity: 1.2; border: 1px solid #fff; }
- ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */ color: #fff !important; }
+ .search-place .btn-site { border-radius: 50px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); background-color: #fff;     background-color: #00a0e3;
+  border: none; font-weight: 500; padding: 9px 25px; color: #fff; outline: 0; outline-offset: 0; width: 100%; border-radius: 4px; height: 55px;font-weight: 600;
+  font-size: 17px; letter-spacing: 0.6px; }
+ .search-place .btn-site:hover { background-color: #01567e; color: #fff;  } 
+ @media (max-width: 767px) {
+  .Searching-area ul li .input-group .input-group-prepend .input-group-text{
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 15px;
+ } 
+ .site-banner.discover-the-best::before{
+  background-size: 100% 150px;
+ }
+ }
  @media (max-width: 575px) {
  .search-place ul li .form-control { height: 45px; }
  .search-place .btn-site { height: 45px; }
