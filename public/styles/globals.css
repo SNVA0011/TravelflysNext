@@ -2046,7 +2046,9 @@
  .xdsoft_datetimepicker.on .xdsoft_timepicker button { margin-left: auto; margin-right: auto; }
  .xdsoft_datetimepicker .xdsoft_calendar th { color: #2a2a2a; border: 0; background: 0; height: 37px; font-size: 15px; }
  .xdsoft_datetimepicker .xdsoft_calendar td { border: 0; background: 0; height: 37px; font-size: 15px; }
- .site-banner.discover-the-best { /* background-image: url("/static/images/top-banner.png"); */ background-image: url(/static/images/aucapina.jpg); background-position: bottom center; background-size: cover; padding-bottom: 75px; position: relative;}
+ .site-banner.discover-the-best { image-rendering: crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast; background-image: url(/static/images/aucapina.jpg); background-position: bottom center; background-size: cover; padding-bottom: 75px; position: relative;}
  .enginebanner_sctn { width: 100%; height: 100%; position: relative; }
  .site-banner.discover-the-best::before{
   content: '';
@@ -2060,6 +2062,9 @@
     background-size: 100% 250px;
     background-repeat: no-repeat;
     z-index: 4;
+    image-rendering: crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
  }
  .site-banner.discover-the-best::after{
   content: '';
