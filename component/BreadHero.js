@@ -6,7 +6,7 @@ export default function BreadHero(props) {
     return (
         <div className={'breadcrumb_area full-w text-uppercase ' + (props.bigbanner ? props.bigbanner : 'none')} style={{ backgroundImage: props.bigbanner ? `url("../images/bann-3.jpg")` : '' }}>
             <Container>
-                <h1>{props.title}</h1>
+                <p className='text-white my-2'>{props.title}</p>
                 {props.linkhtml}
             </Container>
 

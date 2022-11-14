@@ -34,9 +34,25 @@ export default function BlogDetails(props, router) {
     };
   }, [location.events]);
 
+  console.log('props.singleblog-', props.singleblog)
 
   return (
     <>
+
+      {props.singleblog[0].tfnHeader ?
+        <div className="call-header d-none d-md-block">
+          <Container>
+            <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
+              <i class="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">
+                <span>{props.singleblog[0].tfnHeader}</span>
+              </div>
+            </a>
+          </Container>
+        </div>
+        : ""}
+
+
       <Header />
 
       {props.singleblog.length != 0 && props.singleblog[0].status === "Active" ? (
@@ -61,9 +77,9 @@ export default function BlogDetails(props, router) {
             <div className="page-title page-title--small page-title--blog text-center ">
               <div className="container">
                 <div className="page-title__content">
-                  <h2 className="page-title__name">
+                  <p className="page-title__name">
                     {loading ? "loading..." : props.singleblog[0].heading}
-                  </h2>
+                  </p>
                 </div>
               </div>
               <BreadHero
@@ -184,12 +200,27 @@ export default function BlogDetails(props, router) {
       
       )} */}
 
+      {props.singleblog[0].tfnFooter1 ?
+        <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
+          <div className="tfn-no">
+            <p>
+              <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+            </p>
+            <span>
+              <i class="bi bi-telephone mr-2 d-md-none"></i>
+              {props.singleblog[0].tfnFooter1}
+            </span>
+          </div>
+        </a>
+        : ""}
+
+
       <Footer />
     </>
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { params } = context;
 
   // single blogDetail
@@ -275,4 +306,59 @@ export async function getServerSideProps(context) {
       allblog: multiplejson.response,
     },
   };
+}
+
+
+
+// paths -> slugs which are allowed
+export const getStaticPaths = async() => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "img_url": "",
+    "siteId": "143",
+    "categoryName": "",
+    "blogdes2": "",
+    "blogTagsName2": "",
+    "extarTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await  fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
+  const json = await res.json()
+  const data= json.response;
+  
+	// fallback ->
+  let paths =[];
+
+  data.forEach((post)=>{
+  paths.push({
+    params:{blogDetail: post.titleUrl}
+  })
+})
+
+	return {
+		paths,
+		fallback: true
+	}
 }

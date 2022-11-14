@@ -36,7 +36,7 @@ export default function Airline(props) {
               <div className="page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <h1 className="page-title__name">{props.singleflight[0].metaTitle}</h1>
+                    <p className="page-title__name">{props.singleflight[0].metaTitle}</p>
                     <BreadHero linkhtml={<>
                       <ul className='bradcum'>
                         <li> <Link href="/es/">Casa</Link> </li>
@@ -76,7 +76,7 @@ export default function Airline(props) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { params } = context
   const pageurl = params.Airline
 
@@ -119,4 +119,59 @@ export async function getServerSideProps(context) {
   return {
     props: { singleflight: json.response }
   }
+}
+
+
+
+// paths -> slugs which are allowed
+export const getStaticPaths = async() => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "contentId": "",
+    "pageType": "",
+    "pageValue": "",
+    "pageName": "",
+    "metaTitle": "",
+    "metaKeyword": "",
+    "metaDesc": "",
+    "otherMeta": "",
+    "dealCode": "",
+    "dealTitle": "",
+    "contentTitle": "",
+    "contentData": "",
+    "contentImage": "",
+    "siteId": "143",
+    "status": "",
+    "count": "",
+    "url": "",
+    "modifyBy": "",
+    "modifyDate": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
+  const json = await res.json()
+  const data= json.response;
+  
+	// fallback ->
+  let paths =[];
+
+  data.forEach((post)=>{
+  paths.push({
+    params: { Airline: post.url + "-" + post.pageValue }
+  })
+})
+
+	return {
+		paths,
+		fallback: true
+	}
 }

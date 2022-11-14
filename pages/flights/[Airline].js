@@ -17,7 +17,7 @@ export default function Airline(props) {
 
   return (
     <>
-   <Header />
+      <Header />
 
       {
         props.singleflight?.length > 0 ?
@@ -30,44 +30,44 @@ export default function Airline(props) {
               <link rel="canonical" href={`https://www.travelflys.com/flights/${props.singleflight[0].url}-${props.singleflight[0].pageValue}`} />
             </Head>
 
-         
+
             <div className='blogadda'>
 
-              
-            <div className="page-title page-title--small page-title--blog text-center">
-            <div className="container">
-                    <div className="page-title__content">
-                      <h1 className="page-title__name">{props.singleflight[0].metaTitle}</h1>
-                       <BreadHero linkhtml={<>
-                        <ul className='bradcum'>
-                          <li> <Link href="/">Home</Link> </li>
-                          <li className='mr-2'>/</li> 
-                          <li> <Link href="/flights">FLIGHTS</Link> </li>
-                          <li className='mr-2'>/</li> 
-                           <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
-                    </div>
+
+              <div className="page-title page-title--small page-title--blog text-center">
+                <div className="container">
+                  <div className="page-title__content">
+                    <p className="page-title__name">{props.singleflight[0].metaTitle}</p>
+                    <BreadHero linkhtml={<>
+                      <ul className='bradcum'>
+                        <li> <Link href="/">Home</Link> </li>
+                        <li className='mr-2'>/</li>
+                        <li> <Link href="/flights">FLIGHTS</Link> </li>
+                        <li className='mr-2'>/</li>
+                        <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
                   </div>
+                </div>
               </div>
 
- 
+
               <div className='popular-destination blogaddalist details full-w'>
                 <Container>
-                <div className='blogaddalist-round'>
-                      <div className='blogaddalist-inner'> 
-                        <div className="blog-inner-box2">
+                  <div className='blogaddalist-round'>
+                    <div className='blogaddalist-inner'>
+                      <div className="blog-inner-box2">
                         {props.singleflight[0].contentData.length == 0 ?
                           <p className='pb-2'>No Content found</p>
                           :
-                          <div  className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
+                          <div className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
                         }
-                        </div>
                       </div>
                     </div>
+                  </div>
                 </Container>
               </div>
             </div>
           </>
-          :  <Pageerror />
+          : <Pageerror />
       }
 
 
@@ -77,7 +77,7 @@ export default function Airline(props) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { params } = context
   const pageurl = params.Airline
 
@@ -86,7 +86,7 @@ export async function getServerSideProps(context) {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
- 
+
   var raw = JSON.stringify({
     "contentId": "",
     "pageType": "Airline",
@@ -122,3 +122,58 @@ export async function getServerSideProps(context) {
     props: { singleflight: json.response }
   }
 }
+
+
+
+// paths -> slugs which are allowed
+export const getStaticPaths = async () => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "contentId": "",
+    "pageType": "",
+    "pageValue": "",
+    "pageName": "",
+    "metaTitle": "",
+    "metaKeyword": "",
+    "metaDesc": "",
+    "otherMeta": "",
+    "dealCode": "",
+    "dealTitle": "",
+    "contentTitle": "",
+    "contentData": "",
+    "contentImage": "",
+    "siteId": "143",
+    "status": "",
+    "count": "",
+    "url": "",
+    "modifyBy": "",
+    "modifyDate": ""
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
+  const json = await res.json()
+  const data = json.response;
+
+  // fallback ->
+  let paths = [];
+
+  data.forEach((post) => {
+    paths.push({
+      params: { Airline: post.url + "-" + post.pageValue }
+    })
+  })
+
+  return {
+    paths,
+    fallback: true
+  }
+}
+

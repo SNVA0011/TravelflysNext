@@ -116,12 +116,7 @@ export default function Flights(props) {
 }
 
 
-
-
-
-
-
-export async function getServerSideProps() {
+export const getStaticProps = async ({ params }) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 

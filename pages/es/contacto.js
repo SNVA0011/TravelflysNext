@@ -12,7 +12,7 @@ export default function ContactUs() {
   return (
     <>
       <Head>
-        <title>Contacto - airlingster</title>
+        <title>Contacto - Travelflys</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <link rel="canonical" href={'https://www.travelflys.com/es/contacto'} />
