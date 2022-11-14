@@ -39,23 +39,7 @@ export default function BlogDetails(props, router) {
   return (
     <>
 
-      {props.singleblog[0].tfnHeader ?
-        <div className="call-header d-none d-md-block">
-          <Container>
-            <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
-              <i class="bi bi-telephone mr-2"></i>
-              <div className="tfn-no d-inline-block">
-                <span>{props.singleblog[0].tfnHeader}</span>
-              </div>
-            </a>
-          </Container>
-        </div>
-        : ""}
-
-
-      <Header />
-
-      {props.singleblog.length != 0 && props.singleblog[0].status === "Active" ? (
+      {props.singleblog?.length > 0 && props.singleblog[0].status === "Active" ? (
         <>
           <Head>
             <title>{props.singleblog[0].title}</title>
@@ -72,6 +56,22 @@ export default function BlogDetails(props, router) {
               }
             />
           </Head>
+
+          {props.singleblog[0].tfnHeader ?
+            <div className="call-header d-none d-md-block">
+              <Container>
+                <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
+                  <i class="bi bi-telephone mr-2"></i>
+                  <div className="tfn-no d-inline-block">
+                    <span>{props.singleblog[0].tfnHeader}</span>
+                  </div>
+                </a>
+              </Container>
+            </div>
+            : ""}
+
+          <Header />
+
 
           <div className="blogadda">
             <div className="page-title page-title--small page-title--blog text-center ">
@@ -189,9 +189,27 @@ export default function BlogDetails(props, router) {
               </Container>
             </div>
           </div>
+
+          {props.singleblog[0].tfnFooter1 ?
+            <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
+              <div className="tfn-no">
+                <p>
+                  <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+                </p>
+                <span>
+                  <i class="bi bi-telephone mr-2 d-md-none"></i>
+                  {props.singleblog[0].tfnFooter1}
+                </span>
+              </div>
+            </a>
+            : ""}
         </>
       ) : (
-        <Pageerror />
+        <>
+          <Header />
+
+          <Pageerror />
+        </>
       )}
 
       {/* {props.singleblog[0] != "" ? (
@@ -200,19 +218,7 @@ export default function BlogDetails(props, router) {
       
       )} */}
 
-      {props.singleblog[0].tfnFooter1 ?
-        <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
-          <div className="tfn-no">
-            <p>
-              <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
-            </p>
-            <span>
-              <i class="bi bi-telephone mr-2 d-md-none"></i>
-              {props.singleblog[0].tfnFooter1}
-            </span>
-          </div>
-        </a>
-        : ""}
+
 
 
       <Footer />
@@ -311,7 +317,7 @@ export async function getStaticProps(context) {
 
 
 // paths -> slugs which are allowed
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -344,21 +350,21 @@ export const getStaticPaths = async() => {
     body: raw,
     redirect: 'follow'
   };
-  const res = await  fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
+  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
-  const data= json.response;
-  
-	// fallback ->
-  let paths =[];
+  const data = json.response;
 
-  data.forEach((post)=>{
-  paths.push({
-    params:{blogDetail: post.titleUrl}
+  // fallback ->
+  let paths = [];
+
+  data.forEach((post) => {
+    paths.push({
+      params: { blogDetail: post.titleUrl }
+    })
   })
-})
 
-	return {
-		paths,
-		fallback: true
-	}
+  return {
+    paths,
+    fallback: true
+  }
 }
