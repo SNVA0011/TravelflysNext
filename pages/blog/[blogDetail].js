@@ -141,6 +141,7 @@ export default function BlogDetails(props, router) {
                     </div>
                   </Col>
 
+
                   <Col xs={12} lg={5} xl={4}>
                     <aside className="recent-blogsalide">
                       <div className="post__info">
