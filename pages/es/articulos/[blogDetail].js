@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import Pageerror from "../../../component/es/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Moment from 'react-moment';
 
 export default function BlogDetails(props, router) {
   const location = useRouter();
@@ -122,12 +123,18 @@ export default function BlogDetails(props, router) {
                           ) : props.singleblog[0].content === "" ? (
                             <p className="pb-2">No Content found</p>
                           ) : (
+                          <>
+                            <div className="mb-2 text-secondary">
+                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                            </div>
+                 
                             <div
                               className="blog-p  mb-5 content-ullist"
                               dangerouslySetInnerHTML={{
                                 __html: props.singleblog[0].content,
                               }}
                             />
+                          </>
                           )}
                         </div>
                       </div>
@@ -158,12 +165,7 @@ export default function BlogDetails(props, router) {
                                       <li className="p-0 m-0">
                                         <i className="bi bi-calendar4 mr-2"></i>
                                         <span>
-                                          {new Date(items.posttime).getDate() +
-                                            "/" +
-                                            (new Date(items.posttime).getMonth() +
-                                              1) +
-                                            "/" +
-                                            new Date(items.posttime).getFullYear()}
+                                        <Moment date={items.posttime} format="MMM DD, YYYY" />   
                                         </span>
                                       </li>
                                     </ul>
@@ -293,6 +295,10 @@ export async function getStaticProps(context) {
       singleblog: onejson.response,
       allblog: multiplejson.response,
     },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   };
 }
 

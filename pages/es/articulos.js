@@ -94,5 +94,9 @@ export const getStaticProps = async ({ params }) => {
   const json = await res.json()
   return {
     props: { allbloglist: json.response },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
   }
 }

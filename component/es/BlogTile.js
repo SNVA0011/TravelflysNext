@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Link from "next/link";
+import Moment from 'react-moment';
 
 export default function Blog(props) {
   useEffect(() => {
@@ -39,12 +40,7 @@ export default function Blog(props) {
                                     {" "}
                                     <i className="bi bi-calendar4 mr-2"></i>{" "}
                                     <span>
-                                      {new Date(items.posttime).getDate() +
-                                        "/" +
-                                        (new Date(items.posttime).getMonth() +
-                                          1) +
-                                        "/" +
-                                        new Date(items.posttime).getFullYear()}
+                                    <Moment date={items.posttime} format="MMM DD, YYYY" />   
                                     </span>
                                   </li>
                                 </ul>
@@ -80,12 +76,7 @@ export default function Blog(props) {
                                     {" "}
                                     <i className="bi bi-calendar4 mr-2"></i>{" "}
                                     <span>
-                                      {new Date(items.posttime).getDate() +
-                                        "/" +
-                                        (new Date(items.posttime).getMonth() +
-                                          1) +
-                                        "/" +
-                                        new Date(items.posttime).getFullYear()}
+                                    <Moment date={items.posttime} format="MMM DD, YYYY" />   
                                     </span>
                                   </li>
                                 </ul>
