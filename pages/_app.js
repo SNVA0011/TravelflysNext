@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head';
+import '../styles/globals.css'
+import '../styles/responsive.css'
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -11,9 +13,7 @@ function MyApp({ Component, pageProps }) {
   }, [lang]);
   return (
     <>
-      <Head></Head>
-      <link rel="stylesheet" href="/styles/globals.css"></link>
-      <link rel="stylesheet" href="/styles/responsive.css"></link>
+      <Head></Head> 
       <Component {...pageProps} />
     </>
   )
