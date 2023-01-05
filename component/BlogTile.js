@@ -25,10 +25,7 @@ export default function Blog(props) {
             {props.allbloglist?.length > 0 ? (
               <Row>
                 {props.showitem
-                  ? props.allbloglist
-                      .slice(0, props.showitem)
-                      .filter((items) => items.status === "Active")
-                      .map((items, i) => (
+                  ? props.allbloglist.slice(0, props.showitem).filter((items) => items.status === "Active").map((items, i) => (
                         <Col xs={12} md={6} xl={4} key={i} className="mb-4">
                           <div className="post hover__box bog-border h-100 d-flex flex-column">
                             <div className="wrapper"></div>
@@ -62,9 +59,7 @@ export default function Blog(props) {
                           </div>
                         </Col>
                       ))
-                  : props.allbloglist
-                      .filter((items) => items.status === "Active")
-                      .map((items, i) => (
+                  : props.allbloglist.filter((items) => items.status === "Active").map((items, i) => (
                         <Col xs={12} md={6} xl={4} key={i} className="mb-4">
                           <div className="post hover__box bog-border h-100 d-flex flex-column">
                             <div className="wrapper"></div>

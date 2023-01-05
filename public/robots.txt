@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://travelflys.com/sitemap.xml
+Sitemap: https://www.travelflys.com/sitemap.xml

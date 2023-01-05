@@ -73,7 +73,7 @@ export default function Flights(props) {
               props.allflights.length > 0 ?
 
                 <Row className='alldeals-vi'>
-                  {props.allflights.filter((items) => items.pageType === "AirlineE").map((items, i) => ( 
+                  {props.allflights.filter((items) => items.status === "Active").filter((items) => items.pageType === "AirlineE").map((items, i) => ( 
                     <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
                       <div className='blogaddalist-inner border p-3 departurevg'>
                         <div className='media'>
