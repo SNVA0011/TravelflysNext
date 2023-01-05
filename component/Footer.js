@@ -8,7 +8,7 @@ export default function Footer() {
 				<div className="container">
 					<div className="banner-inner">
 						<h2>Look forward to going to the Best Flight. Every single time we Provied.</h2>
-						<a href="tel:+0-00000000000" className="btn">Contact Us</a>
+						<a href="tel:+1 (802)-341-3448" target="_blank" className="btn">Contact Us</a>
 					</div>
 				</div>
 			</section>
@@ -18,7 +18,9 @@ export default function Footer() {
 						<div className="row">
 							<div className="col-lg-3">
 								<div className="footer__top__info">
-									<a className="footer__top__info__logo"><img src='/images/logo.svg' alt='logo' /></a>
+								<Link href="/">
+									<a className="footer__top__info__logo"><img src='/images/logo-white.svg' alt='logo' /></a>
+									</Link>
 									<p className="footer__top__info__desc">Discover amazing things to do everywhere you go.</p>
 								</div>
 							</div>
@@ -26,11 +28,12 @@ export default function Footer() {
 								<aside className="footer__top__nav">
 									<h3>Company</h3>
 									<ul>
-										<li><Link href="/about-us">About Us</Link></li>
-										<li><Link href="/blog">Blog</Link></li>
-										<li><Link href="/contact">Contact</Link></li>
-										<li className="d-none"><Link href="/"><a>Home</a></Link></li> 
-										<li className="d-none"><Link href="/es"><a>Casa</a></Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/about-us">About Us</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/flights">Flight</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/blog">Blog</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/contact">Contact</Link></li>
+										<li className="d-none"><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/"><a>Home</a></Link></li> 
+										<li className="d-none"><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es"><a>Casa</a></Link></li>
 									</ul>
 								</aside>
 							</div>
@@ -38,8 +41,8 @@ export default function Footer() {
 								<aside className="footer__top__nav">
 									<h3>Support</h3>
 									<ul>
-										<li><Link href="/privacy">Privacy Policy</Link></li>
-										<li><Link href="/terms">Terms and Condition</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/privacy">Privacy Policy</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/terms">Terms and Condition</Link></li>
 										{/* <li><Link href="/site-map">Sitemap</Link></li> */}
 
 									</ul>
@@ -48,9 +51,20 @@ export default function Footer() {
 							<div className="col-lg-3">
 								<aside className="footer__top__nav footer__top__nav--contact">
 									<h3>Contact Us</h3>
-									<p>Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
+									<p><i class="bi bi-envelope-fill mr-1"></i> Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
 									{/* <p>Phone: 1 (00) 832 2342</p> */}
-									<ul>
+									
+								</aside>
+							</div>
+						</div>
+					</div>
+					<div className="footer__bottom footer__top__nav footer__top__nav--contact  d-flex justify-content-between flex-wrap align-items-center">
+						<p className="footer__bottom__copyright  flex-grow-1">2022 © <Link href="/">Travelflys</Link>. All rights reserved.</p>
+					
+
+					<div className="d-flex  align-items-center flex-wrap">
+					<span className="pl-4 pt-1 mb-3 text-light  follow-usfotter">Follow Us</span>
+					<ul>
 										<li className="facebook">
 											<a target='_blank' title="Facebook" href="https://www.facebook.com/travelflys">
                       <i className="bi bi-facebook"></i>
@@ -72,12 +86,9 @@ export default function Footer() {
 											</a> 
 										</li>
 									</ul>
-								</aside>
-							</div>
-						</div>
-					</div>
-					<div className="footer__bottom">
-						<p className="footer__bottom__copyright">2022 © <Link href="/">travelflys</Link>. All rights reserved.</p>
+									</div>
+
+
 					</div>
 				</div>
 			</footer> 

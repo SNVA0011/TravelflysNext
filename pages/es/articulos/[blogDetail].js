@@ -39,7 +39,7 @@ export default function BlogDetails(props, router) {
 
 
   return (
-    <>
+    <div className="blogdt-single">
 
 
       {props.singleblog?.length > 0 && props.singleblog[0].status === "Active" ? (
@@ -210,7 +210,7 @@ export default function BlogDetails(props, router) {
 
 
       <Footer />
-    </>
+    </div>
   );
 }
 
