@@ -15,7 +15,28 @@ export default function Flights(props) {
   }, [])
 
   return (
-    <>
+    <div className='blogdt-single'>
+      <div className="call-header d-none d-md-block">
+        <div className="container">
+          <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+            <i class="bi bi-telephone mr-2"></i>
+            <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
       <Head>
         <title>Fights - Travelflys</title>
         <meta name="description" content="" />
@@ -35,7 +56,7 @@ export default function Flights(props) {
               <p className="page-title__slogan">Check Best Flight With us </p>
             </div>
           </div>
-          <BreadHero linkhtml={<><ul className='bradcum '>
+          <BreadHero linkhtml={<><ul className='bradcum container'>
             <li><Link href="/" className=''>Home</Link> </li>
             <li className='mr-2'>/</li>
             <li className='breadcrumb-item active ' aria-current="page">Flights</li> </ul></>} />
@@ -82,6 +103,7 @@ export default function Flights(props) {
             <h4 className='title title-border-bottom align-center offset-item animate font-weight-bold'>Top Flights Deals</h4>
 
 
+
             {
               props.allflights.length > 0 ?
 
@@ -90,8 +112,8 @@ export default function Flights(props) {
                     <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
                       <div className='blogaddalist-inner border p-3 departurevg'>
                         <div className='media'>
-                        <i className="fa-solid fa-plane-departure d-flex align-items-center justify-content-center">
-                          <Image src="/images/departures.png" alt='departures' width={40} height={40}></Image>
+                          <i className="fa-solid fa-plane-departure d-flex align-items-center justify-content-center">
+                            <Image src="/images/departures.png" alt='departures' width={40} height={40}></Image>
                           </i>
                           <div className='media-body'>
                             <h3 className='h4 title'>{items.pageName}-{items.pageValue}</h3>
@@ -124,7 +146,7 @@ export default function Flights(props) {
 
       <Footer />
 
-    </>
+    </div>
   )
 }
 

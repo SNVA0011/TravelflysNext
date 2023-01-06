@@ -64,8 +64,14 @@
  .footer__top__nav--contact li { margin-bottom: 0; }
  .footer__top { padding: 60px 0 40px; }
  .related-post .related-grid { flex-wrap: wrap; }
- .page-title--small { background-position: center right -480px; background-size: cover; }
- .intro__meta, .sidebar { margin-top: 30px; }
+  .intro__meta, .sidebar { margin-top: 30px; }
+  .page-title--small {
+   padding: 100px 0;
+   background-position: left 47% center;
+}
+.breadcrumb_area ul.bradcum.container {
+   display: none;
+}
  .intro__meta .col-md-4:first-child .intro__meta__item { border-left: 0; }
  .place__amenities span { margin-left: 5px; }
  .shop-details__addcart button { padding: 0 55px; }
@@ -169,8 +175,7 @@
  .city-content__tabtitle__button.btn, .city-content__tabtitle__tablist { float: none; margin-bottom: 10px; }
  .city-content__tabtitle { text-align: center; }
  .place__amenities { margin-bottom: 20px; }
- .place-item__photo { top: 30px; left: 50px; right: auto; bottom: auto; }
- .page-title.page-title--small { background-image: none !important; }
+ .place-item__photo { top: 30px; left: 50px; right: auto; bottom: auto; } 
  .place-03 .breadcrumbs { margin-bottom: 30px; }
  .place-04 .place-gallery { left: 50px; top: 30px; right: auto; bottom: auto; }
  .grid.grid-4 { flex-wrap: wrap; }
@@ -279,6 +284,9 @@
  .single .place-gallery { top: 30px; left: 50px; bottom: auto; right: auto; }
  .single .place-gallery a { font-size: 0; height: 48px; width: 48px; border-radius: 50%; line-height: 48px; padding: 0; text-align: center; }
  .single .place-gallery i { font-size: 24px; vertical-align: -7px; }
+ a.footer-number-md .tfn-no span {
+   font-size: 17px;
+}
  }
  @media only screen and (max-width: 575px) {
  .intro__meta .intro__meta__item { border: 0; text-align: center; margin-bottom: 30px; padding-left: 0; }
@@ -297,6 +305,12 @@
  .shop__meta { margin-left: -5px; margin-right: -5px; }
  .shop__meta > div { padding: 0 5px; }
  .site__order > div { margin-right: 5px; }
+ .page-title--small::after{
+   height: 160%;
+ }
+ .page-title--small .page-title__content p.page-title__slogan {
+   box-shadow: none;
+}
  .site__order > div > a { font-size: 14px; }
  .place-share { position: static; margin-top: 20px; }
  .place-flex .place__currency { margin-right: 15px; }

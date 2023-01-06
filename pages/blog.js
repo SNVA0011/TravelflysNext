@@ -14,7 +14,30 @@ export default function Blog(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <>
+    <div className='blogdt-single'>
+
+    <div className="call-header d-none d-md-block">
+        <div className="container">
+            <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+                <i class="bi bi-telephone mr-2"></i>
+                <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
+    
       <Head>
          <title>Blog - Travelflys</title>
             <meta name="description" content="" />
@@ -33,7 +56,7 @@ export default function Blog(props) {
                 <p className="page-title__slogan">Let our experts inspire you</p>
               </div> 
             </div>
-            <BreadHero linkhtml={<><ul className='bradcum'>
+            <BreadHero linkhtml={<><ul className="bradcum container">
              <li><Link href="/">Home</Link></li> 
             <li className='mr-2'>/</li>
             <li aria-current="page">Blog</li>
@@ -49,7 +72,7 @@ export default function Blog(props) {
       </div>
 
       <Footer />
-    </>
+    </div>
 
 
   )

@@ -15,7 +15,30 @@ export default function Airline(props) {
 
 
   return (
-    <>
+    <div className='blogdt-single'>
+
+      <div className="call-header d-none d-md-block">
+        <div className="container">
+          <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+            <i class="bi bi-telephone mr-2"></i>
+            <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
+
       <Header />
 
       {
@@ -36,16 +59,19 @@ export default function Airline(props) {
               <div className="page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <p className="page-title__name">{props.singleflight[0].metaTitle}</p>
-                    <BreadHero linkhtml={<>
-                      <ul className='bradcum'>
-                        <li> <Link href="/es/">Casa</Link> </li>
-                        <li className='mr-2'>/</li>
-                        <li> <Link href="/es/vuelos">VUELOS</Link> </li>
-                        <li className='mr-2'>/</li>
-                        <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
+                    <h1 className="page-title__name">  Detalles del vuelo </h1>
+                    <p className="page-title__slogan">{props.singleflight[0].metaTitle}</p>
+
                   </div>
                 </div>
+
+                <BreadHero linkhtml={<>
+                  <ul className="bradcum container">
+                    <li> <Link href="/es/">Casa</Link> </li>
+                    <li className='mr-2'>/</li>
+                    <li> <Link href="/es/vuelos">VUELOS</Link> </li>
+                    <li className='mr-2'>/</li>
+                    <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
               </div>
 
 
@@ -57,7 +83,7 @@ export default function Airline(props) {
                         {props.singleflight[0].contentData.length == 0 ?
                           <p className='pb-2'>No Content found</p>
                           :
-                          <div  className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
+                          <div className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
                         }
                       </div>
                     </div>
@@ -71,7 +97,7 @@ export default function Airline(props) {
 
 
       <Footer />
-    </>
+    </div>
   )
 }
 
@@ -128,7 +154,7 @@ export async function getStaticProps(context) {
 
 
 // paths -> slugs which are allowed
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -163,19 +189,19 @@ export const getStaticPaths = async() => {
 
   const res = await fetch("https://cms.travomint.com/travoles-content/site-map?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
-  const data= json.response;
-  
-	// fallback ->
-  let paths =[];
+  const data = json.response;
 
-  data.forEach((post)=>{
-  paths.push({
-    params: { Airline: post.url + "-" + post.pageValue }
+  // fallback ->
+  let paths = [];
+
+  data.forEach((post) => {
+    paths.push({
+      params: { Airline: post.url + "-" + post.pageValue }
+    })
   })
-})
 
-	return {
-		paths,
-		fallback: true
-	}
+  return {
+    paths,
+    fallback: true
+  }
 }

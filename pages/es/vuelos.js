@@ -15,7 +15,30 @@ export default function Flights(props) {
   }, [])
 
   return (
-    <>
+    <div className='blogdt-single'>
+
+<div className="call-header d-none d-md-block">
+        <div className="container">
+          <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+            <i class="bi bi-telephone mr-2"></i>
+            <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
+    
       <Head>
         <title>Vuelos</title>
         <meta name="description" content="Get Latest information about Airlines, holiday packages, flight tickets booking deals and the airlines latest policies through our blog." />
@@ -31,13 +54,15 @@ export default function Flights(props) {
             <div className="container">
               <div className="page-title__content">
                 <h1 className="page-title__name">Vuelos</h1>
-                <span>Más reciente <span>Vuelos</span></span>
-                <BreadHero linkhtml={<><ul className='bradcum '> 
+                <p className='page-title__slogan'>Más reciente <span>Vuelos</span></p>
+              
+              </div>
+            </div>
+
+            <BreadHero linkhtml={<><ul className='bradcum container'> 
                 <li > <Link href="/es/">Casa</Link> </li>
                 <li className='mr-2'>/</li> 
                 <li className='breadcrumb-item active text-white' aria-current="page">Vuelos</li> </ul></>} />
-              </div>
-            </div>
           </div>
 
 
@@ -111,7 +136,7 @@ export default function Flights(props) {
 
       <Footer />
 
-    </>
+    </div>
   )
 }
 

@@ -10,8 +10,7 @@ export default function Blog(props) {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(" props.allbloglist-", props.allbloglist);
-
+ 
   return (
     <>
       <div className="blogadda">

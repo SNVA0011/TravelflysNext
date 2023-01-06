@@ -35,11 +35,10 @@ export default function BlogDetails(props, router) {
     };
   }, [location.events]);
 
-  console.log('props.singleblog-', props.singleblog)
-
+ 
 
   return (
-    <div className="blogdt-single">
+    <div className={props.singleblog[0].tfnHeader ? "blogdt-single" : ""}>
 
 
       {props.singleblog?.length > 0 && props.singleblog[0].status === "Active" ? (
@@ -63,7 +62,7 @@ export default function BlogDetails(props, router) {
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
-                    <span>{props.singleblog[0].tfnHeader}</span>
+                  (USA) <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
               </Container>
@@ -78,7 +77,8 @@ export default function BlogDetails(props, router) {
             <div className="page-title page-title--small page-title--blog text-center">
               <div className="container">
                 <div className="page-title__content">
-                  <p className="page-title__name">
+                <h1 className="page-title__name">Detalle del blog</h1> 
+                  <p className="page-title__slogan">
                     {loading ? "loading..." : props.singleblog[0].heading}
                   </p>
                 </div>
@@ -86,7 +86,7 @@ export default function BlogDetails(props, router) {
               <BreadHero
                 linkhtml={
                   <>
-                    <ul className="bradcum">
+                    <ul className="bradcum container">
                       <li>
                         <Link href="/es/">Casa</Link>{" "}
                       </li>

@@ -10,7 +10,30 @@ export default function ContactUs() {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <>
+    <div className='blogdt-single'>
+
+<div className="call-header d-none d-md-block">
+        <div className="container">
+          <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+            <i class="bi bi-telephone mr-2"></i>
+            <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
+    
       <Head>
         <title>Contacto - Travelflys</title>
         <meta name="description" content="" />
@@ -30,7 +53,7 @@ export default function ContactUs() {
         <BreadHero
           linkhtml={
             <>
-              <ul className="bradcum">
+              <ul className="bradcum container">
                 <li>
                   <Link href="/es/">Casa</Link>
                 </li>
@@ -89,6 +112,6 @@ export default function ContactUs() {
 
 
       <Footer />
-    </>
+    </div>
   )
 }

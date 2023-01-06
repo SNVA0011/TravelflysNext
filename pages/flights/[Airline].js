@@ -13,10 +13,32 @@ export default function Airline(props) {
     window.scrollTo(0, 0)
   }, [])
 
-  console.log('props.singleflight-', props.singleflight)
-
+ 
   return (
-    <>
+    <div className='blogdt-single'>
+
+    <div className="call-header d-none d-md-block">
+        <div className="container">
+            <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+                <i class="bi bi-telephone mr-2"></i>
+                <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+        <div className="tfn-no">
+          <p>
+            <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+          </p>
+          <span>
+            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+          </span>
+        </div>
+      </a>
+
+    
       <Header />
 
       {
@@ -37,16 +59,17 @@ export default function Airline(props) {
               <div className="page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <p className="page-title__name">{props.singleflight[0].metaTitle}</p>
-                    <BreadHero linkhtml={<>
-                      <ul className='bradcum'>
+                  <h1 className="page-title__name">Flight Detail</h1>
+                    <p className="page-title__slogan">{props.singleflight[0].metaTitle}</p> 
+                  </div>
+                </div>
+                <BreadHero linkhtml={<>
+                      <ul className="bradcum container">
                         <li> <Link href="/">Home</Link> </li>
                         <li className='mr-2'>/</li>
                         <li> <Link href="/flights">FLIGHTS</Link> </li>
                         <li className='mr-2'>/</li>
                         <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
-                  </div>
-                </div>
               </div>
 
 
@@ -72,7 +95,7 @@ export default function Airline(props) {
 
 
       <Footer />
-    </>
+    </div>
   )
 }
 
