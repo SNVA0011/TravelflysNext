@@ -29,7 +29,7 @@ export default function Blog(props) {
             <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
           </p>
           <span>
-            <i class="bi bi-telephone mr-2 d-md-none"></i> (USA)  +1 (802)-341-3448
+            <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-341-3448
           </span>
         </div>
       </a>
