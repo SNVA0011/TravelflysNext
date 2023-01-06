@@ -37,10 +37,10 @@ export default function BlogDetails(props, router) {
 
  
   return (
-    <div className={props.singleblog[0].tfnHeader ? "blogdt-single" : ""}>
+    <>
 
-      {props.singleblog?.length > 0 && props.singleblog[0].status === "Active" ? (
-        <>
+      {props.singleblog?.length > 0 ? (
+        <div className={props.singleblog[0].tfnHeader ? "blogdt-single" : ""}>
           <Head>
             <title>{props.singleblog[0].title}</title>
             <meta
@@ -204,7 +204,7 @@ export default function BlogDetails(props, router) {
               </div>
             </a>
             : ""}
-        </>
+        </div>
       ) : (
         <>
           <Header />
@@ -223,7 +223,7 @@ export default function BlogDetails(props, router) {
 
 
       <Footer />
-    </div>
+    </>
   );
 }
 
