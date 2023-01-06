@@ -2071,7 +2071,8 @@
  .cities-wrap.unbackground { background-color: transparent; }
  .banner-wrap.layout-02 { background-color: #f7f7f7; padding: 130px 0; background-repeat: no-repeat; background-position: bottom right 20%; }
  .banner-wrap.layout-02 .banner-inner { padding: 0; background-color: transparent; max-width: 50%; }
- .banner-contact {    border-top: solid 1px #f1f6f6;
+ .banner-contact {   
+   border-top: 1px solid #e4e4e4;
   padding: 45px 0;}
  .banner-contact .banner-inner { display: flex; align-items: center; justify-content: space-between; }
  .banner-contact .banner-inner h2 {    font-size: 29px;
