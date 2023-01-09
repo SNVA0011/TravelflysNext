@@ -26,8 +26,8 @@ export default function Footer() {
 									</Link>
 
 									<p className="footer__top__info__desc">
-										Descubre cosas increíbles para hacer donde quiera que vayas.</p>
-
+									Viajar no es sólo hacer turismo, se trata de explorar nuevos lugares, disfrutar de la naturaleza para cumplir el sueño y conseguir una experiencia inolvidable. <Link href="/es/sobre-nosotras"><a className="rdmore-fotter">Lee mas</a></Link>
+									</p>
 								</div>
 							</div>
 							<div className="col-lg-3">
@@ -64,10 +64,22 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className="footer__bottom footer__top__nav footer__top__nav--contact  d-flex justify-content-between flex-wrap align-items-center">
-						<p className="footer__bottom__copyright flex-grow-1">2022 © <Link href="/es/">Travelflys</Link>. Reservados todos los derechos.</p>
-					
-						<div className="d-flex  align-items-center flex-wrap">
+					</div>
+
+					<div className="footer-disclaimer">
+					<div className="container">
+					<b>Descargo de responsabilidad:-</b> Travelflys is a third-party travel booking website, and we 
+are not associated with any airlines directly or indirectly. Our main 
+aim is to offer smooth travel services to the customers who are in 
+search of it. In case you have any query or want to ask any questions 
+related to our services, you can contact us directly.
+					</div>
+					</div>
+
+					<div className="container">
+					<div className="footer__bottom footer__top__nav footer__top__nav--contact d-flex justify-content-between flex-wrap align-items-center flex-md-row-reverse">
+						
+					<div className="d-flex  align-items-center flex-wrap">
 						<span className="pl-4 pt-1 mb-3 text-light  follow-usfotter">Síguenos</span>
 					<ul>
 										<li className="facebook">
@@ -92,6 +104,10 @@ export default function Footer() {
 										</li>
 									</ul>
 						</div>
+						
+						<p className="footer__bottom__copyright flex-grow-1 order-lg-2">2022 © <Link href="/es/">Travelflys</Link>. Reservados todos los derechos.</p>
+					
+					
 					</div>
 				</div>
 			</footer>

@@ -65,9 +65,9 @@
  .footer__top { padding: 60px 0 40px; }
  .related-post .related-grid { flex-wrap: wrap; }
   .intro__meta, .sidebar { margin-top: 30px; }
-  .page-title--small {
-   padding: 100px 0;
-   background-position: left 47% center;
+  .page-title--small { 
+   background-position: left 47% center; 
+   min-height: 300px;
 }
 .breadcrumb_area ul.bradcum.container {
    display: none;
@@ -306,7 +306,7 @@
  .shop__meta > div { padding: 0 5px; }
  .site__order > div { margin-right: 5px; }
  .page-title--small::after{
-   height: 160%;
+   display: none;
  }
  .page-title--small .page-title__content p.page-title__slogan {
    box-shadow: none;

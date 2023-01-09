@@ -28,7 +28,7 @@ export default function Terms() {
         <a href="tel:+1 (802)-341-3448" className="footer-number-md">
         <div className="tfn-no">
           <p>
-            <i class="bi bi-telephone"></i> Having Travel Related Query?<small>Ask the Experts</small>
+            <i class="bi bi-telephone"></i> How Can We Help ?<small>Feel free to  Ask</small>
           </p>
           <span>
             <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-341-3448
@@ -47,7 +47,7 @@ export default function Terms() {
             <Header />
 
 
-            <div className="page-title page-title--small text-center" >
+            <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small text-center" >
                 <div className="container">
                     <div className="page-title__content">
                         <h1 className="page-title__name">Privacy Policy</h1>

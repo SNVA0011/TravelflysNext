@@ -21,7 +21,10 @@ export default function Footer() {
 								<Link href="/">
 									<a className="footer__top__info__logo"><img src='/images/logo-white.svg' alt='logo' /></a>
 									</Link>
-									<p className="footer__top__info__desc">Discover amazing things to do everywhere you go.</p>
+									<p className="footer__top__info__desc">
+									Air Travel can be a necessity or a leisure activity depending upon the passenger. However, in the whole process, the protagonist of the story is the passenger or the customer itself, and
+									 keeping the passenger happy is what matters the most.  <Link href="/about-us"><a className="rdmore-fotter">Read more</a></Link>
+									</p>
 								</div>
 							</div>
 							<div className="col-lg-3">
@@ -58,10 +61,21 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className="footer__bottom footer__top__nav footer__top__nav--contact  d-flex justify-content-between flex-wrap align-items-center">
-						<p className="footer__bottom__copyright  flex-grow-1">2022 © <Link href="/">Travelflys</Link>. All rights reserved.</p>
-					
 
+</div>
+					<div className="footer-disclaimer">
+					<div className="container">
+					<b>Disclaimer:-</b> Travelflys is a third-party travel booking website, and we 
+are not associated with any airlines directly or indirectly. Our main 
+aim is to offer smooth travel services to the customers who are in 
+search of it. In case you have any query or want to ask any questions 
+related to our services, you can contact us directly.
+					</div>
+					</div>
+
+					<div className="container">
+					<div className="footer__bottom footer__top__nav footer__top__nav--contact d-flex justify-content-between flex-wrap align-items-center flex-md-row-reverse">
+						
 					<div className="d-flex  align-items-center flex-wrap">
 					<span className="pl-4 pt-1 mb-3 text-light  follow-usfotter">Follow Us</span>
 					<ul>
@@ -87,8 +101,9 @@ export default function Footer() {
 										</li>
 									</ul>
 									</div>
-
-
+						
+						<p className="footer__bottom__copyright  flex-grow-1">2022 © <Link href="/">Travelflys</Link>. All rights reserved.</p>
+					 
 					</div>
 				</div>
 			</footer> 

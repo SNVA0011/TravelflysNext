@@ -25,7 +25,7 @@ export default function ContactUs() {
       <a href="tel:+1 (802)-341-3448" className="footer-number-md">
         <div className="tfn-no">
           <p>
-            <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
+            <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
           </p>
           <span>
             <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-341-3448
@@ -43,7 +43,7 @@ export default function ContactUs() {
 
       <Header />
 
-      <div className="page-title page-title--small text-center">
+      <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small text-center">
         <div className="container">
           <div className="page-title__content">
             <h1 className="page-title__name">Contacta con nosotros</h1>

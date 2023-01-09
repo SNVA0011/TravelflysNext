@@ -73,10 +73,10 @@ export default function BlogDetails(props, router) {
 
 
           <div className="blogadda">
-            <div className="page-title page-title--small page-title--blog text-center">
+            <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
               <div className="container">
                 <div className="page-title__content">
-                <h1 className="page-title__name">Detalle del blog</h1> 
+                <div className="page-title__name">Detalles del blog</div> 
                   <p className="page-title__slogan">
                     {loading ? "loading..." : props.singleblog[0].heading}
                   </p>
@@ -189,7 +189,7 @@ export default function BlogDetails(props, router) {
             <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
               <div className="tfn-no">
                 <p>
-                  <i class="bi bi-telephone"></i> ¿Tiene una consulta relacionada con viajes?<small>Pregunta a los expertos</small>
+                  <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
                 </p>
                 <span>
                   <i class="bi bi-telephone mr-2 d-md-none"></i>
