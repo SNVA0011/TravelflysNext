@@ -56,28 +56,10 @@ export default function Footer() {
 									<h3>Contact Us</h3>
 									<p><i class="bi bi-envelope-fill mr-1"></i> Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
 									{/* <p>Phone: 1 (00) 832 2342</p> */}
-									
-								</aside>
-							</div>
-						</div>
-					</div>
 
-</div>
-					<div className="footer-disclaimer">
-					<div className="container">
-					<b>Disclaimer:-</b> Travelflys is a third-party travel booking website, and we 
-are not associated with any airlines directly or indirectly. Our main 
-aim is to offer smooth travel services to the customers who are in 
-search of it. In case you have any query or want to ask any questions 
-related to our services, you can contact us directly.
-					</div>
-					</div>
-
-					<div className="container">
-					<div className="footer__bottom footer__top__nav footer__top__nav--contact d-flex justify-content-between flex-wrap align-items-center flex-md-row-reverse">
-						
-					<div className="d-flex  align-items-center flex-wrap">
-					<span className="pl-4 pt-1 mb-3 text-light  follow-usfotter">Follow Us</span>
+									<hr className="siguenos"></hr>
+									<div className="w-100">
+					<span className="pt-1 mb-2 d-block text-light  follow-usfotter">Follow Us</span>
 					<ul>
 										<li className="facebook">
 											<a target='_blank' title="Facebook" href="https://www.facebook.com/travelflys">
@@ -102,6 +84,27 @@ related to our services, you can contact us directly.
 									</ul>
 									</div>
 						
+									
+								</aside>
+							</div>
+						</div>
+					</div>
+
+</div>
+					<div className="footer-disclaimer">
+					<div className="container">
+					<b>Disclaimer:-</b> Travelflys is a third-party travel booking website, and we 
+are not associated with any airlines directly or indirectly. Our main 
+aim is to offer smooth travel services to the customers who are in 
+search of it. In case you have any query or want to ask any questions 
+related to our services, you can contact us directly.
+					</div>
+					</div>
+
+				
+					<div className="footer__bottom footer__top__nav footer__top__nav--contact d-flex justify-content-between flex-wrap align-items-center flex-md-row-reverse">
+					<div className="container">
+				
 						<p className="footer__bottom__copyright  flex-grow-1">2022 © <Link href="/">Travelflys</Link>. All rights reserved.</p>
 					 
 					</div>
