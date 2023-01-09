@@ -2430,7 +2430,7 @@ a.rdmore-fotter {
  @media (min-width: 992px) {
  .navbar-light .navbar-nav .nav-link.active { box-shadow: 0 -3px 1px -1px #00a0e3 inset; }
  .footer{
-  background-size: auto 138%;
+  background-size: auto;
  }
  }
  @media (min-width: 1200px) {
