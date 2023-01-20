@@ -10,12 +10,11 @@ import Pageerror from "../../../component/es/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
+import Modal from 'react-bootstrap/Modal';
+
 
 export default function BlogDetails(props, router) {
   const location = useRouter();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -35,7 +34,21 @@ export default function BlogDetails(props, router) {
     };
   }, [location.events]);
 
- 
+
+
+  // callto show
+  const [calltoshow, setCalltoShow] = useState(false);
+  const callFunClose = () => setCalltoShow(false);
+  const callFunShow = () => setCalltoShow(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      callFunShow()
+    }, 20000);
+  }, []);
+
 
   return (
     <>
@@ -61,7 +74,7 @@ export default function BlogDetails(props, router) {
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
-                  (USA) <span>{props.singleblog[0].tfnHeader}</span>
+                    (USA) <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
               </Container>
@@ -76,7 +89,7 @@ export default function BlogDetails(props, router) {
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
               <div className="container">
                 <div className="page-title__content">
-                <div className="page-title__name">Detalles del blog</div> 
+                  <div className="page-title__name">Detalles del blog</div>
                   <p className="page-title__slogan">
                     {loading ? "loading..." : props.singleblog[0].heading}
                   </p>
@@ -122,18 +135,18 @@ export default function BlogDetails(props, router) {
                           ) : props.singleblog[0].content === "" ? (
                             <p className="pb-2">No Content found</p>
                           ) : (
-                          <>
-                            <div className="mb-2 text-secondary">
-                            - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
-                            </div>
-                 
-                            <div
-                              className="blog-p  mb-5 content-ullist"
-                              dangerouslySetInnerHTML={{
-                                __html: props.singleblog[0].content,
-                              }}
-                            />
-                          </>
+                            <>
+                              <div className="mb-2 text-secondary">
+                                - <Moment date={props.singleblog[0].posttime} format="MMM DD, YYYY" />
+                              </div>
+
+                              <div
+                                className="blog-p  mb-5 content-ullist"
+                                dangerouslySetInnerHTML={{
+                                  __html: props.singleblog[0].content,
+                                }}
+                              />
+                            </>
                           )}
                         </div>
                       </div>
@@ -149,7 +162,7 @@ export default function BlogDetails(props, router) {
                         {props.allblog?.length > 0 ? (
                           <>
                             <ul>
-                              {props.allblog.slice(0, 5).map((items, i) => (
+                              {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
                                 <li>
                                   <div className="text-left float-left">
                                     <span className="count-s">{i + 1}</span>
@@ -164,7 +177,7 @@ export default function BlogDetails(props, router) {
                                       <li className="p-0 m-0">
                                         <i className="bi bi-calendar4 mr-2"></i>
                                         <span>
-                                        <Moment date={items.posttime} format="MMM DD, YYYY" />   
+                                          <Moment date={items.posttime} format="MMM DD, YYYY" />
                                         </span>
                                       </li>
                                     </ul>
@@ -186,17 +199,60 @@ export default function BlogDetails(props, router) {
 
 
           {props.singleblog[0].tfnFooter1 ?
-            <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
-              <div className="tfn-no">
-                <p>
-                  <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
-                </p>
-                <span>
-                  <i class="bi bi-telephone mr-2 d-md-none"></i>
-                  {props.singleblog[0].tfnFooter1}
-                </span>
-              </div>
-            </a>
+            <>
+
+              <Modal show={calltoshow} onHide={callFunClose}
+                className="cheapbook-modal"
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered>
+                <Modal.Header closeButton className="justify-content-end">
+                </Modal.Header>
+                <Modal.Body className="py-0 text-center">
+                  <Row>
+                    <Col xs="12" md="6" className="bg-callcustomcare">
+
+                    </Col>
+                    <Col xs="12" md="6" className="callcustomcare-content flex-column d-flex justify-content-between ">
+                      <div className="cheapbook-light">
+                        <div className="inner">
+                          <p class="head"><b>Lo mas barato</b> ofertas</p>
+                          <p class="sub_head">Reservas de Grupos y Ofertas Especiales</p>
+                          <p class="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
+
+                        </div>
+                      </div>
+
+                      <div class="cheapbook-contact">
+                        <p class="head1">
+                          Más bajo
+                          <span className="d-block">Tarifa del mes</span>
+                        </p>
+                        <p class="calling"><i class="bi bi-arrow-90deg-down"></i> llamando </p>
+                        <p class="phone_number">
+                          <a href={`tel:${props.singleblog[0].tfnFooter1}`} target="_blank">{props.singleblog[0].tfnFooter1}</a>
+                        </p>
+                        <p class="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
+                        <p class="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Myfaresadda</p>
+                      </div>
+                    </Col>
+                  </Row>
+                </Modal.Body>
+              </Modal>
+
+
+              <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
+                <div className="tfn-no">
+                  <p>
+                    <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+                  </p>
+                  <span>
+                    <i class="bi bi-telephone mr-2 d-md-none"></i>
+                    {props.singleblog[0].tfnFooter1}
+                  </span>
+                </div>
+              </a>
+            </>
             : ""}
         </div>
       ) : (

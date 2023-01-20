@@ -13,8 +13,11 @@
  .site__search.layout-02 .site-banner__search.layout-02 .search-suggestions li a { padding: 8px 10px; }
  .archive-city .col-left { padding: 40px 20px 60px; margin: 0; }
  }
- @media only screen and (min-width: 1200px) {
- .container { max-width: 1200px; }
+ 
+ @media (min-width: 1340px) {
+   .container {
+     max-width: 1300px;
+ }
  }
  @media only screen and (max-width: 1200px) {
  .site__search { max-width: 200px; }
@@ -304,10 +307,7 @@
  .shop__meta .shop__results { font-size: 14px; }
  .shop__meta { margin-left: -5px; margin-right: -5px; }
  .shop__meta > div { padding: 0 5px; }
- .site__order > div { margin-right: 5px; }
- .page-title--small::after{
-   display: none;
- }
+ .site__order > div { margin-right: 5px; } 
  .page-title--small .page-title__content p.page-title__slogan {
    box-shadow: none;
 }
