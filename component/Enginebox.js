@@ -51,7 +51,7 @@ export default function Enginebox(props) {
                   <div className="input-group">
                     <div className="input-group-prepend">
                       <span className="input-group-text">
-                        <i className="bi bi-calendar-week"></i>
+                        <i className="bi bi-calendar"></i>
                       </span>
                     </div>
                     <input
@@ -65,7 +65,7 @@ export default function Enginebox(props) {
                   <div className="input-group">
                     <div className="input-group-prepend">
                       <span className="input-group-text">
-                        <i className="bi bi-calendar-week"></i>
+                        <i className="bi bi-calendar"></i>
                       </span>
                     </div>
                     <input

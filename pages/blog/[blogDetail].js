@@ -77,7 +77,7 @@ export default function BlogDetails(props, router) {
           <Header />
 
 
-          <div className="blogadda">
+          <div className="blogadda bg-white">
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center ">
               <div className="container">
                 <div className="page-title__content">
@@ -229,13 +229,12 @@ export default function BlogDetails(props, router) {
                           <a href={`tel:${props.singleblog[0].tfnFooter1}`} target="_blank">{props.singleblog[0].tfnFooter1}</a>
                         </p>
                         <p class="unpublished"><span><b>24*7</b> Unlimited Support</span></p>
-                        <p class="calling">* This contact number provided is not associated with any organization, or brand except for the Myfaresadda</p>
+                        <p class="calling">* This contact number provided is not associated with any organization, or brand except for the Travelflys</p>
                       </div>
                     </Col>
                   </Row>
                 </Modal.Body>
               </Modal>
-
 
               <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">

@@ -32,6 +32,7 @@ export default function Footer() {
 									<h3>Company</h3>
 									<ul>
 										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/about-us">About Us</Link></li>
+										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/news">News</Link></li>
 										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/flights">Flight</Link></li>
 										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/blog">Blog</Link></li>
 										<li><i class="bi bi-caret-right-fill text-sm"></i>  <Link href="/contact">Contact</Link></li>

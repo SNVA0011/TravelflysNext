@@ -1,20 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Link from "next/link";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Moment from 'react-moment'; 
 import Footer from "../../../component/es/Footer";
 import Header from "../../../component/es/Navbar";
 import BreadHero from "../../../component/es/BreadHero";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import Pageerror from "../../../component/es/Pageerror";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Moment from 'react-moment';
-import Modal from 'react-bootstrap/Modal';
 
-
-export default function BlogDetails(props, router) {
+export default function Detail(props, router) {
   const location = useRouter();
+
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -34,19 +33,10 @@ export default function BlogDetails(props, router) {
     };
   }, [location.events]);
 
-
-
-  // callto show
-  const [calltoshow, setCalltoShow] = useState(false);
-  const callFunClose = () => setCalltoShow(false);
-  const callFunShow = () => setCalltoShow(true);
-
+  
+  // callto show 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
-    setTimeout(() => {
-      callFunShow()
-    }, 20000);
+    window.scrollTo(0, 0); 
   }, []);
 
 
@@ -59,13 +49,7 @@ export default function BlogDetails(props, router) {
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />
             <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link
-              rel="canonical"
-              href={
-                "https://www.travelflys.com/es/articulos/" +
-                props.singleblog[0].titleUrl
-              }
-            />
+            <link rel="canonical" href={"https://www.travelflys.com/es/noticias/" + props.singleblog[0].titleUrl} />
           </Head>
 
           {props.singleblog[0].tfnHeader ?
@@ -81,15 +65,14 @@ export default function BlogDetails(props, router) {
             </div>
             : ""}
 
-
           <Header />
 
 
           <div className="blogadda bg-white">
-            <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
+            <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center ">
               <div className="container">
                 <div className="page-title__content">
-                  <div className="page-title__name">Detalles del blog</div>
+                  <div className="page-title__name">Detalles de noticias</div>
                   <p className="page-title__slogan">
                     {loading ? "loading..." : props.singleblog[0].heading}
                   </p>
@@ -100,16 +83,12 @@ export default function BlogDetails(props, router) {
                   <>
                     <ul className="bradcum container">
                       <li>
-                        <Link href="/es/">Casa</Link>{" "}
+                      <Link href="/es/">Casa</Link>{" "}
                       </li>
                       <li className="mr-2">/</li>
                       <li>
-                        <Link href="/es/articulos">Artículos</Link>{" "}
-                      </li>
-                      {/* <li className="mr-2">/</li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      {loading ? "loading..." : props.singleblog[0].title}{" "}
-                    </li>{" "} */}
+                        <Link href="/es/noticias">Noticias</Link>{" "}
+                      </li> 
                     </ul>
                   </>
                 }
@@ -141,7 +120,7 @@ export default function BlogDetails(props, router) {
                               </div>
 
                               <div
-                                className="blog-p  mb-5 content-ullist"
+                                className="blog-p mb-5 content-ullist"
                                 dangerouslySetInnerHTML={{
                                   __html: props.singleblog[0].content,
                                 }}
@@ -153,39 +132,45 @@ export default function BlogDetails(props, router) {
                     </div>
                   </Col>
 
+
                   <Col xs={12} lg={5} xl={4}>
                     <aside className="recent-blogsalide">
                       <div className="post__info">
                         <h3 className="post__title position-relative text-uppercase">
-                          Recent Posts
+                          Noticias recientes
                         </h3>
                         {props.allblog?.length > 0 ? (
-                          <>
-                            <ul>
-                              {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
-                                <li>
-                                  <div className="text-left float-left">
-                                    <span className="count-s">{i + 1}</span>
-                                  </div>
-                                  <div className="overflow-hidden">
-                                    <Link href={`/es/articulos/${items.titleUrl}`}>
-                                      <a className={location.asPath === "/es/articulos/" + items.titleUrl ? "active" : "not-active"} >
-                                        {items.title}
-                                      </a>
-                                    </Link>
-                                    <ul className="post__category p-0 m-0">
-                                      <li className="p-0 m-0">
-                                        <i className="bi bi-calendar4 mr-2"></i>
-                                        <span>
-                                          <Moment date={items.posttime} format="MMM DD, YYYY" />
-                                        </span>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </>
+                          <ul>
+                            {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
+                              <li>
+                                <div className="text-left float-left">
+                                  <span className="count-s">{i + 1}</span>
+                                </div>
+                                <div className="overflow-hidden">
+                                  <Link href={`/es/noticias/${items.titleUrl}`}>
+                                    <a
+                                      className={
+                                        location.asPath ===
+                                          "/es/noticias/" + items.titleUrl
+                                          ? "active"
+                                          : "not-active"
+                                      }
+                                    >
+                                      {items.title}
+                                    </a>
+                                  </Link>
+                                  <ul className="post__category p-0 m-0">
+                                    <li className="p-0 m-0">
+                                      <i className="bi bi-calendar4 mr-2"></i>
+                                      <span>
+                                        <Moment date={items.posttime} format="MMM DD, YYYY" />
+                                      </span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
                         ) : (
                           "No items found !"
                         )}
@@ -197,51 +182,9 @@ export default function BlogDetails(props, router) {
             </div>
           </div>
 
-
           {props.singleblog[0].tfnFooter1 ?
-            <>
-
-              <Modal show={calltoshow} onHide={callFunClose}
-                className="cheapbook-modal"
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered>
-                <Modal.Header closeButton className="justify-content-end">
-                </Modal.Header>
-                <Modal.Body className="py-0 text-center">
-                  <Row>
-                    <Col xs="12" md="6" className="bg-callcustomcare">
-
-                    </Col>
-                    <Col xs="12" md="6" className="callcustomcare-content flex-column d-flex justify-content-between ">
-                      <div className="cheapbook-light">
-                        <div className="inner">
-                          <p class="head"><b>Lo mas barato</b> ofertas</p>
-                          <p class="sub_head">Reservas de Grupos y Ofertas Especiales</p>
-                          <p class="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
-
-                        </div>
-                      </div>
-
-                      <div class="cheapbook-contact">
-                        <p class="head1">
-                          Más bajo
-                          <span className="d-block">Tarifa del mes</span>
-                        </p>
-                        <p class="calling"><i class="bi bi-arrow-90deg-down"></i> llamando </p>
-                        <p class="phone_number">
-                          <a href={`tel:${props.singleblog[0].tfnFooter1}`} target="_blank">{props.singleblog[0].tfnFooter1}</a>
-                        </p>
-                        <p class="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
-                        <p class="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Travelflys</p>
-                      </div>
-                    </Col>
-                  </Row>
-                </Modal.Body>
-              </Modal>
-
-
-              <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
+            <>  
+                  <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">
                   <p>
                     <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
@@ -263,6 +206,14 @@ export default function BlogDetails(props, router) {
         </>
       )}
 
+      {/* {props.singleblog[0] != "" ? (
+      
+      ) : (
+      
+      )} */}
+
+
+
 
       <Footer />
     </>
@@ -272,28 +223,31 @@ export default function BlogDetails(props, router) {
 export async function getStaticProps(context) {
   const { params } = context;
 
-  // single blogDetail
+  // single slug
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
     id: "",
     title: "",
-    titleUrl: `${params.blogDetail}`,
+    titleUrl: `${params.slug}`,
     content: "",
     description: "",
     keywords: "",
     posttime: "",
     status: "",
     heading: "",
-    categoryName: "",
+    img_url: "",
     siteId: "143",
-    pageType: "Articulo",
-    extraTag: "",
+    categoryName: "",
+    blogdes2: "",
+    blogTagsName2: "",
+    extarTag: "",
     tfnHeader: "",
     tfnFooter1: "",
     tfnFooter2: "",
     tfnFooter3: "",
     tfnPopup: "",
+    pageType: "noticias",
   });
 
   var requestOptions = {
@@ -313,24 +267,25 @@ export async function getStaticProps(context) {
   myHeadersal.append("Content-Type", "application/json");
 
   var rawall = JSON.stringify({
-    id: "",
-    title: "",
-    titleUrl: "",
-    content: "",
-    description: "",
-    keywords: "",
-    posttime: "",
-    status: "",
-    heading: "",
-    categoryName: "",
+    contentId: "",
+    pageType: "noticias",
+    pageValue: "",
+    pageName: "",
+    metaTitle: "",
+    metaKeyword: "",
+    metaDesc: "",
+    otherMeta: "",
+    dealCode: "",
+    dealTitle: "",
+    contentTitle: "",
+    contentData: "",
+    contentImage: "",
     siteId: "143",
-    pageType: "Articulo",
-    extraTag: "",
-    tfnHeader: "",
-    tfnFooter1: "",
-    tfnFooter2: "",
-    tfnFooter3: "",
-    tfnPopup: "",
+    status: "",
+    count: "",
+    url: "",
+    modifyBy: "",
+    modifyDate: "",
   });
 
   var requestOptions = {
@@ -359,7 +314,6 @@ export async function getStaticProps(context) {
 
 
 
-
 // paths -> slugs which are allowed
 export const getStaticPaths = async () => {
   var myHeaders = new Headers();
@@ -375,10 +329,12 @@ export const getStaticPaths = async () => {
     "posttime": "",
     "status": "",
     "heading": "",
-    "categoryName": "",
+    "img_url": "",
     "siteId": "143",
-    "pageType": "Articulo",
-    "extraTag": "",
+    "categoryName": "",
+    "blogdes2": "",
+    "blogTagsName2": "",
+    "extarTag": "",
     "tfnHeader": "",
     "tfnFooter1": "",
     "tfnFooter2": "",
@@ -392,9 +348,7 @@ export const getStaticPaths = async () => {
     body: raw,
     redirect: 'follow'
   };
-
-
-  const res = await fetch("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", requestOptions)
+  const res = await fetch("https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876", requestOptions)
   const json = await res.json()
   const data = json.response;
 
@@ -403,7 +357,7 @@ export const getStaticPaths = async () => {
 
   data.forEach((post) => {
     paths.push({
-      params: { blogDetail: post.titleUrl }
+      params: { slug: post.titleUrl }
     })
   })
 
