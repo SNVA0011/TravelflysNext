@@ -509,9 +509,7 @@
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  position: relative;
-  background-color: #005075;
-  background-blend-mode: hard-light;
+  position: relative; 
  }
  .page-title--small::after{
   content: '';
@@ -520,7 +518,7 @@
   bottom: 0;
   left: 0;
   position: absolute;
-  background: rgb(1 16 24 / 70%)
+  background: rgb(0 62 94 / 70%)
  }
  .page-title--small .page-title__content { position: relative; height: 100%;z-index: 3; }
  b, strong { font-weight: 700; }
@@ -536,7 +534,7 @@
   margin-right: auto;
   letter-spacing: 0.6px;
   font-weight: 700;
-  text-shadow: 0 0px 58px #000, 0 2px 5px rgb(0 0 0 / 50%);
+  text-shadow: 0 0px 58px rgb(0 0 0 / 70%), 0 2px 5px rgb(0 0 0 / 30%);
  }
  .page-title--small ul.bradcum {  
   display: inline-block; 
