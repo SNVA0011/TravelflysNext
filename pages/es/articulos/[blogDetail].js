@@ -214,16 +214,7 @@ export default function BlogDetails(props, router) {
 
                     </Col>
                     <Col xs="12" md="6" className="callcustomcare-content flex-column d-flex justify-content-between ">
-                      <div className="cheapbook-light">
-                        <div className="inner">
-                          <p class="head"><b>Lo mas barato</b> ofertas</p>
-                          <p class="sub_head">Reservas de Grupos y Ofertas Especiales</p>
-                          <p class="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
-
-                        </div>
-                      </div>
-
-                      <div class="cheapbook-contact">
+                    <div class="cheapbook-contact">
                         <p class="head1">
                           Más bajo
                           <span className="d-block">Tarifa del mes</span>
@@ -235,6 +226,16 @@ export default function BlogDetails(props, router) {
                         <p class="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
                         <p class="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Travelflys</p>
                       </div>
+                     
+                      <div className="cheapbook-light">
+                        <div className="inner">
+                          <p class="head"><b>Lo mas barato</b> ofertas</p>
+                          <p class="sub_head">Reservas de Grupos y Ofertas Especiales</p>
+                          <p class="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
+
+                        </div>
+                      </div>
+ 
                     </Col>
                   </Row>
                 </Modal.Body>
