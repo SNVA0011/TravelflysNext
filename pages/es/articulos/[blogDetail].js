@@ -71,7 +71,7 @@ export default function BlogDetails(props, router) {
     if (event.target.authornumber.value.length !== 0) { event.target.authornumber.classList.remove("error") }
 
     if (countrating == 0) {
-      alert("¡Por favor califícanos!");
+      alert("¡Califícanos!");
       event.target.authorrate.focus();
     }
     else if (event.target.authorcomment.value.length == 0) {
@@ -308,7 +308,7 @@ export default function BlogDetails(props, router) {
                                     <b className="font-14">{item.reviewRating}.0</b>
                                   </div>
 
-                                  <p className="author-text">{item.reviewMessage}</p>
+                                  <div className="author-text" dangerouslySetInnerHTML={{__html: item.reviewMessage}}></div>
 
                                 </div>
                               </li>
