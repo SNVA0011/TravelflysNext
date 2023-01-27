@@ -11,6 +11,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 
 export default function BlogDetails(props, router) {
@@ -48,6 +50,85 @@ export default function BlogDetails(props, router) {
       callFunShow()
     }, 20000);
   }, []);
+
+
+
+  // RateUs
+  const [message, setMessage] = useState("");
+  const [countrating, setCountrating] = useState(0);
+  const RateUs = (val) => {
+    setCountrating(val)
+  }
+
+  // CommentSubmit
+  const CommentSubmit = async (event) => {
+    event.preventDefault();
+    document.getElementById('leavecomment').scrollIntoView();
+
+    if (event.target.authorcomment.value.length !== 0) { event.target.authorcomment.classList.remove("error") }
+    if (event.target.authorname.value.length !== 0) { event.target.authorname.classList.remove("error") }
+    if (event.target.authoremail.value.length !== 0) { event.target.authoremail.classList.remove("error") }
+    if (event.target.authornumber.value.length !== 0) { event.target.authornumber.classList.remove("error") }
+
+    if (countrating == 0) {
+      alert("¡Por favor califícanos!");
+      event.target.authorrate.focus();
+    }
+    else if (event.target.authorcomment.value.length == 0) {
+      alert("¡Por favor ingrese su comentario!");
+      event.target.authorcomment.focus();
+      event.target.authorcomment.classList.add("error");
+    }
+    else if (event.target.authorname.value.length == 0) {
+      alert("¡Por favor proporcione su nombre!");
+      event.target.authorname.focus()
+      event.target.authorname.classList.add("error");
+    }
+    else if (event.target.authoremail.value.length == 0) {
+      alert("¡Por favor proporcione su correo electrónico!");
+      event.target.authoremail.focus()
+      event.target.authoremail.classList.add("error");
+    }
+    else if (event.target.authornumber.value.length == 0) {
+      alert("¡Por favor proporcione su número de teléfono!");
+      event.target.authornumber.focus()
+      event.target.authornumber.classList.add("error");
+    }
+    else {
+
+      try {
+        let res = await fetch("http://cms.travomint.com/travoles-content/addreview?authcode=Trav3103s987876", {
+          method: "POST",
+          headers: { 'Content-type': 'application/json; charset=UTF-8' },
+          body: JSON.stringify({
+            "reviewId": "",
+            "userName": event.target.authorname.value,
+            "userEmail": event.target.authoremail.value,
+            "userPhone": event.target.authornumber.value,
+            "reviewMessage": event.target.authorcomment.value,
+            "reviewDate": "",
+            "reviewRating": event.target.authorrate.value,
+            "reviewRpyId": "0",
+            "reviewStatus": "Inactive",
+            "siteId": "143",
+            "reviewUrl": props.singleblog[0].titleUrl
+          }),
+        });
+        if (res.status === 200) {
+          event.target.reset();
+          setMessage("success");
+          setTimeout(function () {
+            setMessage("");
+          }, 6000);
+        } else {
+          setMessage("error");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+
+    }
+  };
 
 
   return (
@@ -193,6 +274,127 @@ export default function BlogDetails(props, router) {
                     </aside>
                   </Col>
                 </Row>
+
+                {/*------ Customer Reviews ------*/}
+                <Row>
+                  <Col xs={12} xl={8} className="mb-4">
+
+                    {props.getallcomments.length > 0 ?
+                      <div className="row-comments-col">
+                        <div className="comments-list">
+                          <span className="comment-reply-title ttlcomment">{props.getallcomments?.length} Comentario{props.getallcomments?.length > 1 ? "s" : ""}</span>
+
+                          <ol class="commentlist-ol">
+
+
+                            {props.getallcomments && props.getallcomments.map((item, index) =>
+                              <li class="comment-byuser d-flex w-100" key={index}>
+                                <div class="author-avatar loaded">
+                                  <img src="/images/usercomment.png" class="avatar-img" alt="Avatar" />
+                                </div>
+                                <div class="right pl-3 pt-2 flex-grow-1">
+                                  <span class="author-name">{item.userName}</span> <span class="authordate"> <Moment toNow>{item.reviewDate}</Moment> antes de</span>
+
+                                  <div className="d-flex align-items-center mt-2">
+                                    <div class="star-select mt-0">
+                                      {[...Array(parseInt(item.reviewRating))].map((elementInArray, index) => (
+                                        <i class="bi bi-star-fill active" key={index}></i>
+                                      ))}
+
+                                      {[...Array(parseInt(5 - item.reviewRating))].map((elementInArray, indx) => (
+                                        <i class="bi bi-star-fill" key={indx}></i>
+                                      ))}
+                                    </div>
+                                    <b className="font-14">{item.reviewRating}.0</b>
+                                  </div>
+
+                                  <p className="author-text">{item.reviewMessage}</p>
+
+                                </div>
+                              </li>
+                            )}
+
+
+                          </ol>
+
+                        </div>
+                      </div>
+                      : ""}
+
+
+                    <h3 className="comment-reply-title d-flex align-items-center" id="leavecomment">
+                      Deja un comentario
+                    </h3>
+                    <p className="willbe-pub">Su dirección de correo electrónico no será publicada.</p>
+                    <form onSubmit={CommentSubmit} className="leavereply-form">
+                      <div className="mb-4 d-flex align-items-center justify-content-between justify-content-md-start">
+                        <input type="hidden" name="authorrate" value={countrating}></input>
+
+                        <div className="star-select">
+                          <OverlayTrigger placement="top" overlay={<Tooltip>Lo odié</Tooltip>} >
+                            <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onMouseEnter={() => { RateUs(1) }}></i>
+                          </OverlayTrigger>
+
+                          <OverlayTrigger placement="top" overlay={<Tooltip>No me gustó</Tooltip>} >
+                            <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onMouseEnter={() => { RateUs(2) }}></i>
+                          </OverlayTrigger>
+
+                          <OverlayTrigger placement="top" overlay={<Tooltip>Estuvo bien</Tooltip>} >
+                            <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onMouseEnter={() => { RateUs(3) }}></i>
+                          </OverlayTrigger>
+
+                          <OverlayTrigger placement="top" overlay={<Tooltip>Le gustó</Tooltip>} >
+                            <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onMouseEnter={() => { RateUs(4) }}></i>
+                          </OverlayTrigger>
+
+                          <OverlayTrigger placement="top" overlay={<Tooltip>Me encantó</Tooltip>} >
+                            <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onMouseEnter={() => { RateUs(5) }}></i>
+                          </OverlayTrigger>
+
+                        </div>
+                        <div className="startotal badge">
+                          {countrating} / 5
+                        </div>
+                      </div>
+                      <div className="mb-3">
+                        <textarea className="form-control" name="authorcomment" rows="6" placeholder="Comentario"></textarea>
+                      </div>
+
+                      <Row>
+                        <Col xs={6}>
+                          <div className="mb-3">
+                            <input className="form-control" name="authorname" type="text" placeholder="Nombre" required="" />
+                          </div>
+                        </Col>
+
+                        <Col xs={6}>
+                          <div className="mb-3">
+                            <input className="form-control" name="authoremail" type="email" placeholder="Correo electrónico" required="" />
+                          </div>
+                        </Col>
+                      </Row>
+
+                      <div className="mb-3">
+                        <input className="form-control" name="authornumber" type="number" placeholder="Teléfono" pattern="/^-?\d+\.?\d*$/" />
+                      </div>
+
+                      <div className="search-place">
+                        <p className="form-submit">
+                          <input name="submit" type="submit" className="btn btn-site" value="Publicar Comentario" />
+                        </p>
+                      </div>
+
+                      {message === 'success' ?
+                        <div className="alertsw">
+                          <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-3"></i> Gracias por enviar una reseña.</div>
+                        </div>
+                        : ""}
+
+                    </form>
+                  </Col>
+                </Row>
+                {/*------ End Customer Reviews ------*/}
+
               </Container>
             </div>
           </div>
@@ -214,7 +416,7 @@ export default function BlogDetails(props, router) {
 
                     </Col>
                     <Col xs="12" md="6" className="callcustomcare-content flex-column d-flex justify-content-between ">
-                    <div class="cheapbook-contact">
+                      <div class="cheapbook-contact">
                         <p class="head1">
                           Más bajo
                           <span className="d-block">Tarifa del mes</span>
@@ -226,7 +428,7 @@ export default function BlogDetails(props, router) {
                         <p class="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
                         <p class="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Travelflys</p>
                       </div>
-                     
+
                       <div className="cheapbook-light">
                         <div className="inner">
                           <p class="head"><b>Lo mas barato</b> ofertas</p>
@@ -235,7 +437,7 @@ export default function BlogDetails(props, router) {
 
                         </div>
                       </div>
- 
+
                     </Col>
                   </Row>
                 </Modal.Body>
@@ -346,15 +548,38 @@ export async function getStaticProps(context) {
   );
   const multiplejson = await resall.json();
 
+  // All Comments  
+  var requestComment = {
+    method: "POST",
+    body: JSON.stringify({
+      "reviewId": "",
+      "userName": "",
+      "userEmail": "",
+      "userPhone": "",
+      "reviewMessage": "",
+      "reviewDate": "",
+      "reviewRating": "",
+      "reviewRpyId": "",
+      "reviewStatus": "",
+      "siteId": "143",
+      "reviewUrl": `${params.blogDetail}`
+    }),
+    redirect: "follow",
+    headers: { 'Content-type': 'application/json; charset=UTF-8' }
+  };
+  const commentall = await fetch(
+    "http://cms.travomint.com/travoles-content/reviewbyurl?authcode=Trav3103s987876",
+    requestComment
+  );
+  const commentjson = await commentall.json();
+
   return {
     props: {
       singleblog: onejson.response,
       allblog: multiplejson.response,
+      getallcomments: commentjson.response
     },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 60, // In seconds
+    revalidate: 60,
   };
 }
 
