@@ -97,7 +97,7 @@ export default function BlogDetails(props, router) {
     else {
 
       try {
-        let res = await fetch("http://cms.travomint.com/travoles-content/addreview?authcode=Trav3103s987876", {
+        let res = await fetch("https://cms.travomint.com/travoles-content/addreview?authcode=Trav3103s987876", {
           method: "POST",
           headers: { 'Content-type': 'application/json; charset=UTF-8' },
           body: JSON.stringify({
@@ -386,7 +386,7 @@ export default function BlogDetails(props, router) {
 
                       {message === 'success' ?
                         <div className="alertsw">
-                          <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-3"></i> Gracias por enviar una reseña.</div>
+                          <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-2"></i> Gracias por enviar una reseña.</div>
                         </div>
                         : ""}
 
@@ -568,7 +568,7 @@ export async function getStaticProps(context) {
     headers: { 'Content-type': 'application/json; charset=UTF-8' }
   };
   const commentall = await fetch(
-    "http://cms.travomint.com/travoles-content/reviewbyurl?authcode=Trav3103s987876",
+    "https://cms.travomint.com/travoles-content/reviewbyurl?authcode=Trav3103s987876",
     requestComment
   );
   const commentjson = await commentall.json();

@@ -1280,10 +1280,12 @@
   font-size: 180%;
   line-height: 0;}
  .alert a { color: #01567e; }
- .alert.alert-success {     color: #ffffff;
+ .alert.alert-success {    color: #ffffff;
   background-color: #48c75f;
   border: 0;
-  text-align: center; } 
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.4px;} 
  .alert.alert-error p { border: solid 1px #ff2d55; }
  .alert.alert-error i { color: #ff2d55; }
  .alert.alert-warning { color: #434343; background-color: inherit; border: 0; }
