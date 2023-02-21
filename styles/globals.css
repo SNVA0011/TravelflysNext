@@ -3018,6 +3018,10 @@ body .splitsm-box h1+h2 {
     margin: 0;
     display: inline;
 }
+.spinner-border{
+  border-width: 1px;
+  vertical-align: middle;
+}
 body .splitsm-box h1+h2,
 body .splitsm-box h2+h3,
 body .splitsm-box h2+h3 strong,

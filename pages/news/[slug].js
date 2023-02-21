@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import Pageerror from "../../component/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Moment from 'react-moment'; 
+import Moment from 'react-moment';
 
 export default function Detail(props, router) {
   const location = useRouter();
@@ -33,11 +33,26 @@ export default function Detail(props, router) {
     };
   }, [location.events]);
 
-  
+
   // callto show 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
+
+
+
+  if (location.isFallback) {
+    return <>
+      <Header />
+
+      <div className='text-center full-w my-5 py-5'>
+        <div class="spinner-border text-secondary mr-2" role="status">
+        </div>  Loading...
+      </div>
+
+      <Footer />
+    </>
+  }
 
 
   return (
@@ -187,7 +202,7 @@ export default function Detail(props, router) {
           </div>
 
           {props.singleblog[0].tfnFooter1 ?
-            <>  
+            <>
               <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">
                   <p>

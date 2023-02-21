@@ -6,12 +6,31 @@ import BreadHero from "../../../component/es/BreadHero";
 import Header from '../../../component/es/Navbar'
 import Footer from "../../../component/es/Footer"
 import Pageerror from "../../../component/es/Pageerror"
+import { useRouter } from "next/router";
+
 
 
 export default function Airline(props) {
+  const location = useRouter();
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+
+
+  if (location.isFallback) {
+    return <>
+      <Header />
+
+      <div className='text-center full-w my-5 py-5'>
+        <div class="spinner-border text-secondary mr-2" role="status">
+        </div>  Loading...
+      </div>
+
+      <Footer />
+    </>
+  }
 
 
   return (

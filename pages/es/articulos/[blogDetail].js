@@ -10,7 +10,7 @@ import Pageerror from "../../../component/es/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
-import Modal from 'react-bootstrap/Modal'; 
+import Modal from 'react-bootstrap/Modal';
 
 
 export default function BlogDetails(props, router) {
@@ -129,6 +129,20 @@ export default function BlogDetails(props, router) {
   };
 
 
+  if (location.isFallback) {
+    return <>
+      <Header />
+
+      <div className='text-center full-w my-5 py-5'>
+        <div class="spinner-border text-secondary mr-2" role="status">
+        </div>  Loading...
+      </div>
+
+      <Footer />
+    </>
+  }
+
+
   return (
     <>
 
@@ -199,7 +213,7 @@ export default function BlogDetails(props, router) {
               <Container>
                 <Row>
                   <Col xs={12} lg={7} xl={8} className="mb-4">
-                  <div className="blogaddalist-round anchorsc-space">
+                    <div className="blogaddalist-round anchorsc-space">
                       <div className="blogaddalist-inner">
                         <div className="blog-inner-box2 mb-5 content-ullist">
                           {loading ? (
@@ -306,7 +320,7 @@ export default function BlogDetails(props, router) {
                                     <b className="font-14">{item.reviewRating}.0</b>
                                   </div>
 
-                                  <div className="author-text" dangerouslySetInnerHTML={{__html: item.reviewMessage}}></div>
+                                  <div className="author-text" dangerouslySetInnerHTML={{ __html: item.reviewMessage }}></div>
 
                                 </div>
                               </li>
@@ -329,25 +343,25 @@ export default function BlogDetails(props, router) {
                         <input type="hidden" name="authorrate" value={countrating}></input>
 
                         <div className="star-select">
-                             <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onClick={() => { RateUs(1) }}>
-                              <span>Lo odié</span>
-                            </i>
+                          <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onClick={() => { RateUs(1) }}>
+                            <span>Lo odié</span>
+                          </i>
 
-                             <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onClick={() => { RateUs(2) }}>
-                              <span>No me gustó</span>
-                            </i>
+                          <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onClick={() => { RateUs(2) }}>
+                            <span>No me gustó</span>
+                          </i>
 
-                             <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onClick={() => { RateUs(3) }}>
-                              <span>Estuvo bien</span>
-                            </i>
+                          <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onClick={() => { RateUs(3) }}>
+                            <span>Estuvo bien</span>
+                          </i>
 
-                             <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onClick={() => { RateUs(4) }}>
-                              <span>Le gustó</span>
-                            </i>
+                          <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onClick={() => { RateUs(4) }}>
+                            <span>Le gustó</span>
+                          </i>
 
-                             <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onClick={() => { RateUs(5) }}>
-                              <span>Me encantó</span>
-                            </i> 
+                          <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onClick={() => { RateUs(5) }}>
+                            <span>Me encantó</span>
+                          </i>
                         </div>
                         <div className="startotal badge">
                           {countrating} / 5

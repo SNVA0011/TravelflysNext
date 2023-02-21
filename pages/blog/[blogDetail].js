@@ -127,9 +127,18 @@ export default function BlogDetails(props, router) {
     }
   };
 
+  if (location.isFallback) {
+    return <>
+      <Header />
 
-  console.log('props.singleblog[0]-', props.singleblog[0])
+      <div className='text-center full-w my-5 py-5'>
+        <div class="spinner-border text-secondary mr-2" role="status">
+        </div>  Loading...
+      </div>
 
+      <Footer />
+    </>
+  }
 
   return (
     <>
@@ -204,8 +213,8 @@ export default function BlogDetails(props, router) {
                     </div>
                   </Col> */}
 
- 
-                   <Col xs={12} lg={7} xl={8} className="mb-4">
+
+                  <Col xs={12} lg={7} xl={8} className="mb-4">
                     <div className="blogaddalist-round anchorsc-space">
                       <div className="blogaddalist-inner">
                         <div className="blog-inner-box2 mb-5 content-ullist">
@@ -240,7 +249,7 @@ export default function BlogDetails(props, router) {
                   </Col>
 
 
-                   <Col xs={12} lg={5} xl={4}>
+                  <Col xs={12} lg={5} xl={4}>
                     <aside className="recent-blogsalide">
                       <div className="post__info">
                         <h3 className="post__title position-relative text-uppercase">

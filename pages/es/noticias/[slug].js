@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Moment from 'react-moment'; 
+import Moment from 'react-moment';
 import Footer from "../../../component/es/Footer";
 import Header from "../../../component/es/Navbar";
 import BreadHero from "../../../component/es/BreadHero";
@@ -33,11 +33,26 @@ export default function Detail(props, router) {
     };
   }, [location.events]);
 
-  
+
   // callto show 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
+
+
+  if (location.isFallback) {
+    return <>
+      <Header />
+
+      <div className='text-center full-w my-5 py-5'>
+        <div class="spinner-border text-secondary mr-2" role="status">
+        </div>  Loading...
+      </div>
+
+      <Footer />
+    </>
+  }
+
 
 
   return (
@@ -83,12 +98,12 @@ export default function Detail(props, router) {
                   <>
                     <ul className="bradcum container">
                       <li>
-                      <Link href="/es/">Casa</Link>{" "}
+                        <Link href="/es/">Casa</Link>{" "}
                       </li>
                       <li className="mr-2">/</li>
                       <li>
                         <Link href="/es/noticias">Noticias</Link>{" "}
-                      </li> 
+                      </li>
                     </ul>
                   </>
                 }
@@ -183,8 +198,8 @@ export default function Detail(props, router) {
           </div>
 
           {props.singleblog[0].tfnFooter1 ?
-            <>  
-                  <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
+            <>
+              <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">
                   <p>
                     <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
