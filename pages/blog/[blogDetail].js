@@ -11,8 +11,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 
 export default function BlogDetails(props, router) {
   const location = useRouter();
@@ -69,7 +67,7 @@ export default function BlogDetails(props, router) {
     if (event.target.authoremail.value.length !== 0) { event.target.authoremail.classList.remove("error") }
     if (event.target.authornumber.value.length !== 0) { event.target.authornumber.classList.remove("error") }
 
-    if(countrating == 0){
+    if (countrating == 0) {
       alert("Please rate us!");
       event.target.authorrate.focus();
     }
@@ -128,6 +126,9 @@ export default function BlogDetails(props, router) {
 
     }
   };
+
+
+  console.log('props.singleblog[0]-', props.singleblog[0])
 
 
   return (
@@ -192,8 +193,20 @@ export default function BlogDetails(props, router) {
             <div className="popular-destination blogaddalist details full-w">
               <Container>
                 <Row>
-                  <Col xs={12} lg={7} xl={8} className="mb-4">
-                    <div className="blogaddalist-round">
+                  {/* <Col xs={12} lg={7} xl={2} className="mb-4 tableof-col">
+                    <div className="tableof-cont">
+                      <h3><i class="bi bi-list-ul mr-1"></i> Table of Contents</h3>
+                      <ol>
+                        <li><a href="#title-1">Title-1</a></li>
+                        <li><a href="#title-2">Title-2</a></li>
+                        <li><a href="#title-3">Title-3</a></li>
+                      </ol>
+                    </div>
+                  </Col> */}
+
+ 
+                   <Col xs={12} lg={7} xl={8} className="mb-4">
+                    <div className="blogaddalist-round anchorsc-space">
                       <div className="blogaddalist-inner">
                         <div className="blog-inner-box2 mb-5 content-ullist">
                           {loading ? (
@@ -227,7 +240,7 @@ export default function BlogDetails(props, router) {
                   </Col>
 
 
-                  <Col xs={12} lg={5} xl={4}>
+                   <Col xs={12} lg={5} xl={4}>
                     <aside className="recent-blogsalide">
                       <div className="post__info">
                         <h3 className="post__title position-relative text-uppercase">
@@ -273,9 +286,9 @@ export default function BlogDetails(props, router) {
                   </Col>
                 </Row>
 
-                {/*------ Customer Reviews ------*/} 
+                {/*------ Customer Reviews ------*/}
                 <Row>
-                  <Col xs={12} xl={8} className="mb-4">
+                  <Col xs={12} xl={9} className="mb-4">
 
                     {props.getallcomments.length > 0 ?
                       <div className="row-comments-col">
@@ -292,21 +305,21 @@ export default function BlogDetails(props, router) {
                                 </div>
                                 <div class="right pl-3 pt-2 flex-grow-1">
                                   <span class="author-name">{item.userName}</span> <span class="authordate"> <Moment toNow>{item.reviewDate}</Moment> ago</span>
-                                 
-                                 <div className="d-flex align-items-center mt-2">
-                                 <div class="star-select mt-0">
-                                    {[...Array(parseInt(item.reviewRating))].map((elementInArray, index) => (
-                                      <i class="bi bi-star-fill active" key={index}></i>
-                                    ))}
 
-                                    {[...Array(parseInt(5-item.reviewRating))].map((elementInArray, indx) => (
-                                      <i class="bi bi-star-fill" key={indx}></i>
-                                    ))}
+                                  <div className="d-flex align-items-center mt-2">
+                                    <div class="star-select mt-0">
+                                      {[...Array(parseInt(item.reviewRating))].map((elementInArray, index) => (
+                                        <i class="bi bi-star-fill active" key={index}></i>
+                                      ))}
+
+                                      {[...Array(parseInt(5 - item.reviewRating))].map((elementInArray, indx) => (
+                                        <i class="bi bi-star-fill" key={indx}></i>
+                                      ))}
+                                    </div>
+                                    <b className="font-14">{item.reviewRating}.0</b>
                                   </div>
-                                  <b className="font-14">{item.reviewRating}.0</b>
-                                 </div>
 
-                                 <div className="author-text" dangerouslySetInnerHTML={{__html: item.reviewMessage}}></div>
+                                  <div className="author-text" dangerouslySetInnerHTML={{ __html: item.reviewMessage }}></div>
 
                                 </div>
                               </li>
@@ -320,7 +333,7 @@ export default function BlogDetails(props, router) {
                       : ""}
 
 
-                    <h3 className="comment-reply-title d-flex align-items-center" id="leavecomment">
+                    <h3 className="comment-reply-title d-flex align-items-center mt-5" id="leavecomment">
                       Leave a Comment
                     </h3>
                     <p className="willbe-pub">Your email address will not be published.</p>
@@ -329,25 +342,25 @@ export default function BlogDetails(props, router) {
                         <input type="hidden" name="authorrate" value={countrating}></input>
 
                         <div className="star-select">
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Hated it</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onMouseEnter={() => { RateUs(1) }}></i>
-                          </OverlayTrigger>
+                          <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onClick={() => { RateUs(1) }}>
+                            <span>Hated it</span>
+                          </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Disliked it</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onMouseEnter={() => { RateUs(2) }}></i>
-                          </OverlayTrigger>
+                          <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onClick={() => { RateUs(2) }}>
+                            <span>Disliked it</span>
+                          </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>It was ok</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onMouseEnter={() => { RateUs(3) }}></i>
-                          </OverlayTrigger>
+                          <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onClick={() => { RateUs(3) }}>
+                            <span>It was ok</span>
+                          </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Liked it</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onMouseEnter={() => { RateUs(4) }}></i>
-                          </OverlayTrigger>
+                          <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onClick={() => { RateUs(4) }}>
+                            <span>Liked it</span>
+                          </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Loved it</Tooltip>} >
-                            <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onMouseEnter={() => { RateUs(5) }}></i>
-                          </OverlayTrigger>
+                          <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onClick={() => { RateUs(5) }}>
+                            <span>Loved it</span>
+                          </i>
 
                         </div>
                         <div className="startotal badge">
@@ -386,7 +399,7 @@ export default function BlogDetails(props, router) {
                         <div className="alertsw">
                           <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-2"></i> Thank you for submitting review.</div>
                         </div>
-                        : ""} 
+                        : ""}
                     </form>
                   </Col>
                 </Row>

@@ -10,9 +10,7 @@ import Pageerror from "../../../component/es/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
-import Modal from 'react-bootstrap/Modal';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
+import Modal from 'react-bootstrap/Modal'; 
 
 
 export default function BlogDetails(props, router) {
@@ -201,7 +199,7 @@ export default function BlogDetails(props, router) {
               <Container>
                 <Row>
                   <Col xs={12} lg={7} xl={8} className="mb-4">
-                    <div className="blogaddalist-round">
+                  <div className="blogaddalist-round anchorsc-space">
                       <div className="blogaddalist-inner">
                         <div className="blog-inner-box2 mb-5 content-ullist">
                           {loading ? (
@@ -331,26 +329,25 @@ export default function BlogDetails(props, router) {
                         <input type="hidden" name="authorrate" value={countrating}></input>
 
                         <div className="star-select">
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Lo odié</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onMouseEnter={() => { RateUs(1) }}></i>
-                          </OverlayTrigger>
+                             <i className={"bi bi-star-fill" + (countrating >= 1 ? " active" : "")} onClick={() => { RateUs(1) }}>
+                              <span>Lo odié</span>
+                            </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>No me gustó</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onMouseEnter={() => { RateUs(2) }}></i>
-                          </OverlayTrigger>
+                             <i className={"bi bi-star-fill" + (countrating >= 2 ? " active" : "")} onClick={() => { RateUs(2) }}>
+                              <span>No me gustó</span>
+                            </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Estuvo bien</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onMouseEnter={() => { RateUs(3) }}></i>
-                          </OverlayTrigger>
+                             <i className={"bi bi-star-fill" + (countrating >= 3 ? " active" : "")} onClick={() => { RateUs(3) }}>
+                              <span>Estuvo bien</span>
+                            </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Le gustó</Tooltip>} >
-                            <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onMouseEnter={() => { RateUs(4) }}></i>
-                          </OverlayTrigger>
+                             <i className={"bi bi-star-fill" + (countrating >= 4 ? " active" : "")} onClick={() => { RateUs(4) }}>
+                              <span>Le gustó</span>
+                            </i>
 
-                          <OverlayTrigger placement="top" overlay={<Tooltip>Me encantó</Tooltip>} >
-                            <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onMouseEnter={() => { RateUs(5) }}></i>
-                          </OverlayTrigger>
-
+                             <i className={"bi bi-star-fill mr-0" + (countrating >= 5 ? " active" : "")} onClick={() => { RateUs(5) }}>
+                              <span>Me encantó</span>
+                            </i> 
                         </div>
                         <div className="startotal badge">
                           {countrating} / 5

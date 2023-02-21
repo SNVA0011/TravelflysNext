@@ -26,7 +26,7 @@ export default function Blog(props) {
               <Row>
                 {props.allbloglist.filter((items) => items.status === "Active").map((items, i) => (
                   <Col xs={12} md={6} xl={4} key={i} className="mb-4">
-                    <div className="post hover__box bog-border h-100 d-flex flex-column">
+                    <div className="post hover__box bog-border h-100 d-flex flex-column splitsm-box">
                       <div className="wrapper"></div>
 
                       <div className="flex-grow-1">
@@ -40,13 +40,12 @@ export default function Blog(props) {
                               </span>
                             </li>
                           </ul>
-                          <h3 className="post__title">{items.title}</h3>
-                          <div
-                            className="blog-p  mb-4 content-ullist"
-                            dangerouslySetInnerHTML={{
-                              __html: items.description,
-                            }}
-                          />
+                          {/* <h3 className="post__title">{items.title}</h3> */} 
+                            <div className="blog-p  mb-4 content-ullist">
+                            <div className="d-inline" dangerouslySetInnerHTML={{  __html: items.content.substr(0, 240) }}></div>
+                            <p>...</p>
+                            </div>
+                            
                         </div>
                       </div>
                       <Link href={`/news/${items.titleUrl}`}>

@@ -110,13 +110,13 @@ export default function Flights(props) {
                 <Row className='alldeals-vi'>
                   {props.allflights.filter((items) => items.status === "Active").filter((items) => items.pageType === "Airline").map((items, i) => (
                     <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
-                      <div className='blogaddalist-inner border p-3 departurevg'>
+                      <div className='blogaddalist-inner border px-3 py-4 departurevg'>
                         <div className='media'>
                           <i className="fa-solid fa-plane-departure d-flex align-items-center justify-content-center">
                             <Image src="/images/departures.png" alt='departures' width={40} height={40}></Image>
                           </i>
                           <div className='media-body'>
-                            <h3 className='h4 title'>{items.pageName}-{items.pageValue}</h3>
+                            <h3 className='h4 title mt-0'>{items.pageName}-{items.pageValue}</h3>
                             <hr className="mx-row-hr" />
                             <Link href={`/flights/${items.url}-${items.pageValue}`}>
                               <a className='btn btn-site ripple-effbtn btn-40'>
