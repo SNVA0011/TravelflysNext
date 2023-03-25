@@ -19,21 +19,21 @@ export default function Flights(props) {
 
 <div className="call-header d-none d-md-block">
         <div className="container">
-          <a href="tel:+1 (802)-341-3448" class="footer-number-md">
+          <a href="tel:+1 (802)-909-0003" class="footer-number-md">
             <i class="bi bi-telephone mr-2"></i>
-            <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
+            <div class="tfn-no d-inline-block"><span>+1 (802)-909-0003</span>
             </div>
           </a>
         </div>
       </div>
 
-      <a href="tel:+1 (802)-341-3448" className="footer-number-md">
+      <a href="tel:+1 (802)-909-0003" className="footer-number-md">
         <div className="tfn-no">
           <p>
             <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
           </p>
           <span>
-            <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-341-3448
+            <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
           </span>
         </div>
       </a>

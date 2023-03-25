@@ -522,7 +522,7 @@
   bottom: 0;
   left: 0;
   position: absolute;
-  background: rgb(0 62 94 / 70%)
+  background: rgb(0 0 0 / 40%)
  }
  .page-title--small .page-title__content { position: relative; height: 100%;z-index: 3; }
  b, strong { font-weight: 700; }
@@ -2289,6 +2289,7 @@
  .bog-border {    padding: 25px;
   min-height: 220px;
   background: #fff;
+      border: solid 1px #ececec;
   border-radius: 15px;
   box-shadow: 0 0 30px rgb(0 0 0 / 5%);} 
  .recent-blogsalide ul li span, .recent-blogsalide ul li .bi { font-size: 13px; }
@@ -2414,7 +2415,7 @@
  50% { transform: rotate(0) scale(1) skew(1deg) }
  100% { transform: rotate(0) scale(1) skew(1deg) }
  }
- .call-header a.footer-number-md { position: static; border-radius: 40px; padding: 7px 18px; line-height: normal;
+ .call-header a.footer-number-md { position: static; border-radius: 40px; padding: 9px 18px; line-height: normal;
    text-align: left; background: #00a0e3; box-shadow: none; color: #fff; width: auto;   box-shadow: 0 0 0 rgb(0 160 227 / 50%);
    animation: pulse 1.5s infinite;}
  
@@ -3025,7 +3026,9 @@ body .splitsm-box h1+h2 {
 body .splitsm-box h1+h2,
 body .splitsm-box h2+h3,
 body .splitsm-box h2+h3 strong,
-body .splitsm-box h1+h2 strong{
+body .splitsm-box h1+h2 strong,
+body .splitsm-box p,
+body .splitsm-box strong p{
      font-weight: 400;
 }
 .content li {

@@ -9,7 +9,7 @@ export default function Footer() {
 				<div className="container">
 					<div className="banner-inner">
 						<h2>Esperamos ir al mejor vuelo. Cada vez que proporcionamos.</h2>
-						<a href="tel:+1 (802)-341-3448" target="_blank" className="btn">Contacta con nosotros</a>
+						<a href="tel:+1 (802)-909-0003" target="_blank" className="btn">Contacta con nosotros</a>
 					</div>
 				</div>
 			</section>
