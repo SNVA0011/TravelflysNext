@@ -190,6 +190,7 @@ export default function BlogDetails(props, router) {
                   </p>
                 </div>
               </div>
+              
               <BreadHero
                 linkhtml={
                   <>
