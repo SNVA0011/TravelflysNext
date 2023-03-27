@@ -73,7 +73,7 @@ export default function Detail(props, router) {
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
-                    (USA) <span>{props.singleblog[0].tfnHeader}</span>
+                    <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
               </Container>

@@ -167,16 +167,14 @@ export default function BlogDetails(props, router) {
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
-                    (USA) <span>{props.singleblog[0].tfnHeader}</span>
+                    <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
               </Container>
             </div>
             : ""}
-
-
+ 
           <Header />
-
 
           <div className="blogadda bg-white">
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
