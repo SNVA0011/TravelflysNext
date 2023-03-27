@@ -174,7 +174,12 @@ export default function BlogDetails(props, router) {
             </div>
             : ""}
  
+
+
           <Header />
+
+
+          
 
           <div className="blogadda bg-white">
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
