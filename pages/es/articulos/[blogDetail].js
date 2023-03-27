@@ -190,7 +190,7 @@ export default function BlogDetails(props, router) {
                   </p>
                 </div>
               </div>
-              
+
               <BreadHero
                 linkhtml={
                   <>
@@ -201,11 +201,7 @@ export default function BlogDetails(props, router) {
                       <li className="mr-2">/</li>
                       <li>
                         <Link href="/es/articulos">Artículos</Link>{" "}
-                      </li>
-                      {/* <li className="mr-2">/</li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      {loading ? "loading..." : props.singleblog[0].title}{" "}
-                    </li>{" "} */}
+                      </li> 
                     </ul>
                   </>
                 }
