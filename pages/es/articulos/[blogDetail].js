@@ -212,6 +212,7 @@ export default function BlogDetails(props, router) {
               />
             </div>
 
+
             <div className="popular-destination blogaddalist details full-w">
               <Container>
                 <Row>
