@@ -8,7 +8,7 @@ import BreadHero from '../../component/BreadHero'
 
 
 export default function News(props) {
-
+  console.log('props.allbloglist-', props.allbloglist)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
