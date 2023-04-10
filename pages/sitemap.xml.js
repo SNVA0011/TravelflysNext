@@ -240,7 +240,7 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily'
   }));
 
-    //========== Mix (en + es) ==========//
+  //========== Mix (en + es) ==========//
   const fields = [
     ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps, ...newsSitemaps,
     ...esStaticSitemaps, ...esBlogSitemaps, ...esFlightsSitemaps, ...esNewsSitemaps
