@@ -3090,7 +3090,7 @@ img.callby-round-cl {
     border-radius: 8px;
     font-weight: 700;
     color: #000;
-    padding: 10px;
+    padding: 10px; 
 }
 .callby-ip .toast-body a.list-group-item:last-child{
   margin-bottom: 0;
@@ -3137,6 +3137,12 @@ img.callby-round-cl,.btn-round-cl.btn{
     text-align: center;
     background-color: #00a0e3;
     box-shadow: 0 15px 18px -5px rgb(0 0 0 / 20%);
+background: rgb(0,160,227);
+background: -moz-linear-gradient(-45deg,  rgba(0,160,227,1) 0%, rgba(0,106,150,1) 100%);
+background: -webkit-linear-gradient(-45deg,  rgba(0,160,227,1) 0%,rgba(0,106,150,1) 100%);
+background: linear-gradient(135deg,  rgba(0,160,227,1) 0%,rgba(0,106,150,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a0e3', endColorstr='#006a96',GradientType=1 );
+
 }
 
  /*-------- responsive --------*/ 
