@@ -7,6 +7,7 @@ import Header from '../../component/es/Navbar'
 import Footer from "../../component/es/Footer"
 import Head from 'next/head'
 import BreadHero from "../../component/es/BreadHero";
+import CallUkToast from "../../component/CallUkToast";
 
 export default function AboutUs() {
 
@@ -18,28 +19,39 @@ export default function AboutUs() {
     return (
         <div className='blogdt-single'>
 
-<div className="call-header d-none d-md-block">
-        <div className="container">
-          <a href="tel:+1 (802)-909-0003" class="footer-number-md">
-            <i class="bi bi-telephone mr-2"></i>
-            <div class="tfn-no d-inline-block"><span>+1 (802)-909-0003</span>
+            <div className="call-header d-none d-md-block">
+                <div className="container">
+                    <a href="tel:+1 (802)-909-0003" class="footer-number-md">
+                        <i class="bi bi-telephone mr-2"></i>
+                        <div class="tfn-no d-inline-block"><span>+1 (802)-909-0003</span>
+                        </div>
+                    </a>
+                    <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+                        <i className="bi bi-telephone mr-2"></i>
+                        <div className="tfn-no d-inline-block">
+                            (UK) <span>+44 (20) 37693132</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
 
-      <a href="tel:+1 (802)-909-0003" className="footer-number-md">
-        <div className="tfn-no">
-          <p>
-            <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
-          </p>
-          <span>
-            <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
-          </span>
-        </div>
-      </a>
-    
-        
+
+            {/*------- CallUkToast -------*/}
+            <CallUkToast />
+            {/*----- end CallUkToast -----*/}
+
+            <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+                <div className="tfn-no">
+                    <p>
+                        <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+                    </p>
+                    <span>
+                        <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
+                    </span>
+                </div>
+            </a>
+
+
             <Head>
                 <title>sobre nosotras - travelflys</title>
                 <meta name="description" content="" />
@@ -54,13 +66,13 @@ export default function AboutUs() {
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog align-left" >
                 <div className="container">
                     <div className="page-title__content">
-                        <h1 className="page-title__name">Sobre Nosotros </h1> 
+                        <h1 className="page-title__name">Sobre Nosotros </h1>
                     </div>
                 </div>
                 <BreadHero linkhtml={<><ul className="bradcum container">
-                            <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li>
-                            <li className='mr-2'>/</li>
-                            <li className=' active text-white' aria-current="page"> sobre nosotras </li> </ul></>} />
+                    <li className="breadcrumb-item" > <Link href="/es/">Casa</Link> </li>
+                    <li className='mr-2'>/</li>
+                    <li className=' active text-white' aria-current="page"> sobre nosotras </li> </ul></>} />
             </div>
 
 
@@ -101,7 +113,7 @@ export default function AboutUs() {
                                 al cliente que están esperando para planificar su viaje. Así que deje el estrés a un lado
                                 y venga a disfrutar de su viaje con nosotros.</p>
 
-                        </Col> 
+                        </Col>
                     </Row>
                 </Container>
             </div>

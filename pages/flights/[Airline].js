@@ -7,6 +7,7 @@ import Header from '../../component/Navbar'
 import Footer from "../../component/Footer"
 import Pageerror from "../../component/Pageerror"
 import { useRouter } from "next/router";
+import CallUkToast from '../../component/CallUkToast';
 
 
 
@@ -42,8 +43,19 @@ export default function Airline(props) {
             <div class="tfn-no d-inline-block">(USA) <span>+1 (802)-341-3448</span>
             </div>
           </a>
+          <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+            <i className="bi bi-telephone mr-2"></i>
+            <div className="tfn-no d-inline-block">
+              (UK) <span>+44 (20) 37693132</span>
+            </div>
+          </a>
         </div>
       </div>
+
+
+      {/*------- CallUkToast -------*/}
+      <CallUkToast />
+      {/*----- end CallUkToast -----*/}
 
       <a href="tel:+1 (802)-341-3448" className="footer-number-md">
         <div className="tfn-no">

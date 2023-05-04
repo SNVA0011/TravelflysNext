@@ -288,7 +288,9 @@
  .single .place-gallery a { font-size: 0; height: 48px; width: 48px; border-radius: 50%; line-height: 48px; padding: 0; text-align: center; }
  .single .place-gallery i { font-size: 24px; vertical-align: -7px; }
  a.footer-number-md .tfn-no span {
-   font-size: 17px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
 }
  }
  @media only screen and (max-width: 575px) {

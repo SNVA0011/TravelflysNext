@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Link from "next/link"
 import Footer from '../../component/es/Footer';
 import Header from "../../component/es/Navbar";
+import CallUkToast from '../../component/CallUkToast';
 
 export default function Terms() {
     useEffect(() => {
@@ -22,8 +23,19 @@ export default function Terms() {
             <div class="tfn-no d-inline-block"><span>+1 (802)-909-0003</span>
             </div>
           </a>
+            <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+              <i className="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">
+                (UK) <span>+44 (20) 37693132</span>
+              </div>
+            </a>
         </div>
       </div>
+
+
+        {/*------- CallUkToast -------*/}
+        <CallUkToast />
+        {/*----- end CallUkToast -----*/}
 
       <a href="tel:+1 (802)-909-0003" className="footer-number-md">
         <div className="tfn-no">

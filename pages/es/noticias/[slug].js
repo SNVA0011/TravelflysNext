@@ -10,6 +10,7 @@ import Footer from "../../../component/es/Footer";
 import Header from "../../../component/es/Navbar";
 import BreadHero from "../../../component/es/BreadHero";
 import Pageerror from "../../../component/es/Pageerror";
+import CallUkToast from "../../../component/CallUkToast";
 
 export default function Detail(props, router) {
   const location = useRouter();
@@ -67,18 +68,32 @@ export default function Detail(props, router) {
             <link rel="canonical" href={"https://www.travelflys.com/es/noticias/" + props.singleblog[0].titleUrl} />
           </Head>
 
-          {props.singleblog[0].tfnHeader ?
-            <div className="call-header d-none d-md-block">
-              <Container>
+
+          <div className="call-header d-none d-md-block">
+            <Container>
+              {props.singleblog[0].tfnHeader ?
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
                     <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
-              </Container>
-            </div>
-            : ""}
+                : ""}
+
+              <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+                <i className="bi bi-telephone mr-2"></i>
+                <div className="tfn-no d-inline-block">
+                  (UK) <span>+44 (20) 37693132</span>
+                </div>
+              </a>
+            </Container>
+          </div>
+
+
+          {/*------- CallUkToast -------*/}
+          <CallUkToast />
+          {/*----- end CallUkToast -----*/}
+
 
           <Header />
 

@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
+import CallUkToast from "../../../component/CallUkToast";
 
 
 export default function BlogDetails(props, router) {
@@ -161,19 +162,31 @@ export default function BlogDetails(props, router) {
             />
           </Head>
 
-          {props.singleblog[0].tfnHeader ?
-            <div className="call-header d-none d-md-block">
-              <Container>
+
+          <div className="call-header d-none d-md-block">
+            <Container>
+              {props.singleblog[0].tfnHeader ?
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
                   <i class="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
                     <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
                 </a>
-              </Container>
-            </div>
-            : ""}
- 
+                : ""}
+
+              <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+                <i className="bi bi-telephone mr-2"></i>
+                <div className="tfn-no d-inline-block">
+                  (UK) <span>+44 (20) 37693132</span>
+                </div>
+              </a>
+            </Container>
+          </div>
+
+          {/*------- CallUkToast -------*/}
+          <CallUkToast />
+          {/*----- end CallUkToast -----*/}
+
 
 
           <Header />
@@ -190,7 +203,7 @@ export default function BlogDetails(props, router) {
                   </p>
                 </div>
               </div>
-              
+
               <BreadHero
                 linkhtml={
                   <>
@@ -473,17 +486,21 @@ export default function BlogDetails(props, router) {
               </a>
             </>
             : ""}
+
+          <Footer />
         </div>
       ) : (
         <>
           <Header />
 
           <Pageerror />
+
+            <Footer />
         </>
       )}
 
 
-      <Footer />
+    
     </>
   );
 }
