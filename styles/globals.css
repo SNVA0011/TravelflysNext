@@ -3098,6 +3098,9 @@ img.callby-round-cl {
 .callby-ip .toast-body a.list-group-item:hover {
     background-color: #e9e9e9;
 }
+img.callby-round-cl{
+  
+}
 img.callby-round-cl,.btn-round-cl.btn{
     width: 60px;
     height: 60px; 
