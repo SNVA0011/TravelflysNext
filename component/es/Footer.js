@@ -34,13 +34,13 @@ export default function Footer() {
 								<aside className="footer__top__nav">
 									<h3>Empresa</h3>
 									<ul>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/sobre-nosotras">Sobre nosotros</Link></li>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/noticias">Noticias</Link></li>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/vuelos">Vuelo</Link></li>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/articulos"  >Artículos</Link></li>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/contacto">Contacto</Link></li>
-										<li className="d-none"><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/"><a>Home</a></Link></li>
-										<li className="d-none"><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es"><a>Casa</a></Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/sobre-nosotras">Sobre nosotros</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/noticias">Noticias</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/vuelos">Vuelo</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/articulos"  >Artículos</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/contacto">Contacto</Link></li>
+										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/"><a>Home</a></Link></li>
+										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es"><a>Casa</a></Link></li>
 									</ul>
 								</aside>
 							</div>
@@ -48,8 +48,8 @@ export default function Footer() {
 								<aside className="footer__top__nav">
 									<h3>Support</h3>
 									<ul>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/privacidad">Política de privacidad</Link></li>
-										<li><i class="bi bi-caret-right-fill text-sm"></i> <Link href="/es/terminos">
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/privacidad">Política de privacidad</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es/terminos">
 											Términos y Condiciones</Link></li>
 
 									</ul>
@@ -58,7 +58,7 @@ export default function Footer() {
 							<div className="col-lg-3">
 								<aside className="footer__top__nav footer__top__nav--contact">
 									<h3>Contacta con nosotros</h3>
-									<p><i class="bi bi-envelope-fill mr-1"></i> Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
+									<p><i className="bi bi-envelope-fill mr-1"></i> Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
 									{/* <p>Phone: 1 (00) 832 2342</p> */}
 									
 									<hr className="siguenos"></hr>

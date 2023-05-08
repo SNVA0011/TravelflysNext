@@ -3056,7 +3056,7 @@ body .splitsm-box strong p{
     border-radius: 10px;
     padding: 0;
     position: relative;
-    box-shadow: 0 10px 50px -12px rgb(0 0 0 / 25%); 
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.17);
        width: 260px;
            border: solid 1px #ececec;
 }
@@ -3064,7 +3064,8 @@ body .splitsm-box strong p{
     padding: 4px;
   }
 .callby-ip .toast-body a.list-group-item img {
-    width: 21px;
+    width: 28px;
+    border-radius: 4px;
 }
 .callby-ip .toast::after {
     content: '';
@@ -3148,6 +3149,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a0e3', end
         -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+.callby-ip .toast-body .badge { 
+      font-weight: 500;
+    border: solid 1px #e4e4e4;
+    margin-right: 4px;
+    padding: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    font-size: 10px;
+    border-radius: 4px;
+    color: #484848;
 }
  
  /*-------- responsive --------*/ 

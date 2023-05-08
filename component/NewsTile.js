@@ -60,7 +60,7 @@ export default function Blog(props) {
               </Row>
             ) : (
               <div className="text-center mt-5 mb-3 py-5 font-weight-bold">
-                <i class="bi bi-exclamation-triangle-fill h1 mb-2 d-inline-block text-danger"></i><br></br>
+                <i className="bi bi-exclamation-triangle-fill h1 mb-2 d-inline-block text-danger"></i><br></br>
                 No items found !
               </div>
             )}

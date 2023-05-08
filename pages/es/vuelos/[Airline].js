@@ -25,7 +25,7 @@ export default function Airline(props) {
       <Header />
 
       <div className='text-center full-w my-5 py-5'>
-        <div class="spinner-border text-secondary mr-2" role="status">
+        <div className="spinner-border text-secondary mr-2" role="status">
         </div>  Loading...
       </div>
 
@@ -39,9 +39,9 @@ export default function Airline(props) {
 
       <div className="call-header d-none d-md-block">
         <div className="container">
-          <a href="tel:+1 (802)-909-0003" class="footer-number-md">
-            <i class="bi bi-telephone mr-2"></i>
-            <div class="tfn-no d-inline-block"><span>+1 (802)-909-0003</span>
+          <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+            <i className="bi bi-telephone mr-2"></i>
+            <div className="tfn-no d-inline-block">(USA) <span>+1 (802)-909-0003</span>
             </div>
           </a>
           <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
@@ -61,10 +61,10 @@ export default function Airline(props) {
       <a href="tel:+1 (802)-909-0003" className="footer-number-md">
         <div className="tfn-no">
           <p>
-            <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+            <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
           </p>
           <span>
-            <i class="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
+            <i className="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
           </span>
         </div>
       </a>

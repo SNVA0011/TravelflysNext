@@ -47,7 +47,7 @@ export default function Detail(props, router) {
       <Header />
 
       <div className='text-center full-w my-5 py-5'>
-        <div class="spinner-border text-secondary mr-2" role="status">
+        <div className="spinner-border text-secondary mr-2" role="status">
         </div>  Loading...
       </div>
 
@@ -73,7 +73,7 @@ export default function Detail(props, router) {
               <Container>
                 {props.singleblog[0].tfnHeader ?
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
-                  <i class="bi bi-telephone mr-2"></i>
+                  <i className="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
                     (USA) <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
@@ -221,10 +221,10 @@ export default function Detail(props, router) {
               <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">
                   <p>
-                    <i class="bi bi-telephone"></i> How Can We Help ?<small>Feel free to  Ask</small>
+                    <i className="bi bi-telephone"></i> How Can We Help ?<small>Feel free to  Ask</small>
                   </p>
                   <span>
-                    <i class="bi bi-telephone mr-2 d-md-none"></i>
+                    <i className="bi bi-telephone mr-2 d-md-none"></i>
                     {props.singleblog[0].tfnFooter1}
                   </span>
                 </div>

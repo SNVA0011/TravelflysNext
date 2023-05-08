@@ -135,7 +135,7 @@ export default function BlogDetails(props, router) {
       <Header />
 
       <div className='text-center full-w my-5 py-5'>
-        <div class="spinner-border text-secondary mr-2" role="status">
+        <div className="spinner-border text-secondary mr-2" role="status">
         </div>  Loading...
       </div>
 
@@ -167,7 +167,7 @@ export default function BlogDetails(props, router) {
             <Container>
               {props.singleblog[0].tfnHeader ?
                 <a href={`tel:${props.singleblog[0].tfnHeader}`} className="footer-number-md">
-                  <i class="bi bi-telephone mr-2"></i>
+                  <i className="bi bi-telephone mr-2"></i>
                   <div className="tfn-no d-inline-block">
                     <span>{props.singleblog[0].tfnHeader}</span>
                   </div>
@@ -184,7 +184,7 @@ export default function BlogDetails(props, router) {
           </div>
 
           {/*------- CallUkToast -------*/}
-          <CallUkToast />
+          <CallUkToast numberjson={props.ipnumber} />
           {/*----- end CallUkToast -----*/}
 
 
@@ -314,25 +314,25 @@ export default function BlogDetails(props, router) {
                         <div className="comments-list">
                           <span className="comment-reply-title ttlcomment">{props.getallcomments?.length} Comentario{props.getallcomments?.length > 1 ? "s" : ""}</span>
 
-                          <ol class="commentlist-ol">
+                          <ol className="commentlist-ol">
 
 
                             {props.getallcomments && props.getallcomments.map((item, index) =>
-                              <li class="comment-byuser d-flex w-100" key={index}>
-                                <div class="author-avatar loaded">
-                                  <img src="/images/usercomment.png" class="avatar-img" alt="Avatar" />
+                              <li className="comment-byuser d-flex w-100" key={index}>
+                                <div className="author-avatar loaded">
+                                  <img src="/images/usercomment.png" className="avatar-img" alt="Avatar" />
                                 </div>
-                                <div class="right pl-3 pt-2 flex-grow-1">
-                                  <span class="author-name">{item.userName}</span> <span class="authordate"> <Moment toNow>{item.reviewDate}</Moment> antes de</span>
+                                <div className="right pl-3 pt-2 flex-grow-1">
+                                  <span className="author-name">{item.userName}</span> <span className="authordate"> <Moment toNow>{item.reviewDate}</Moment> antes de</span>
 
                                   <div className="d-flex align-items-center mt-2">
-                                    <div class="star-select mt-0">
+                                    <div className="star-select mt-0">
                                       {[...Array(parseInt(item.reviewRating))].map((elementInArray, index) => (
-                                        <i class="bi bi-star-fill active" key={index}></i>
+                                        <i className="bi bi-star-fill active" key={index}></i>
                                       ))}
 
                                       {[...Array(parseInt(5 - item.reviewRating))].map((elementInArray, indx) => (
-                                        <i class="bi bi-star-fill" key={indx}></i>
+                                        <i className="bi bi-star-fill" key={indx}></i>
                                       ))}
                                     </div>
                                     <b className="font-14">{item.reviewRating}.0</b>
@@ -415,7 +415,7 @@ export default function BlogDetails(props, router) {
 
                       {message === 'success' ?
                         <div className="alertsw">
-                          <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-2"></i> Gracias por enviar una reseña.</div>
+                          <div role="alert" className="fade alert alert-success show"><i className="bi bi-check2-circle mr-2"></i> Gracias por enviar una reseña.</div>
                         </div>
                         : ""}
 
@@ -445,24 +445,24 @@ export default function BlogDetails(props, router) {
 
                     </Col>
                     <Col xs="12" md="6" className="callcustomcare-content flex-column d-flex justify-content-between ">
-                      <div class="cheapbook-contact">
-                        <p class="head1">
+                      <div className="cheapbook-contact">
+                        <p className="head1">
                           Más bajo
                           <span className="d-block">Tarifa del mes</span>
                         </p>
-                        <p class="calling"><i class="bi bi-arrow-90deg-down"></i> llamando </p>
-                        <p class="phone_number">
+                        <p className="calling"><i className="bi bi-arrow-90deg-down"></i> llamando </p>
+                        <p className="phone_number">
                           <a href={`tel:${props.singleblog[0].tfnFooter1}`} target="_blank">{props.singleblog[0].tfnFooter1}</a>
                         </p>
-                        <p class="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
-                        <p class="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Travelflys</p>
+                        <p className="unpublished"><span><b>24*7</b> Soporte Ilimitado</span></p>
+                        <p className="calling">* Este número de contacto proporcionado no está asociado con ninguna organización o marca, excepto Travelflys</p>
                       </div>
 
                       <div className="cheapbook-light">
                         <div className="inner">
-                          <p class="head"><b>Lo mas barato</b> ofertas</p>
-                          <p class="sub_head">Reservas de Grupos y Ofertas Especiales</p>
-                          <p class="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
+                          <p className="head"><b>Lo mas barato</b> ofertas</p>
+                          <p className="sub_head">Reservas de Grupos y Ofertas Especiales</p>
+                          <p className="sub_head1">También ayuda para <b>Cancelación del vuelo</b> y exención de tarifas como <b>CORONAVIRUS (COVID-19)</b></p>
 
                         </div>
                       </div>
@@ -476,10 +476,10 @@ export default function BlogDetails(props, router) {
               <a href={`tel:${props.singleblog[0].tfnFooter1}`} className="footer-number-md">
                 <div className="tfn-no">
                   <p>
-                    <i class="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+                    <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
                   </p>
                   <span>
-                    <i class="bi bi-telephone mr-2 d-md-none"></i>
+                    <i className="bi bi-telephone mr-2 d-md-none"></i>
                     {props.singleblog[0].tfnFooter1}
                   </span>
                 </div>
@@ -606,11 +606,34 @@ export async function getStaticProps(context) {
   );
   const commentjson = await commentall.json();
 
+  // Get Ip address
+  const resip = await fetch('http://stest2.hunterwave.com/ipaddress');
+  const getip = await resip.json();
+  const ipaddress = await getip.response.countryCode;
+  // Get Ip address
+  const nobyip = await fetch(
+    "https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        "countryCode": ipaddress,
+        "siteId": "143",
+        "countrytfn": "",
+        "status": ""
+      }),
+      redirect: "follow",
+      headers: { 'Content-type': 'application/json; charset=UTF-8' }
+    }
+  );
+  const getnobyip = await nobyip.json();
+  const ipcallnumber = await getnobyip.response;
+
   return {
     props: {
       singleblog: onejson.response,
       allblog: multiplejson.response,
-      getallcomments: commentjson.response
+      getallcomments: commentjson.response,
+      ipnumber: ipcallnumber,
     },
     revalidate: 60,
   };

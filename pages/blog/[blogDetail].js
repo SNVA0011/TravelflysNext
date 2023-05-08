@@ -14,7 +14,7 @@ import Modal from 'react-bootstrap/Modal';
 import CallUkToast from "../../component/CallUkToast";
 
 export default function BlogDetails(props, router) {
-  const location = useRouter();
+  const location = useRouter(); 
 
 
   const [loading, setLoading] = useState(false);
@@ -42,11 +42,10 @@ export default function BlogDetails(props, router) {
   const callFunShow = () => setCalltoShow(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
+    window.scrollTo(0, 0); 
     setTimeout(() => {
       callFunShow()
-    }, 20000);
+    }, 20000); 
   }, []);
 
 
@@ -55,7 +54,7 @@ export default function BlogDetails(props, router) {
   const [countrating, setCountrating] = useState(0);
   const RateUs = (val) => {
     setCountrating(val)
-  }
+  } 
 
   // CommentSubmit
   const CommentSubmit = async (event) => {
@@ -127,12 +126,14 @@ export default function BlogDetails(props, router) {
     }
   };
 
+
+  // isFallback
   if (location.isFallback) {
     return <>
       <Header />
 
       <div className='text-center full-w my-5 py-5'>
-        <div class="spinner-border text-secondary mr-2" role="status">
+        <div className="spinner-border text-secondary mr-2" role="status">
         </div>  Loading...
       </div>
 
@@ -174,7 +175,7 @@ export default function BlogDetails(props, router) {
           </div>
 
           {/*------- CallUkToast -------*/}
-          <CallUkToast />
+          <CallUkToast numberjson={props.ipnumber}/> 
           {/*----- end CallUkToast -----*/}
 
 
@@ -217,7 +218,7 @@ export default function BlogDetails(props, router) {
                 <Row>
                   {/* <Col xs={12} lg={7} xl={2} className="mb-4 tableof-col">
                     <div className="tableof-cont">
-                      <h3><i class="bi bi-list-ul mr-1"></i> Table of Contents</h3>
+                      <h3><i className="bi bi-list-ul mr-1"></i> Table of Contents</h3>
                       <ol>
                         <li><a href="#title-1">Title-1</a></li>
                         <li><a href="#title-2">Title-2</a></li>
@@ -319,25 +320,25 @@ export default function BlogDetails(props, router) {
                         <div className="comments-list">
                           <span className="comment-reply-title ttlcomment">{props.getallcomments?.length} Comment{props.getallcomments?.length > 1 ? "s" : ""}</span>
 
-                          <ol class="commentlist-ol">
+                          <ol className="commentlist-ol">
 
 
                             {props.getallcomments && props.getallcomments.map((item, index) =>
-                              <li class="comment-byuser d-flex w-100" key={index}>
-                                <div class="author-avatar loaded">
-                                  <img src="/images/usercomment.png" class="avatar-img" alt="Avatar" />
+                              <li className="comment-byuser d-flex w-100" key={index}>
+                                <div className="author-avatar loaded">
+                                  <img src="/images/usercomment.png" className="avatar-img" alt="Avatar" />
                                 </div>
-                                <div class="right pl-3 pt-2 flex-grow-1">
-                                  <span class="author-name">{item.userName}</span> <span class="authordate"> <Moment toNow>{item.reviewDate}</Moment> ago</span>
+                                <div className="right pl-3 pt-2 flex-grow-1">
+                                  <span className="author-name">{item.userName}</span> <span className="authordate"> <Moment toNow>{item.reviewDate}</Moment> ago</span>
 
                                   <div className="d-flex align-items-center mt-2">
-                                    <div class="star-select mt-0">
+                                    <div className="star-select mt-0">
                                       {[...Array(parseInt(item.reviewRating))].map((elementInArray, index) => (
-                                        <i class="bi bi-star-fill active" key={index}></i>
+                                        <i className="bi bi-star-fill active" key={index}></i>
                                       ))}
 
                                       {[...Array(parseInt(5 - item.reviewRating))].map((elementInArray, indx) => (
-                                        <i class="bi bi-star-fill" key={indx}></i>
+                                        <i className="bi bi-star-fill" key={indx}></i>
                                       ))}
                                     </div>
                                     <b className="font-14">{item.reviewRating}.0</b>
@@ -421,7 +422,7 @@ export default function BlogDetails(props, router) {
 
                       {message === 'success' ?
                         <div className="alertsw">
-                          <div role="alert" class="fade alert alert-success show"><i class="bi bi-check2-circle mr-2"></i> Thank you for submitting review.</div>
+                          <div role="alert" className="fade alert alert-success show"><i className="bi bi-check2-circle mr-2"></i> Thank you for submitting review.</div>
                         </div>
                         : ""}
                     </form>
@@ -500,12 +501,7 @@ export default function BlogDetails(props, router) {
 
           <Footer />
         </>
-      )}
-
-
-
-
-
+      )} 
     </>
   );
 }
@@ -616,11 +612,34 @@ export async function getStaticProps(context) {
   );
   const commentjson = await commentall.json();
 
+  // Get Ip address
+  const resip = await fetch('http://stest2.hunterwave.com/ipaddress');
+  const getip = await resip.json();
+  const ipaddress = await getip.response.countryCode;
+  // Get Ip address
+  const nobyip = await fetch(
+    "https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        "countryCode": ipaddress,
+        "siteId": "143",
+        "countrytfn": "",
+        "status": ""
+      }),
+      redirect: "follow",
+      headers: { 'Content-type': 'application/json; charset=UTF-8' }
+    }
+  );
+  const getnobyip = await nobyip.json();
+  const ipcallnumber = await getnobyip.response;
+
   return {
     props: {
       singleblog: onejson.response,
       allblog: multiplejson.response,
       getallcomments: commentjson.response,
+      ipnumber: ipcallnumber,
     },
     revalidate: 60,
   };
