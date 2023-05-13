@@ -45,10 +45,9 @@ export default function BlogDetails(props, router) {
     window.scrollTo(0, 0); 
     setTimeout(() => {
       callFunShow()
-    }, 20000); 
+    }, 20000);   
   }, []);
-
-
+ 
   // RateUs
   const [message, setMessage] = useState("");
   const [countrating, setCountrating] = useState(0);
@@ -125,7 +124,7 @@ export default function BlogDetails(props, router) {
 
     }
   };
-
+ 
 
   // isFallback
   if (location.isFallback) {
@@ -640,6 +639,7 @@ export async function getStaticProps(context) {
       allblog: multiplejson.response,
       getallcomments: commentjson.response,
       ipnumber: ipcallnumber,
+      ipSTATE: getip,
     },
     revalidate: 60,
   };

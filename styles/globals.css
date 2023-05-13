@@ -3066,7 +3066,7 @@ body .splitsm-box strong p{
 .callby-ip .toast-body a.list-group-item img {
     width: 28px;
     border-radius: 4px;
-}
+} 
 .callby-ip .toast::after {
     content: '';
     width: 0;
@@ -3083,6 +3083,7 @@ img.callby-round-cl {
     border-radius: 50%;
     box-shadow: 0 15px 18px -5px rgb(0 0 0 / 20%); 
     cursor: pointer;
+        background-color: #3a3432;
 }
 .callby-ip .toast-body a.list-group-item {
        border: none; 

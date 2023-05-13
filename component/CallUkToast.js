@@ -7,6 +7,8 @@ const CallUkToast = ({ numberjson }) => {
     const [showA, setShowA] = useState(true);
     const toggleShowA = () => setShowA(!showA);
 
+    console.log('numberjson----', numberjson)
+
     return (
         <div className="callby-ip">
             <Toast show={showA} onClose={toggleShowA}>
