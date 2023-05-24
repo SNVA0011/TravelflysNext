@@ -47,7 +47,7 @@ export default function BlogDetails(props, router) {
 
     setTimeout(() => {
       callFunShow()
-    }, 20000);
+    }, 6000);
   }, []);
 
 
@@ -128,20 +128,58 @@ export default function BlogDetails(props, router) {
 
     }
   };
+ 
 
 
+  // ipaddress number 
+  const [dataIp, setDataIp] = useState([]);
+  const [isLoading, setLoadingIp] = useState(false);
+  useEffect(async () => {
+    setLoadingIp(true);
+    await fetch("http://stest2.hunterwave.com/ipaddress").then((res) => res.json()).then(async (data) => {
+      const reqopt = {
+        method: "POST",
+        body: JSON.stringify({
+          "countryCode": data.response.countryCode,
+          "siteId": "143",
+          "countrytfn": "",
+          "status": ""
+        }),
+        redirect: "follow",
+        headers: { 'Content-type': 'application/json; charset=UTF-8' }
+      }
+      await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
+        setDataIp(data.response || []);
+        setLoadingIp(false);
+      }).catch((error) => {
+        setLoadingIp(false);
+        setDataIp([]);
+        console.log('Error - ', error)
+      });
+
+    }).catch((error) => {
+      setLoadingIp(false);
+      setDataIp([]);
+      console.log('Error : countrycode -', error)
+    });
+  }, []);
+
+
+
+    // isFallback
   if (location.isFallback) {
     return <>
       <Header />
 
       <div className='text-center full-w my-5 py-5'>
         <div className="spinner-border text-secondary mr-2" role="status">
-        </div>  Loading...
+        </div> 
       </div>
 
       <Footer />
     </>
   }
+  
 
 
   return (
@@ -184,7 +222,21 @@ export default function BlogDetails(props, router) {
           </div>
 
           {/*------- CallUkToast -------*/}
-          <CallUkToast numberjson={props.ipnumber} />
+          <CallUkToast numberjson={{ "data": dataIp, "status": isLoading }}
+
+            numberbyurl={[{
+              "code": props.singleblog[0].contImag1 || "",
+              "number": props.singleblog[0].countryNum1 || "",
+            },
+            {
+              "code": props.singleblog[0].contImag2 || "",
+              "number": props.singleblog[0].countryNum2 || "",
+            },
+            {
+              "code": props.singleblog[0].contImag3 || "",
+              "number": props.singleblog[0].countryNum3 || "",
+            }
+            ]} />
           {/*----- end CallUkToast -----*/}
 
 
@@ -240,7 +292,7 @@ export default function BlogDetails(props, router) {
                                 className="spinner-border text-secondary"
                                 role="status"
                               >
-                                <span className="sr-only">Loading...</span>
+                                <span className="sr-only"></span>
                               </div>
                             </div>
                           ) : props.singleblog[0].content === "" ? (
@@ -274,7 +326,7 @@ export default function BlogDetails(props, router) {
                           <>
                             <ul>
                               {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
-                                <li>
+                                <li key={i}>
                                   <div className="text-left float-left">
                                     <span className="count-s">{i + 1}</span>
                                   </div>
@@ -298,7 +350,7 @@ export default function BlogDetails(props, router) {
                             </ul>
                           </>
                         ) : (
-                          "No items found !"
+                          <p className="text-center">No items found !</p>  
                         )}
                       </div>
                     </aside>
@@ -606,34 +658,11 @@ export async function getStaticProps(context) {
   );
   const commentjson = await commentall.json();
 
-  // Get Ip address
-  const resip = await fetch('http://stest2.hunterwave.com/ipaddress');
-  const getip = await resip.json();
-  const ipaddress = await getip.response.countryCode;
-  // Get Ip address
-  const nobyip = await fetch(
-    "https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        "countryCode": ipaddress,
-        "siteId": "143",
-        "countrytfn": "",
-        "status": ""
-      }),
-      redirect: "follow",
-      headers: { 'Content-type': 'application/json; charset=UTF-8' }
-    }
-  );
-  const getnobyip = await nobyip.json();
-  const ipcallnumber = await getnobyip.response;
-
   return {
     props: {
       singleblog: onejson.response,
       allblog: multiplejson.response,
-      getallcomments: commentjson.response,
-      ipnumber: ipcallnumber,
+      getallcomments: commentjson.response
     },
     revalidate: 60,
   };

@@ -94,7 +94,7 @@ export default function Blog(props) {
                     
               </Row>
             ) : (
-              "No items found !"
+                <p className="text-center">No items found !</p>
             )}
           </Container>
         </div>

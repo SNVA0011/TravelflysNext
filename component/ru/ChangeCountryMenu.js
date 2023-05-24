@@ -9,7 +9,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 
 export default function ChangeCountryMenu() {
     const location = useRouter();
-    const [lang, setLang] = useState('ES');
+    const [lang, setLang] = useState('RU');
     const [curr, setCurr] = useState('INR');
     const [expanded, setExpanded] = useState(false);
 
@@ -26,7 +26,8 @@ export default function ChangeCountryMenu() {
         };
     }, [location.events]);
 
-    // showmn
+
+     // showmn
     const [showmn, setShowmn] = useState(false);
     const showDropdown = (e) => {
         setShowmn(!showmn);
@@ -35,16 +36,15 @@ export default function ChangeCountryMenu() {
         setShowmn(false);
     }
 
-
     return (
-        <DropdownButton 
-            show={showmn}
+        <DropdownButton
+         show={showmn}
             onMouseEnter={showDropdown}
             onMouseLeave={hideDropdown} 
-        title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/ES.png" className='eps-rec' /> {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
+        title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/RU.png" className='eps-rec' /> {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
  
             <div className='curr-block px-2'>
-                <h5 className='mb-4'>Seleccione el idioma</h5>
+                <h5 className='mb-4'>Выберите язык</h5>
                 <Row className='form-row'>
                     <Col xs="6" className='mb-3'>
                         <Dropdown.Item as={Link} href="/">
@@ -57,7 +57,7 @@ export default function ChangeCountryMenu() {
                     </Col>
                     <Col xs="6" className='mb-3'>
                         <Dropdown.Item as={Link} href="/es" locale="es">
-                            <a className={'d-flex btlangst btn active'}>
+                            <a className={'d-flex btlangst btn'}>
                                 <div className='flex-grow-1'>
                                     <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/ES.png" /></div>
                                     <div>Spanish</div>
@@ -70,7 +70,7 @@ export default function ChangeCountryMenu() {
                     </Col>
                     <Col xs="6" className='mb-3'>
                         <Dropdown.Item as={Link} href="/ru" locale="ru">
-                            <a className={'d-flex btlangst btn'}>
+                            <a className={'d-flex btlangst btn active'}>
                                 <div className='flex-grow-1'>
                                     <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/RU.png" /></div>
                                     <div>Russian</div>

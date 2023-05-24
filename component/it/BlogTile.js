@@ -50,9 +50,9 @@ export default function Blog(props) {
                                   </div> 
                               </div>
                             </div>
-                            <Link href={`/es/articulos/${items.titleUrl}`}>
+                            <Link href={`/it/articolo/${items.titleUrl}`}>
                               <a className="btn btn-site ripple-effbtn btn-40">
-                                Lee mas{" "}
+                                Lee Mas{" "}
                                 <i className="bi bi-arrow-right ml-1"></i>
                               </a>
                             </Link>
@@ -84,9 +84,9 @@ export default function Blog(props) {
                                   </div>
                               </div>
                             </div>
-                            <Link href={`/es/articulos/${items.titleUrl}`}>
+                            <Link href={`/it/articolo/${items.titleUrl}`}>
                               <a className="btn btn-site ripple-effbtn btn-40">
-                                Lee mas{" "}
+                                 Lee Mas{" "}
                                 <i className="bi bi-arrow-right ml-1"></i>
                               </a>
                             </Link>
@@ -95,7 +95,7 @@ export default function Blog(props) {
                       ))}
               </Row>
             ) : (
-                <p className="text-center">No items found !</p> 
+                <p className="text-center">Nessun articolo trovato !</p> 
             )}
           </Container>
         </div>

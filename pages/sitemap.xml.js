@@ -160,10 +160,55 @@ export const getServerSideProps = async (ctx) => {
   }))
   //============ End Dynamic - Spanish (es) ============//
 
+  //================ Dynamic - Ru + It ================//
+  const ruposts = await getJsonbyPost("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "categoryName": "",
+    "siteId": "143",
+    "pageType": "ArticleRU",
+    "extraTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  }))
+
+  const itposts = await getJsonbyPost("https://cms.travomint.com/news-article/showNAdata?authcode=Trav3103s987876", JSON.stringify({
+    "id": "",
+    "title": "",
+    "titleUrl": "",
+    "content": "",
+    "description": "",
+    "keywords": "",
+    "posttime": "",
+    "status": "",
+    "heading": "",
+    "categoryName": "",
+    "siteId": "143",
+    "pageType": "ArticleIT",
+    "extraTag": "",
+    "tfnHeader": "",
+    "tfnFooter1": "",
+    "tfnFooter2": "",
+    "tfnFooter3": "",
+    "tfnPopup": ""
+  }))
+  //============== End Dynamic - Ru + It ==============//
+
+
   //============== Static ==============//
-  const staticUrl = [
-    { 'url': '', 'time': '2022-11-30T06:47:34+00:00' },
-    { 'url': "about-us", 'time': '2022-11-30T06:47:34+00:00' },
+  const staticUrl = [ 
+    { 'url': '', 'time': '2022-11-30T06:47:34+00:00' }, 
+    { 'url': "about-us", 'time': '2022-11-30T06:47:34+00:00' }, 
     { 'url': "flights", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "blog", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "contact", 'time': '2022-11-30T06:47:34+00:00' },
@@ -171,7 +216,13 @@ export const getServerSideProps = async (ctx) => {
     { 'url': "terms", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': 'news', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': 'blog', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
-    { 'url': 'flights', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' }
+    { 'url': 'flights', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
+    { 'url': 'ru', 'time': '2023-05-24T06:47:34+00:00' },
+    { 'url': "ru/o-hac", 'time': '2023-05-24T06:47:34+00:00' },
+    { 'url': 'ru/blog', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
+    { 'url': 'it', 'time': '2023-05-24T06:47:34+00:00' },
+    { 'url': "it/chi-siamo", 'time': '2023-05-24T06:47:34+00:00' },
+    { 'url': 'it/articolo', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
   ]
   const esStaticUrl = [
     { 'url': '', 'time': '2022-11-30T06:47:34+00:00' },
@@ -225,7 +276,7 @@ export const getServerSideProps = async (ctx) => {
     loc: `${baseUrl}/es/articulos/${item.titleUrl.replace('&', '&amp;')}`,
     lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
     changefreq: 'daily'
-  }));
+  })); 
   // flights
   const esFlightsSitemaps = esFlightsposts && esFlightsposts?.filter((item) => item.status === "Active").filter((item) => item.pageType === "AirlineE").map((item) => ({
     loc: `${baseUrl}/es/vuelos/${item.url.replace('&', '&amp;')}-${item.pageValue.replace('&', '&amp;')}`,
@@ -240,10 +291,23 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily'
   }));
 
+  // italian + russian
+  const ruBlogSitemaps = ruposts && ruposts?.filter((item) => item.status === "Active").map((item) => ({
+    loc: `${baseUrl}/ru/blog/${item.titleUrl.replace('&', '&amp;')}`,
+    lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
+    changefreq: 'daily'
+  }));
+  const itBlogSitemaps = itposts && itposts?.filter((item) => item.status === "Active").map((item) => ({
+    loc: `${baseUrl}/it/articolo/${item.titleUrl.replace('&', '&amp;')}`,
+    lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
+    changefreq: 'daily'
+  }));
+
   //========== Mix (en + es) ==========//
   const fields = [
     ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps, ...newsSitemaps,
-    ...esStaticSitemaps, ...esBlogSitemaps, ...esFlightsSitemaps, ...esNewsSitemaps
+    ...esStaticSitemaps, ...esBlogSitemaps, ...esFlightsSitemaps, ...esNewsSitemaps,
+    ...ruBlogSitemaps, ...itBlogSitemaps
   ];
   
   return getServerSideSitemap(ctx, fields);

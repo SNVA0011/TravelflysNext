@@ -50,7 +50,7 @@ export default function Terms() {
     
         
             <Head>
-                <title>Política de privacidad - travelflys</title>
+                <title>Política de privacidad - Travelflys</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
                 <link rel="canonical" href={'https://www.travelflys.com/es/privacidad'} />

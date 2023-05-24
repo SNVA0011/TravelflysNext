@@ -4,11 +4,12 @@ import Link from "next/link"
 export default function Footer() {
 	return (
 		<>
+
 			<section className="banner-contact">
 				<div className="container">
 					<div className="banner-inner">
-						<h2>Look forward to going to the Best Flight. Every single time we Provied.</h2>
-						<a href="tel:+1 (802)-341-3448" target="_blank" className="btn">Contact Us</a>
+						<h2>Speriamo di andare al miglior volo. Ogni volta che forniamo.</h2>
+						<a href="tel:+1 (802)-909-0003" target="_blank" className="btn">Contattaci</a>
 					</div>
 				</div>
 			</section>
@@ -18,52 +19,44 @@ export default function Footer() {
 						<div className="row">
 							<div className="col-lg-3">
 								<div className="footer__top__info">
-									<Link href="/">
-										<a className="footer__top__info__logo"><img src='/images/logo-white.svg' alt='logo' /></a>
+									<Link href="/it">
+										<a className="footer__top__info__logo">
+											<img src='/images/logo-white.svg' alt='no-image-found' />
+										</a>
 									</Link>
+
 									<p className="footer__top__info__desc">
-										Air Travel can be a necessity or a leisure activity depending upon the passenger. However, in the whole process, the protagonist of the story is the passenger or the customer itself, and
-										keeping the passenger happy is what matters the most.  <Link href="/about-us"><a className="rdmore-fotter">Read more</a></Link>
+										Viaggiare non è solo visitare la città, si tratta di esplorare nuovi posti, godersi la natura per realizzare il sogno e vivere un'esperienza indimenticabile.
+										 <Link href="/it/chi-siamo"><a className="rdmore-fotter">Per saperne di più</a></Link>
 									</p>
 								</div>
 							</div>
 							<div className="col-lg-3">
 								<aside className="footer__top__nav">
-									<h3>Company</h3>
+									<h3>Attività commerciale</h3>
 									<ul>
-										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/about-us">About Us</Link></li>
-										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/news">News</Link></li>
-										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/flights">Flight</Link></li>
-										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/blog">Blog</Link></li>
-										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/contact">Contact</Link></li>
-			 
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/it/chi-siamo">Chi Siamo</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/it/articolo"  >Articolo</Link></li>
+
 										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/"><a>Home</a></Link></li>
-										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es"><a>Casa</a></Link></li>
+										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/it"><a>Casa</a></Link></li>
 										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/ru"><a>дом</a></Link></li>
 										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/it"><a>casa</a></Link></li>
 									</ul>
 								</aside>
 							</div>
 							<div className="col-lg-3">
-								<aside className="footer__top__nav">
-									<h3>Support</h3>
-									<ul>
-										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/privacy">Privacy Policy</Link></li>
-										<li><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/terms">Terms and Condition</Link></li>
-										{/* <li><Link href="/site-map">Sitemap</Link></li> */}
 
-									</ul>
-								</aside>
 							</div>
 							<div className="col-lg-3">
 								<aside className="footer__top__nav footer__top__nav--contact">
-									<h3>Contact Us</h3>
-									<p><i className="bi bi-envelope-fill mr-1"></i> Email: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
+									<h3>Contattaci</h3>
+									<p><i className="bi bi-envelope-fill mr-1"></i> E-mail: <a href="mailto:support@travelflys.com" className="__cf_email__" data-cfemail="">support@travelflys.com</a></p>
 									{/* <p>Phone: 1 (00) 832 2342</p> */}
 
 									<hr className="siguenos"></hr>
 									<div className="w-100">
-										<span className="pt-1 mb-2 d-block text-light  follow-usfotter">Follow Us</span>
+										<span className="pt-1 mb-2 d-block text-light  follow-usfotter">Seguici</span>
 										<ul>
 											<li className="facebook">
 												<a target='_blank' title="Facebook" href="https://www.facebook.com/travelflys">
@@ -88,29 +81,26 @@ export default function Footer() {
 										</ul>
 									</div>
 
-
 								</aside>
 							</div>
 						</div>
 					</div>
-
 				</div>
+
 				<div className="footer-disclaimer">
 					<div className="container">
-						<b>Disclaimer:-</b> Travelflys is a third-party travel booking website, and we
-						are not associated with any airlines directly or indirectly. Our main
-						aim is to offer smooth travel services to the customers who are in
-						search of it. In case you have any query or want to ask any questions
-						related to our services, you can contact us directly.
+						<b>Disclaimer:-</b> Travelflys è un sito Web di prenotazione di viaggi di terze parti e noi
+						Non sono associati ad alcuna compagnia aerea direttamente o indirettamente. il nostro principale
+						L'obiettivo è offrire servizi di viaggio senza soluzione di continuità ai clienti che si trovano in
+						cercalo. Nel caso in cui abbiate dei dubbi o vogliate fare una domanda
+						relativi ai nostri servizi, potete contattarci direttamente.
 					</div>
 				</div>
 
 
 				<div className="footer__bottom footer__top__nav footer__top__nav--contact d-flex justify-content-between flex-wrap align-items-center flex-md-row-reverse">
 					<div className="container">
-
-						<p className="footer__bottom__copyright  flex-grow-1">{new Date().getFullYear()} © <Link href="/">Travelflys</Link>. All rights reserved.</p>
-
+						<p className="footer__bottom__copyright flex-grow-1 order-lg-2">2022 © <Link href="/it/">Travelflys</Link>. Tutti i diritti riservati.</p>
 					</div>
 				</div>
 			</footer>

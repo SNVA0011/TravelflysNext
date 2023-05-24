@@ -26,7 +26,7 @@ export default function Airline(props) {
 
       <div className='text-center full-w my-5 py-5'>
         <div className="spinner-border text-secondary mr-2" role="status">
-        </div>  Loading...
+        </div> 
       </div>
 
       <Footer />

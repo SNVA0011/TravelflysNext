@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
-  const lang = pathname.startsWith("/es") ? "es" : "en";
+  const lang = pathname.startsWith("/es") ? "es" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/it") ? "it" : "en";
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);

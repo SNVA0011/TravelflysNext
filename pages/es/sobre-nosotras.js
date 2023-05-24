@@ -53,7 +53,7 @@ export default function AboutUs() {
 
 
             <Head>
-                <title>sobre nosotras - travelflys</title>
+                <title>sobre nosotras - Travelflys</title>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
                 <link rel="canonical" href={'https://www.travelflys.com/es/sobre-nosotras'} />

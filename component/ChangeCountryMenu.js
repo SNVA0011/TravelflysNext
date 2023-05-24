@@ -26,80 +26,79 @@ export default function ChangeCountryMenu() {
         };
     }, [location.events]);
 
+    // showmn
+    const [showmn, setShowmn] = useState(false);
+    const showDropdown = (e) => {
+        setShowmn(!showmn);
+    }
+    const hideDropdown = e => {
+        setShowmn(false);
+    }
+
+
     return (
-        <DropdownButton title={<><span> {lang} </span> </>} variant="outline-secondary"  className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
+        <DropdownButton 
+            show={showmn}
+            onMouseEnter={showDropdown}
+            onMouseLeave={hideDropdown} 
+        title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" className='eps-rec' />  {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
             <div className='curr-block px-2'>
-                <h5 className='mb-3'>Select Language</h5>
-                {loadingpage ?
-                <div className='text-center py-4'>
-                <div className="spinner-border text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-              </div>
-                    :
-                    <Row>
-                        <Col xs="12" md="12" className='mb-2'>
-                            <Dropdown.Item as={Link} href="/">
-                                <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item active'}>
-                                    <span>English</span>
-                                </a>
-                            </Dropdown.Item>
-                        </Col>
-                        <Col xs="12" md="12">
-                            <Dropdown.Item as={Link} href="/es" locale="es">
-                                <a className={'btn btn-site ripple-effbtn btn-40 btn-block text-center dropdown-item bg-secondary'}>
-                                    <span>Spanish</span>
-                                </a>
-                            </Dropdown.Item>
-                        </Col>
-                    </Row>
-                }
+                <h5 className='mb-4'>Select Language</h5>
+                <Row className='form-row'>
+                    <Col xs="6" className='mb-3'>
+                        <Dropdown.Item as={Link} href="/">
+                            <a className={'btlangst btn active'}>
+                                <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" /></div>
+                                <div>English</div>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </a>
+                        </Dropdown.Item>
+                    </Col>
+                    <Col xs="6" className='mb-3'>
+                        <Dropdown.Item as={Link} href="/es" locale="es">
+                            <a className={'d-flex btlangst btn'}>
+                                <div className='flex-grow-1'>
+                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/ES.png" /></div>
+                                    <div>Spanish</div>
+                                </div> 
+                                <div>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                            </a>
+                        </Dropdown.Item>
+                    </Col>
+                    <Col xs="6" className='mb-3'>
+                        <Dropdown.Item as={Link} href="/ru" locale="ru">
+                            <a className={'d-flex btlangst btn'}>
+                                <div className='flex-grow-1'>
+                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/RU.png" /></div>
+                                    <div>Russian</div>
+                                </div>
+
+                                <div>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                            </a>
+                        </Dropdown.Item>
+                    </Col>
+                    <Col xs="6" className='mb-3'>
+                        <Dropdown.Item as={Link} href="/it" locale="it">
+                            <a className={'d-flex btlangst btn'}>
+                                <div className='flex-grow-1'>
+                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/IT.png" /></div>
+                                    <div>Italian</div>
+                                </div>
+
+                                <div>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                            </a>
+                        </Dropdown.Item>
+                    </Col>
+                </Row>
             </div>
 
-
-            {/* <Dropdown.Divider className='my-3'/>
-        <div className='curr-block'>
-        <h5>Select Currency</h5>
-     
-      <Row className='selcur-rew'>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('USD')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='USD flg'></b>
-                    USD</span></Dropdown.Item>
-                </Col>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('INR')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='INR flg'></b>
-                    INR</span></Dropdown.Item>
-                </Col>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('AUD')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='AUD flg'></b>
-                    AUD</span></Dropdown.Item>
-                </Col>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('GBP')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='GBP flg'></b>
-                    GBP</span></Dropdown.Item>
-                </Col>
-    
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('AED')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='AED flg'></b>
-                    AED</span></Dropdown.Item>
-                </Col>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('EUR')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='EUR flg'></b>
-                    EUR</span></Dropdown.Item>
-                </Col>
-                <Col xs="6" md="3">
-                <Dropdown.Item onClick={(e)=>{setCurr('CA')}}  className='btn btn-site whitebt ripple-effbtn btn-40 btn-block text-center'><span>
-                    <b className='CA flg'></b>
-                    CA</span></Dropdown.Item>
-                </Col>
-            </Row>  
-        </div> */}
+ 
         </DropdownButton>
     )
 }

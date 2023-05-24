@@ -48,7 +48,7 @@ export default function Detail(props, router) {
 
       <div className='text-center full-w my-5 py-5'>
         <div className="spinner-border text-secondary mr-2" role="status">
-        </div>  Loading...
+        </div>  
       </div>
 
       <Footer />
@@ -142,7 +142,7 @@ export default function Detail(props, router) {
                                 className="spinner-border text-secondary"
                                 role="status"
                               >
-                                <span className="sr-only">Loading...</span>
+                                <span className="sr-only"></span>
                               </div>
                             </div>
                           ) : props.singleblog[0].content === "" ? (
@@ -176,7 +176,7 @@ export default function Detail(props, router) {
                         {props.allblog?.length > 0 ? (
                           <ul>
                             {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
-                              <li>
+                              <li key={i}>
                                 <div className="text-left float-left">
                                   <span className="count-s">{i + 1}</span>
                                 </div>
@@ -206,7 +206,7 @@ export default function Detail(props, router) {
                             ))}
                           </ul>
                         ) : (
-                          "No items found !"
+                          <p className="text-center">No items found !</p>  
                         )}
                       </div>
                     </aside>
