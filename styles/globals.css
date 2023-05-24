@@ -2845,12 +2845,12 @@ p.phone_number a:hover {
   cursor: pointer; 
 }
 .star-select .bi:hover span {
-  opacity: 1;
-  transform: translate(-50%, 0);
+  opacity: 1; 
 }
 .star-select .bi span {
   position: absolute;
-  left: 50%;
+  left: -5px;
+  right: auto;
   bottom: 100%;
   opacity: 0;
   margin-bottom: 1em;
@@ -2861,12 +2861,7 @@ p.phone_number a:hover {
   text-align: left;
   white-space: nowrap;
   border-radius: 6px;
-  font-weight: 500;
-  transform: translate(-50%, 1em);
-  -o-transform: translate(-50%, 1em);
-  -moz-transform: translate(-50%, 1em);
-  -webkit-transform: translate(-50%, 1em);
-  -ms-transform: translate(-50%, 1em); 
+  font-weight: 500; 
   transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
   -webkit-transition: all 0.15s ease-in-out;
@@ -2879,7 +2874,7 @@ p.phone_number a:hover {
   content: '';
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: 14px;
   width: 0;
   height: 0;
   border: 0.5em solid transparent;
