@@ -90,7 +90,9 @@ export default function Airline(props) {
                 <div className="container">
                   <div className="page-title__content">
                     <div className="page-title__name">Flight Detail</div>
-                    <p className="page-title__slogan">{props.singleflight[0].metaTitle}</p>
+                    <p className="page-title__slogan" dangerouslySetInnerHTML={{
+                      __html: props.singleflight[0].metaTitle
+                    }}></p> 
                   </div>
                 </div>
                 <BreadHero linkhtml={<>

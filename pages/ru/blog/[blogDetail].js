@@ -249,10 +249,10 @@ export default function BlogDetails(props, router) {
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
               <div className="container">
                 <div className="page-title__content">
-                  <div className="page-title__name">подробности блога</div>
-                  <p className="page-title__slogan">
-                    {loading ? "loading..." : props.singleblog[0].heading}
-                  </p>
+                  <div className="page-title__name">подробности блога</div> 
+                  <p className="page-title__slogan" dangerouslySetInnerHTML={{
+                    __html: props.singleblog[0].heading
+                  }}></p>
                 </div>
               </div>
 
@@ -329,7 +329,9 @@ export default function BlogDetails(props, router) {
                                   <div className="overflow-hidden">
                                     <Link href={`/ru/blog/${items.titleUrl}`}>
                                       <a className={location.asPath === "/ru/blog/" + items.titleUrl ? "active" : "not-active"} >
-                                        {items.title}
+                        
+                                        <span className="d-block" dangerouslySetInnerHTML={{ __html: items.title }}></span>
+
                                       </a>
                                     </Link>
                                     <ul className="post__category p-0 m-0">

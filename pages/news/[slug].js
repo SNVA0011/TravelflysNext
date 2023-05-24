@@ -102,10 +102,10 @@ export default function Detail(props, router) {
             <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center ">
               <div className="container">
                 <div className="page-title__content">
-                  <div className="page-title__name">News Details</div>
-                  <p className="page-title__slogan">
-                    {loading ? "loading..." : props.singleblog[0].heading}
-                  </p>
+                  <div className="page-title__name">News Details</div> 
+                  <p className="page-title__slogan" dangerouslySetInnerHTML={{
+                    __html: props.singleblog[0].heading
+                  }}></p>
                 </div>
               </div>
               <BreadHero
@@ -190,7 +190,9 @@ export default function Detail(props, router) {
                                           : "not-active"
                                       }
                                     >
-                                      {items.title}
+               
+                                      <span className="d-block" dangerouslySetInnerHTML={{ __html: items.title }}></span>
+
                                     </a>
                                   </Link>
                                   <ul className="post__category p-0 m-0">

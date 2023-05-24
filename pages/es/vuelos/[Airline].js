@@ -90,9 +90,9 @@ export default function Airline(props) {
               <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <div className="page-title__name">  Detalles del vuelo </div>
-                    <p className="page-title__slogan">{props.singleflight[0].metaTitle}</p>
-
+                    <div className="page-title__name">  Detalles del vuelo </div> 
+                    <p className="page-title__slogan" dangerouslySetInnerHTML={{
+                      __html: props.singleflight[0].metaTitle }}></p>
                   </div>
                 </div>
 
