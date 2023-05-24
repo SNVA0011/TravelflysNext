@@ -165,6 +165,13 @@ export default function BlogDetails(props, router) {
   }, []);
 
 
+  function decode(str) { 
+    let txt = new DOMParser().parseFromString(str, "text/html"); 
+    return txt.documentElement.textContent;
+
+  }
+
+
 
     // isFallback
   if (location.isFallback) {
@@ -188,9 +195,9 @@ export default function BlogDetails(props, router) {
       {props.singleblog?.length > 0 ? (
   <div className="blogdt-single">
           <Head>
-            <title>{props.singleblog[0].title}</title>
-            <meta name="description" content={props.singleblog[0].description} />
-            <meta name="keywords" content={props.singleblog[0].keywords} />
+            <title>{decode(props.singleblog[0].title)}</title>
+            <meta name="description" content={decode(props.singleblog[0].description)} />
+            <meta name="keywords" content={decode(props.singleblog[0].keywords)} />
             <link
               rel="canonical"
               href={
