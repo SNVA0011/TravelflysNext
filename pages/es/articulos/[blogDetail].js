@@ -186,7 +186,7 @@ export default function BlogDetails(props, router) {
     <>
 
       {props.singleblog?.length > 0 ? (
-        <div className={props.singleblog[0].tfnHeader ? "blogdt-single" : ""}>
+        <div className="blogdt-single">
           <Head>
             <title>{props.singleblog[0].title}</title>
             <meta name="description" content={props.singleblog[0].description} />

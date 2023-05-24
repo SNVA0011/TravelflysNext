@@ -201,7 +201,7 @@ export default function BlogDetails(props, router) {
             />
           </Head>
 
-          <div className={props.singleblog[0].tfnHeader ? "blogdt-single" : ""}>
+          <div className="blogdt-single">
             <div className="call-header d-none d-md-block">
               <Container>
                 {props.singleblog[0].tfnHeader ?
