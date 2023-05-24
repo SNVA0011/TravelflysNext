@@ -165,10 +165,9 @@ export default function BlogDetails(props, router) {
   }, []);
 
 
-  function decode(str) { 
+  const decode = (str) => {
     let txt = new DOMParser().parseFromString(str, "text/html"); 
-    return txt.documentElement.textContent;
-
+    return txt.documentElement.textContent; 
   }
 
 
