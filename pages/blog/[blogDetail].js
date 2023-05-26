@@ -12,10 +12,10 @@ import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
 import CallUkToast from "../../component/CallUkToast";
+import { getIp } from "../../utils/getip";
 
 export default function BlogDetails(props, router) {
   const location = useRouter();
-
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -131,7 +131,7 @@ export default function BlogDetails(props, router) {
   const [isLoading, setLoadingIp] = useState(false);
   useEffect(async () => {
     setLoadingIp(true);
-    await fetch("http://stest2.hunterwave.com/ipaddress").then((res) => res.json()).then(async (data) => {
+    await fetch(getIp).then((res) => res.json()).then(async (data) => {
       const reqopt = {
         method: "POST",
         body: JSON.stringify({

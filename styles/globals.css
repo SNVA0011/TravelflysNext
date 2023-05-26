@@ -361,7 +361,7 @@
     margin-right: 5px;
     vertical-align: middle;
     display: inline-block;
-    margin-top: -5px;
+    margin-top: -3px;
     margin-left: -12px;
     border-radius: 5px;
     border: solid 1px #efefef;
@@ -391,7 +391,7 @@
     min-height: 52px;
     color: #6c6f78; 
     border: solid 2px #f9f9f9;
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     position: relative;
     font-weight: 400;
