@@ -25,23 +25,11 @@ export default function ChangeCountryMenu() {
             location.events.off('routeChangeError', () => setLoading(false));
         };
     }, [location.events]);
-
-    // showmn
-    const [showmn, setShowmn] = useState(false);
-    const showDropdown = (e) => {
-        setShowmn(!showmn);
-    }
-    const hideDropdown = e => {
-        setShowmn(false);
-    }
+ 
 
 
     return (
-        <DropdownButton 
-            show={showmn}
-            onMouseEnter={showDropdown}
-            onMouseLeave={hideDropdown} 
-        title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" className='eps-rec' />  {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
+        <DropdownButton title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" className='eps-rec' />  {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
             <div className='curr-block px-2'>
                 <h5 className='mb-4'>Select Language</h5>
                 <Row className='form-row'>
