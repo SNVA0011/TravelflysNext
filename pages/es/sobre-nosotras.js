@@ -17,6 +17,15 @@ export default function AboutUs() {
     }, []);
 
     return (
+        
+       <>
+        <Head>
+        <title>sobre nosotras - Travelflys</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/es/sobre-nosotras'} />
+    </Head>
+    
         <div className='blogdt-single'>
 
             <div className="call-header d-none d-md-block">
@@ -52,12 +61,6 @@ export default function AboutUs() {
             </a>
 
 
-            <Head>
-                <title>sobre nosotras - Travelflys</title>
-                <meta name="description" content="" />
-                <meta name="keywords" content="" />
-                <link rel="canonical" href={'https://www.travelflys.com/es/sobre-nosotras'} />
-            </Head>
 
             <Header />
 
@@ -120,5 +123,6 @@ export default function AboutUs() {
 
             <Footer />
         </div>
+       </>
     );
 }

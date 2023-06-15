@@ -14,41 +14,7 @@ export default function News(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div className='blogdt-single'>
-
-      <div className="call-header d-none d-md-block">
-        <div className="container">
-          <a href="tel:+1 (802)-909-0003" className="footer-number-md">
-            <i className="bi bi-telephone mr-2"></i>
-            <div className="tfn-no d-inline-block">(USA) <span>+1 (802)-909-0003</span>
-            </div>
-          </a>
-          <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
-            <i className="bi bi-telephone mr-2"></i>
-            <div className="tfn-no d-inline-block">
-              (UK) <span>+44 (20) 37693132</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-
-      {/*------- CallUkToast -------*/}
-      <CallUkToast />
-      {/*----- end CallUkToast -----*/}
-
-      <a href="tel:+1 (802)-909-0003" className="footer-number-md">
-        <div className="tfn-no">
-          <p>
-            <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
-          </p>
-          <span>
-            <i className="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
-          </span>
-        </div>
-      </a>
-
-
+    <>
       <Head>
         <title>Noticias de viajes - Travelflys</title>
         <meta name="description" content="" />
@@ -56,34 +22,72 @@ export default function News(props) {
         <link rel="canonical" href={'https://www.travelflys.com/es/noticias/'} />
       </Head>
 
-      <Header />
+      <div className='blogdt-single'>
 
-      <div className='blogadda'>
-
-        <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center" >
+        <div className="call-header d-none d-md-block">
           <div className="container">
-            <div className="page-title__content">
-              <h1 className="page-title__name">Noticias </h1>
-              <p className="page-title__slogan">Haciendo que viajar sea fácil</p>
-            </div>
+            <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+              <i className="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">(USA) <span>+1 (802)-909-0003</span>
+              </div>
+            </a>
+            <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+              <i className="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">
+                (UK) <span>+44 (20) 37693132</span>
+              </div>
+            </a>
           </div>
-          <BreadHero linkhtml={<><ul className="bradcum container">
-            <li><Link href="/es/">Casa</Link></li>
-            <li className='mr-2'>/</li>
-            <li aria-current="page">Noticias</li>
-          </ul>
-          </>} />
         </div>
 
 
-        <div className='popular-destination blogaddalist full-w'>
-          <NewsTile allbloglist={props.allbloglist} />
+        {/*------- CallUkToast -------*/}
+        <CallUkToast />
+        {/*----- end CallUkToast -----*/}
+
+        <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+          <div className="tfn-no">
+            <p>
+              <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+            </p>
+            <span>
+              <i className="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
+            </span>
+          </div>
+        </a>
+
+
+
+
+        <Header />
+
+        <div className='blogadda'>
+
+          <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center" >
+            <div className="container">
+              <div className="page-title__content">
+                <h1 className="page-title__name">Noticias </h1>
+                <p className="page-title__slogan">Haciendo que viajar sea fácil</p>
+              </div>
+            </div>
+            <BreadHero linkhtml={<><ul className="bradcum container">
+              <li><Link href="/es/">Casa</Link></li>
+              <li className='mr-2'>/</li>
+              <li aria-current="page">Noticias</li>
+            </ul>
+            </>} />
+          </div>
+
+
+          <div className='popular-destination blogaddalist full-w'>
+            <NewsTile allbloglist={props.allbloglist} />
+          </div>
+
         </div>
 
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </>
 
 
   )

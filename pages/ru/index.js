@@ -1,4 +1,4 @@
-import Head from 'next/head' 
+import Head from 'next/head'
 import Enginebox from '../../component/ru/Enginebox'
 import Footer from '../../component/ru/Footer'
 import Header from '../../component/ru/Navbar'
@@ -7,29 +7,28 @@ import Link from "next/link"
 
 export default function Home(props) {
   return (
-    <div className='homepage'>
-
-      <Head>
-      <title>Путешествие летит | Бронируйте дешевые авиабилеты и арендуйте автомобили</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.travelflys.com/ru/'} />
-        <link rel="alternate" href={'https://www.travelflys.com/ru/'} />
-      </Head>
-
-
+  <>
+  <Head>
+    <title>Забронировать дешевые авиабилеты | Бронирование рейсов | бронирование авиабилетов | Трэвелфлай</title>
+    <meta name="description" content="Покупка авиабилетов онлайн доступна на Travelflys. Получайте регулярные обновления статуса рейса и невероятные предложения и скидки при бронировании недорогих рейсов." />
+    <meta name="keywords" content="Бронирование дешевых авиабилетов онлайн, дешевое бронирование авиабилетов, дешевые авиабилеты онлайн, бронирование авиакомпаний онлайн, бронирование авиабилетов, туристическое агентство Travelflys" />
+    <link rel="canonical" href={'https://www.travelflys.com/ru/'} />
+    <link rel="alternate" href={'https://www.travelflys.com/ru/'} />
+  </Head>
+  
+    <div className='homepage'> 
       <Header />
 
       <div className='business-main'>
         <main id="main" className="site-main overflow">
           <Enginebox />
- 
+
 
           <div className="blogs border-0">
             <div className="container p-0">
               <h2 className="title title-border-bottom align-center offset-item animate">из нашего блога</h2>
               <div className="news__content offset-item animate">
-                <BlogTile allbloglist={props.allbloglist} showitem={3}  nulltopsp='true' />
+                <BlogTile allbloglist={props.allbloglist} showitem={3} nulltopsp='true' />
                 <div className="align-center button-wrap mt-4">
                   <Link href={`/ru/blog`}>
                     <a className="btn btn-border btn-lg-readmore">
@@ -49,7 +48,7 @@ export default function Home(props) {
       <Footer />
 
     </div>
-
+  </>
   )
 }
 

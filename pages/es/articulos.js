@@ -12,6 +12,18 @@ export default function Blog(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
+ <>
+        
+        <Head>
+    <title>Artículos</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link
+      rel="canonical"
+      href={'https://www.travelflys.com/es/articulos'}
+    />
+  </Head>
+  
     <div className='blogdt-single'>
 
 <div className="call-header d-none d-md-block">
@@ -47,16 +59,7 @@ export default function Blog(props) {
         </div>
       </a>
 
-    
-      <Head>
-        <title>Artículos</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link
-          rel="canonical"
-          href={'https://www.travelflys.com/es/articulos'}
-        />
-      </Head>
+
 
       <Header />
 
@@ -90,6 +93,7 @@ export default function Blog(props) {
 
       <Footer />
     </div>
+ </>
   )
 }
 

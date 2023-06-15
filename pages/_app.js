@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
   }, [lang]);
   return (
     <>
-      <Head></Head> 
       <Component {...pageProps} />
     </>
   )

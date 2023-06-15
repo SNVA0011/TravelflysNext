@@ -16,6 +16,16 @@ export default function Flights(props) {
   }, [])
 
   return (
+
+        
+ <>
+    <Head>
+    <title>Vuelos</title>
+    <meta name="description" content="Get Latest information about Airlines, holiday packages, flight tickets booking deals and the airlines latest policies through our blog." />
+    <meta name="keywords" content="last minute flights, Flight booking online, cheap airlines ticket booking, cheap flight tickets, airlines reservations online, airlines reservations, Flight booking, Airline Tickets, Travel Agency" />
+    <link rel="canonical" href={'https://www.travelflys.com/es/vuelos'} />
+  </Head>
+  
     <div className='blogdt-single'>
 
 <div className="call-header d-none d-md-block">
@@ -50,13 +60,7 @@ export default function Flights(props) {
         </div>
       </a>
 
-    
-      <Head>
-        <title>Vuelos</title>
-        <meta name="description" content="Get Latest information about Airlines, holiday packages, flight tickets booking deals and the airlines latest policies through our blog." />
-        <meta name="keywords" content="last minute flights, Flight booking online, cheap airlines ticket booking, cheap flight tickets, airlines reservations online, airlines reservations, Flight booking, Airline Tickets, Travel Agency" />
-        <link rel="canonical" href={'https://www.travelflys.com/es/vuelos'} />
-      </Head>
+
 
       <Header />
 
@@ -149,6 +153,7 @@ export default function Flights(props) {
       <Footer />
 
     </div>
+ </>
   )
 }
 

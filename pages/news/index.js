@@ -14,6 +14,16 @@ export default function News(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
+    
+ <>
+ 
+ <Head>
+    <title>Travel News - Travelflys</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href={'https://www.travelflys.com/news'} />
+  </Head>
+  
     <div className='blogdt-single'>
 
       <div className="call-header d-none d-md-block">
@@ -49,12 +59,6 @@ export default function News(props) {
       </a>
 
 
-      <Head>
-        <title>Travel News - Travelflys</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.travelflys.com/news'} />
-      </Head>
 
       <Header />
 
@@ -84,6 +88,7 @@ export default function News(props) {
 
       <Footer />
     </div>
+ </>
 
 
   )

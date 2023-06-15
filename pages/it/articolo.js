@@ -14,8 +14,8 @@ export default function Blog(props) {
   return (
     <>
       <Head>
-        <title>Articolo</title>
-        <meta name="description" content="" />
+        <title>Storie di viaggio - Il sito web di viaggi Travelflys</title>
+        <meta name="description" content="Per trovare maggiori informazioni su luoghi in tutto il mondo, notizie di viaggio, esperienze di viaggio e idee e consigli per viaggi economici, fai clic sul blog di Travelflys." />
         <meta name="keywords" content="" />
         <link
           rel="canonical"

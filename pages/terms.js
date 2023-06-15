@@ -15,6 +15,15 @@ export default function Terms() {
         window.scrollTo(0, 0)
     }, [])
     return (
+   <>
+          
+          <Head>
+        <title>Terms And Conditions - Travelflys</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/terms'} />
+    </Head>
+    
         <div className='blogdt-single'>
 
         <div className="call-header d-none d-md-block">
@@ -49,13 +58,7 @@ export default function Terms() {
         </div>
       </a>
     
-        
-            <Head>
-                <title>Terms And Conditions - Travelflys</title>
-                <meta name="description" content="" />
-                <meta name="keywords" content="" />
-                <link rel="canonical" href={'https://www.travelflys.com/terms'} />
-            </Head>
+      
 
             <Header />
 
@@ -113,5 +116,6 @@ export default function Terms() {
 
             <Footer />
         </div>
+   </>
     )
 }

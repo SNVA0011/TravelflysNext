@@ -8,16 +8,17 @@ import Link from "next/link"
 
 export default function Home(props) {
   return (
-    <div className='homepage'>
-
-      <Head>
-        <title>Travelflys | Travel Agency | Flight Booking | Ticket cancellation | Online Reservation</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.travelflys.com/'} />
-        <link rel="alternate" href={'https://www.travelflys.com/'} />
-      </Head>
-
+  <>
+  
+  <Head>
+    <title>Travelflys | Travel Agency | Flight Booking | Ticket cancellation | Online Reservation</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href={'https://www.travelflys.com/'} />
+    <link rel="alternate" href={'https://www.travelflys.com/'} />
+  </Head>
+  
+    <div className='homepage'> 
 
       <Header />
 
@@ -51,7 +52,7 @@ export default function Home(props) {
       <Footer />
 
     </div>
-
+  </>
   )
 }
 

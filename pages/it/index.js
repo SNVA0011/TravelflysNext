@@ -10,12 +10,14 @@ export default function Home(props) {
 <>
 
       <Head>
-        <title>Il viaggio vola | Prenota biglietti aerei a basso costo e auto a noleggio</title>
-        <meta name="description" content="" />
+        <title>Prenotazione volo | Trova voli economici e biglietti aerei | prenotazioni di biglietti aerei</title>
+        <meta name="description" content="Travelflys ha imparato ad offrire assistenza clienti ai passeggeri in ogni possibilità. come il libro di volo, il rimborso, il calcolo, le prenotazioni online ecc." />
         <meta name="keywords" content="" />
         <link rel="canonical" href={'https://www.travelflys.com/it/'} />
         <link rel="alternate" href={'https://www.travelflys.com/it/'} />
       </Head>
+
+      
       <div className='homepage'>
 
         <Header />

@@ -11,6 +11,15 @@ export default function ContactUs() {
     window.scrollTo(0, 0)
   }, [])
   return (
+       
+<>
+<Head>
+    <title>Contact us - Travelflys</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href={'https://www.travelflys.com/contact'} />
+  </Head>
+  
     <div className='blogdt-single'>
 
     <div className="call-header d-none d-md-block">
@@ -45,13 +54,7 @@ export default function ContactUs() {
         </div>
       </a>
 
-    
-      <Head>
-        <title>Contact us - Travelflys</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.travelflys.com/contact'} />
-      </Head>
+ 
 
       <Header />
 
@@ -158,5 +161,6 @@ export default function ContactUs() {
 
       <Footer />
     </div>
+</>
   )
 }

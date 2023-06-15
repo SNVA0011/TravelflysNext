@@ -8,16 +8,20 @@ import Link from "next/link"
 
 export default function Home(props) {
   return (
+
+  <>
+    <Head>
+    <title>Moscas de viaje | Reserve boletos de vuelos con tarifas bajas y autos de alquiler</title>
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <link rel="canonical" href={'https://www.travelflys.com/es/'} />
+      <link rel="alternate" href={'https://www.travelflys.com/es/'} />
+    </Head>
+
+
     <div className='homepage'>
 
-      <Head>
-      <title>Moscas de viaje | Reserve boletos de vuelos con tarifas bajas y autos de alquiler</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href={'https://www.travelflys.com/es/'} />
-        <link rel="alternate" href={'https://www.travelflys.com/es/'} />
-      </Head>
-
+  
 
       <Header />
 
@@ -51,6 +55,7 @@ export default function Home(props) {
       <Footer />
 
     </div>
+  </>
 
   )
 }

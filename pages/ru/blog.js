@@ -12,21 +12,16 @@ export default function Blog(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
+    <>
+    <Head>
+    <title>Блог | Последние новости о бронировании рейсов — Travelflys</title>
+    <meta name="description" content="Получите актуальную информацию о правилах авиакомпаний и билетах со скидкой." />
+    <meta name="keywords" content="Бронирование дешевых авиабилетов онлайн, дешевое бронирование авиабилетов, дешевые авиабилеты онлайн, бронирование авиакомпаний онлайн, бронирование авиабилетов, туристическое агентство Travelflys" />
+    <link rel="canonical" href={'https://www.travelflys.com/ru/blog'} />
+  </Head>
+
+
     <div className='blogdt-single'>
-
-
-      <Head>
-        <title>Статьи</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link
-          rel="canonical"
-          href={'https://www.travelflys.com/ru/blog'}
-        />
-      </Head>
-
-
-
       <div className="call-header d-none d-md-block">
         <div className="container">
           <a href="tel:+1 (802)-909-0003" className="footer-number-md">
@@ -94,6 +89,7 @@ export default function Blog(props) {
 
       <Footer />
     </div>
+    </>
   )
 }
 

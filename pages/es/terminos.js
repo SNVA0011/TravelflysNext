@@ -15,6 +15,14 @@ export default function Terms() {
         window.scrollTo(0, 0)
     }, [])
     return (
+     <>
+        <Head>
+        <title>Términos y condiciones - Travelflys</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="canonical" href={'https://www.travelflys.com/es/terminos'} />
+    </Head>
+    
         <div className='blogdt-single'>
 
 <div className="call-header d-none d-md-block">
@@ -50,12 +58,7 @@ export default function Terms() {
       </a>
     
         
-            <Head>
-                <title>Términos y condiciones - Travelflys</title>
-                <meta name="description" content="" />
-                <meta name="keywords" content="" />
-                <link rel="canonical" href={'https://www.travelflys.com/es/terminos'} />
-            </Head>
+          
 
             <Header />
 
@@ -111,5 +114,6 @@ export default function Terms() {
 
             <Footer />
         </div>
+     </>
     )
 }

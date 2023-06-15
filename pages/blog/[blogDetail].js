@@ -178,15 +178,15 @@ export default function BlogDetails(props, router) {
     <>
 
       {props.singleblog?.length > 0 ? (
+          <>
+           <Head>
+           <title>{props.singleblog[0].title}</title>
+           <meta name="description" content={props.singleblog[0].description} />
+           <meta name="keywords" content={props.singleblog[0].keywords} />
+           <link rel="canonical" href={"https://www.travelflys.com/blog/" + props.singleblog[0].titleUrl} />
+         </Head>
+
         <div className="blogdt-single">
-          <Head>
-            <title>{props.singleblog[0].title}</title>
-            <meta name="description" content={props.singleblog[0].description} />
-            <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link rel="canonical" href={"https://www.travelflys.com/blog/" + props.singleblog[0].titleUrl} />
-          </Head>
-
-
           <div className="call-header d-none d-md-block">
             <Container>
               {props.singleblog[0].tfnHeader ?
@@ -542,6 +542,7 @@ export default function BlogDetails(props, router) {
 
           <Footer />
         </div>
+          </>
       ) : (
         <>
           <Header />

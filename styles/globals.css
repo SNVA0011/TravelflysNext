@@ -302,7 +302,7 @@
  .site-header .dropdown-item.active, .site-header .dropdown-item:active { color: #fff; text-decoration: none; background-color: #01567e; }
  .site-header .dropdown-toggle { 
     background-color: #ffffff !important;
-    border-color: rgb(199 199 199 / 30%) !important;
+    border-color: rgb(199 199 199 / 50%) !important;
     color: #000000 !important;
     font-weight: 600;
     border-radius: 11px;
