@@ -2920,7 +2920,7 @@ p.phone_number a:hover {
   -webkit-transform: rotate(44deg);
   border-bottom: 0.8rem solid #5fa735;
   left: -0.4rem;
-  top: -0.4rem;
+  top:-0.35rem;
 }
 .comments-list { 
   border: solid 1px #e2e2e2;

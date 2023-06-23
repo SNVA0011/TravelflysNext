@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Footer from '../../component/ru/Footer'
-import Header from '../../component/ru/Navbar'
+import Footer from '../../../component/ru/Footer'
+import Header from '../../../component/ru/Navbar'
 import Head from 'next/head'
-import BlogTile from '../../component/ru/BlogTile'
-import BreadHero from '../../component/ru/BreadHero'
-import CallUkToast from '../../component/CallUkToast'
+import BlogTile from '../../../component/ru/BlogTile'
+import BreadHero from '../../../component/ru/BreadHero'
+import CallUkToast from '../../../component/CallUkToast'
 
 export default function Blog(props) {
   useEffect(() => {

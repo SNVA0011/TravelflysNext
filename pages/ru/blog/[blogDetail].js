@@ -9,10 +9,12 @@ import { useRouter } from "next/router";
 import Pageerror from "../../../component/ru/Pageerror";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ReactHtmlParser from 'react-html-parser';
 import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
 import CallUkToast from "../../../component/CallUkToast";
 import { getIp } from "../../../utils/getip";
+
 
 
 export default function BlogDetails(props, router) {
@@ -180,24 +182,16 @@ export default function BlogDetails(props, router) {
     </>
   }
 
-
-
   return (
     <>
 
       {props.singleblog?.length > 0 ? (
-        <>
+        <>  
           <Head>
-            <title>{props.singleblog[0].title}</title>
-            <meta name="description" content={props.singleblog[0].description} />
-            <meta name="keywords" content={props.singleblog[0].keywords} />
-            <link
-              rel="canonical"
-              href={
-                "https://www.travelflys.com/ru/blog/" +
-                props.singleblog[0].titleUrl
-              }
-            />
+            <title>{ReactHtmlParser(props.singleblog[0].title)[0]}</title>
+            <meta name="description" content={ReactHtmlParser(props.singleblog[0].description)[0]} />
+            <meta name="keywords" content={ReactHtmlParser(props.singleblog[0].keywords)[0]} />
+            <link rel="canonical" href={ "https://www.travelflys.com/ru/blog/" + props.singleblog[0].titleUrl } />
           </Head>
 
           <div className="blogdt-single">
@@ -242,7 +236,7 @@ export default function BlogDetails(props, router) {
 
 
             <Header />
-
+        
 
 
             <div className="blogadda bg-white">
