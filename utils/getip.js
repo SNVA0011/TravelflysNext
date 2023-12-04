@@ -1,3 +1,3 @@
-export const getIp = "https://stest2.hunterwave.com/ipaddress";
+export const getIp = "https://flykro.developwithsachin.com/getIp";
 
  

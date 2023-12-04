@@ -15,38 +15,47 @@ const CallUkToast = ({ numberbyurl }) => {
     useEffect(async () => {
         setLoadingIp(true);
         await fetch(getIp).then((res) => res.json()).then(async (data) => {
-            const reqopt = {
-                method: "POST",
-                body: JSON.stringify({
-                    "countryCode": data.response.countryCode,
-                    "siteId": siteId,
-                    "countrytfn": "",
-                    "status": ""
-                }),
-                redirect: "follow",
-                headers: { 'Content-type': 'application/json; charset=UTF-8' }
-            }
-            await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
-                setDataIp(data.response || []);
-                setLoadingIp(false);
-            }).catch((error) => {
-                setLoadingIp(false);
-                setDataIp([]);
-                console.log('Error - ', error)
-            });
+            const getClientip = await data.response.clientIp;
 
+            fetch(`https://geo.travomint.com/api/ip/${getClientip}`).then(response => response.text()).then(async (response) => {
+                const reqopt = {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "siteId": siteId,
+                        "countryCode": response
+                    }),
+                    redirect: "follow",
+                    headers: { 'Content-type': 'application/json; charset=UTF-8' }
+                }
+
+                await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
+                    console.log('response=>', data.response)
+                    setDataIp(data.response || []);
+                    setLoadingIp(false);
+                }).catch((error) => {
+                    IpLoadNone();
+                    console.log('Error - ', error)
+                });
+            }).catch(err => console.error('Error geo.travomint ->' + err));
         }).catch((error) => {
-            setLoadingIp(false);
-            setDataIp([]);
-            console.log('Error : countrycode -', error)
+            IpLoadNone();
+            console.error('Error : flykro ->', error)
         });
     }, [router.asPath]);
+
+
+
+
 
 
     // Call Toast
     const numberjson = { "data": dataIp, "status": isLoading }
     const [showA, setShowA] = useState(true);
     const toggleShowA = () => setShowA(!showA);
+    const IpLoadNone = () => {
+        setLoadingIp(false);
+        setDataIp([]);
+    }
     const ipnumners = numberjson && numberjson.data || []
     const ipnumload = numberjson && numberjson.status || false
 
