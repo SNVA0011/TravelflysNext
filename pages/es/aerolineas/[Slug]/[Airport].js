@@ -124,11 +124,11 @@ export default function Airport({ singleAirport, allAirport }) {
                                 <Col xs={12} lg={6} xl={4}>
                                   <div className="locatinner-ldt">
                                     <p className="locdt-p">
-                                      <a href={`tel:${singleAirport[0].contactInfo}`} target="_blank"><i className="bi bi-telephone"></i> {singleAirport[0].contactInfo}</a>
+                                      <a href={`tel:${singleAirport[0].contactInfo}`}><i className="bi bi-telephone"></i> {singleAirport[0].contactInfo}</a>
 
                                     </p>
                                     <p className="locdt-p">
-                                      <a href={`mailto:${singleAirport[0].email}`} target="_blank"><i className="bi bi-envelope"></i> {singleAirport[0].email}</a>
+                                      <a href={`mailto:${singleAirport[0].email}`}><i className="bi bi-envelope"></i> {singleAirport[0].email}</a>
                                     </p>
                                     <p className="locdt-p">
                                       <i className="bi bi-clock-history"></i> Every day - 24hrs
@@ -145,9 +145,9 @@ export default function Airport({ singleAirport, allAirport }) {
                                 <Col xs={12} lg={6} xl={4}>
                                   <div class="locatinner-ldt">
                                     <h4 className='mt-0'>Contact Information :-</h4>
-                                    <a href="https://wizzair.com/" target="_blank"><i class="bi bi-globe2"></i>{singleAirport[0].weblink}</a>
-                                    <hr className='my-4'></hr>
-                                    <div className=''>
+                                    <a href={singleAirport[0].weblink} target="_blank"><i class="bi bi-globe2"></i>{singleAirport[0].weblink}</a>
+                               
+                                    <div className='mt-5'>
                                       <h4 class="title-dtair mt-flw">Social Media Links :-</h4>
                                       <div className='footer__top__nav footer__top__nav--contact '>
                                         <ul className='m-0'>
@@ -223,7 +223,7 @@ export async function getStaticProps(context) {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify({
-      "siteId": 109,
+      "siteId": siteId,
       "pageType": params.Slug,
       "language": "es",
       "url": params.Airport
@@ -238,7 +238,7 @@ export async function getStaticProps(context) {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify({
-      "siteId": 109,
+      "siteId": siteId,
       "pageType": params.Slug
     }),
     redirect: 'follow'
@@ -266,7 +266,7 @@ export const getStaticPaths = async () => {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify({
-      "siteId": 109,
+      "siteId": siteId,
       "language": "es"
     }),
     redirect: 'follow'
@@ -285,7 +285,7 @@ export const getStaticPaths = async () => {
       method: 'POST',
       headers: myHeaders,
       body: JSON.stringify({
-        "siteId": 109,
+        "siteId": siteId,
         "pageType": url
       }),
       redirect: 'follow'

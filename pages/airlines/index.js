@@ -162,7 +162,7 @@ export default function Flights({ allAirlines }) {
                       </Col>
                     ))}
                   </Row>
-                  : 'No items found !'
+                  : <p className="text-center">No items found !</p>
               }
             </Container>
           </div>
@@ -184,7 +184,7 @@ export const getStaticProps = async ({ params }) => {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "siteId": 109,
+    "siteId": siteId,
     "language": "eng"
   });
 

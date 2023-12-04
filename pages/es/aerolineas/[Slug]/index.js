@@ -139,7 +139,7 @@ export async function getStaticProps(context) {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify({
-      "siteId": 109,
+      "siteId": siteId,
       "language": "es",
       "url": pageurl
     }),
@@ -153,7 +153,7 @@ export async function getStaticProps(context) {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify({
-      "siteId": 109,
+      "siteId": siteId,
       "pageType": pageurl
     }),
     redirect: 'follow'
@@ -177,7 +177,7 @@ export const getStaticPaths = async () => {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "siteId": 109,
+    "siteId": siteId,
     "language": "es"
   });
 

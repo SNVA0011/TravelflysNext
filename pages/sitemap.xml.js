@@ -240,11 +240,11 @@ export const getServerSideProps = async (ctx) => {
 
   // Airlines
   const getAirlines = await getJsonbyPost("https://cms.travomint.com/airline_category/showAirlineCategorybySiteIdAndLanguage?authcode=Trav3103s987876", JSON.stringify({
-    "siteId": 109,
+    "siteId": siteId,
     "language": "eng"
   }))
   const getAirlinesEs = await getJsonbyPost("https://cms.travomint.com/airline_category/showAirlineCategorybySiteIdAndLanguage?authcode=Trav3103s987876", JSON.stringify({
-    "siteId": 109,
+    "siteId": siteId,
     "language": "es"
   }))
 
