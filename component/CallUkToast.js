@@ -29,7 +29,6 @@ const CallUkToast = ({ numberbyurl }) => {
                 }
 
                 await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
-                    console.log('response=>', data.response)
                     setDataIp(data.response || []);
                     setLoadingIp(false);
                 }).catch((error) => {
@@ -42,9 +41,6 @@ const CallUkToast = ({ numberbyurl }) => {
             console.error('Error : flykro ->', error)
         });
     }, [router.asPath]);
-
-
-
 
 
 
