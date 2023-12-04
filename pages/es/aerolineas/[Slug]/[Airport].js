@@ -22,6 +22,8 @@ export default function Airport({ singleAirport, allAirport }) {
     window.scrollTo(0, 0)
   }, [])
 
+
+
   if (location.isFallback) {
     return <>
       <Header />
@@ -123,14 +125,13 @@ export default function Airport({ singleAirport, allAirport }) {
                               <Row>
                                 <Col xs={12} lg={6} xl={4}>
                                   <div className="locatinner-ldt">
-                                    <p className="locdt-p">
-                                      <a href={`tel:${singleAirport[0].contactInfo}`}><i className="bi bi-telephone"></i> {singleAirport[0].contactInfo}</a>
-
+                                    <p className="locdt-p d-flex">
+                                     <i className="bi bi-geo-alt"></i> {singleAirport[0].contactInfo} 
                                     </p>
-                                    <p className="locdt-p">
+                                    <p className="locdt-p d-flex">
                                       <a href={`mailto:${singleAirport[0].email}`}><i className="bi bi-envelope"></i> {singleAirport[0].email}</a>
                                     </p>
-                                    <p className="locdt-p">
+                                    <p className="locdt-p d-flex">
                                       <i className="bi bi-clock-history"></i> Every day - 24hrs
                                     </p>
                                     <hr className='my-4'></hr>

@@ -1,14 +1,55 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import Toast from 'react-bootstrap/Toast';
+import { getIp } from "../utils/getip";
+import { useRouter } from "next/router";
+import { siteId } from "../utils/static";
 
-const CallUkToast = ({ numberjson, numberbyurl }) => {
+const CallUkToast = ({ numberbyurl }) => {
+
+    // ipaddress number 
+    const [dataIp, setDataIp] = useState([]);
+    const [isLoading, setLoadingIp] = useState(false);
+    const router = useRouter()
+
+    useEffect(async () => {
+        setLoadingIp(true);
+        await fetch(getIp).then((res) => res.json()).then(async (data) => {
+            const reqopt = {
+                method: "POST",
+                body: JSON.stringify({
+                    "countryCode": data.response.countryCode,
+                    "siteId": siteId,
+                    "countrytfn": "",
+                    "status": ""
+                }),
+                redirect: "follow",
+                headers: { 'Content-type': 'application/json; charset=UTF-8' }
+            }
+            await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
+                setDataIp(data.response || []);
+                setLoadingIp(false);
+            }).catch((error) => {
+                setLoadingIp(false);
+                setDataIp([]);
+                console.log('Error - ', error)
+            });
+
+        }).catch((error) => {
+            setLoadingIp(false);
+            setDataIp([]);
+            console.log('Error : countrycode -', error)
+        });
+    }, [router.asPath]);
+
 
     // Call Toast
+    const numberjson = { "data": dataIp, "status": isLoading }
     const [showA, setShowA] = useState(true);
     const toggleShowA = () => setShowA(!showA);
     const ipnumners = numberjson && numberjson.data || []
     const ipnumload = numberjson && numberjson.status || false
- 
+
 
     return (
         <div className="callby-ip">
@@ -17,8 +58,8 @@ const CallUkToast = ({ numberjson, numberbyurl }) => {
                     <div className="list-group">
 
                         {
-                            ipnumload ? 
-                               <div className="placeholder"> <div className="animated-background"></div> </div>
+                            ipnumload ?
+                                <div className="placeholder"> <div className="animated-background"></div> </div>
                                 :
                                 ipnumners?.length > 0 && ipnumners.map((item, index) => {
                                     const countrycode = item.countryCode?.toUpperCase();

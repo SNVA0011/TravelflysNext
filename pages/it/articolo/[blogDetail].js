@@ -133,41 +133,6 @@ export default function BlogDetails(props, router) {
 
 
 
-  // ipaddress number 
-  const [dataIp, setDataIp] = useState([]);
-  const [isLoading, setLoadingIp] = useState(false);
-  useEffect(async () => {
-    setLoadingIp(true);
-    await fetch(getIp).then((res) => res.json()).then(async (data) => {
-      const reqopt = {
-        method: "POST",
-        body: JSON.stringify({
-          "countryCode": data.response.countryCode,
-          "siteId": siteId,
-          "countrytfn": "",
-          "status": ""
-        }),
-        redirect: "follow",
-        headers: { 'Content-type': 'application/json; charset=UTF-8' }
-      }
-      await fetch("https://cms.travomint.com/ip/getClientiptfnBysiteId?authcode=Trav3103s987876", reqopt).then((res) => res.json()).then((data) => {
-        setDataIp(data.response || []);
-        setLoadingIp(false);
-      }).catch((error) => {
-        setLoadingIp(false);
-        setDataIp([]);
-        console.log('Error - ', error)
-      });
-
-    }).catch((error) => {
-      setLoadingIp(false);
-      setDataIp([]);
-      console.log('Error : countrycode -', error)
-    });
-  }, []);
-
-
-
   // isFallback
   if (location.isFallback) {
     return <>
@@ -225,8 +190,7 @@ export default function BlogDetails(props, router) {
             </div>
 
             {/*------- CallUkToast -------*/}
-            <CallUkToast numberjson={{ "data": dataIp, "status": isLoading }}
-
+            <CallUkToast   
               numberbyurl={[{
                 "code": props.singleblog[0].contImag1 || "",
                 "number": props.singleblog[0].countryNum1 || "",
