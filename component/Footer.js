@@ -36,6 +36,7 @@ export default function Footer() {
 										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/flights">Flight</Link></li>
 										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/blog">Blog</Link></li>
 										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/contact">Contact</Link></li>
+										<li><i className="bi bi-caret-right-fill text-sm"></i>  <Link href="/airlines">Airlines office</Link></li>
 			 
 										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/"><a>Home</a></Link></li>
 										<li className="d-none"><i className="bi bi-caret-right-fill text-sm"></i> <Link href="/es"><a>Casa</a></Link></li>

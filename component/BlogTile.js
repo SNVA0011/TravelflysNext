@@ -48,12 +48,14 @@ export default function Blog(props) {
                                   </div>
                               </div>
                             </div>
+                              <div>
                             <Link href={`/blog/${items.titleUrl}`}>
                               <a className="btn btn-site ripple-effbtn btn-40">
                                 Read more{" "}
                                 <i className="bi bi-arrow-right ml-1"></i>
                               </a>
                             </Link>
+                               </div>
                           </div>
                         </Col>
                       ))
@@ -81,12 +83,14 @@ export default function Blog(props) {
 
                               </div>
                             </div>
+                              <div>
                             <Link href={`/blog/${items.titleUrl}`}>
                               <a className="btn btn-site ripple-effbtn btn-40">
                                 Read more{" "}
                                 <i className="bi bi-arrow-right ml-1"></i>
                               </a>
                             </Link>
+                               </div>
                           </div>
                         </Col>
                         
@@ -94,7 +98,7 @@ export default function Blog(props) {
                     
               </Row>
             ) : (
-                <p className="text-center">No items found !</p>
+              ''
             )}
           </Container>
         </div>

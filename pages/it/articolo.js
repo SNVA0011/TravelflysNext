@@ -6,6 +6,7 @@ import Head from 'next/head'
 import BlogTile from '../../component/it/BlogTile'
 import BreadHero from '../../component/it/BreadHero'
 import CallUkToast from '../../component/CallUkToast'
+import { siteId } from '../../utils/static'
 
 export default function Blog(props) {
   useEffect(() => {
@@ -110,7 +111,7 @@ export const getStaticProps = async ({ params }) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",

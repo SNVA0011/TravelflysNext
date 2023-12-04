@@ -8,6 +8,7 @@ import Header from '../../component/es/Navbar'
 import Footer from "../../component/es/Footer"
 import Image from "next/image"
 import CallUkToast from '../../component/CallUkToast';
+import { siteId } from '../../utils/static';
 
 
 export default function Flights(props) {
@@ -176,7 +177,7 @@ export const getStaticProps = async ({ params }) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",

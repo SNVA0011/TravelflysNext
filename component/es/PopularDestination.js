@@ -26,7 +26,7 @@ export default function PopularDestinations() {
 								</Link>
 							</div>
 							<div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-								<Link href="/es/vuelos/delta-airlines-dl">
+								<Link href="/es/vuelos/delta-airlines-DL">
 									<a className="cities__item hover__box">
 										<div className="cities__thumb hover__box__thumb">
 											<Image src="/images/airlineone.jpg" alt="Delta Airlines" width={640} height={427}/>

@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Moment from 'react-moment';
 import CallUkToast from "../../component/CallUkToast";
+import { siteId } from "../../utils/static";
 
 export default function Detail(props, router) {
   const location = useRouter();
@@ -264,27 +265,27 @@ export async function getStaticProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    id: "",
-    title: "",
-    titleUrl: `${params.slug}`,
-    content: "",
-    description: "",
-    keywords: "",
-    posttime: "",
-    status: "",
-    heading: "",
-    img_url: "",
-    siteId: "143",
-    categoryName: "",
-    blogdes2: "",
-    blogTagsName2: "",
-    extarTag: "",
-    tfnHeader: "",
-    tfnFooter1: "",
-    tfnFooter2: "",
-    tfnFooter3: "",
-    tfnPopup: "",
-    pageType: "News",
+    "id" : "",
+    "title" : "",
+    "titleUrl" : `${params.slug}`,
+    "content" : "",
+    "description" : "",
+    "keywords" : "",
+    "posttime" : "",
+    "status" : "",
+    "heading" : "",
+    "img_url" : "",
+    "siteId" : siteId,
+    "categoryName" : "",
+    "blogdes2" : "",
+    "blogTagsName2" : "",
+    "extarTag" : "",
+    "tfnHeader" : "",
+    "tfnFooter1" : "",
+    "tfnFooter2" : "",
+    "tfnFooter3" : "",
+    "tfnPopup" : "",
+    "pageType" : "News",
   });
 
   var requestOptions = {
@@ -304,25 +305,25 @@ export async function getStaticProps(context) {
   myHeadersal.append("Content-Type", "application/json");
 
   var rawall = JSON.stringify({
-    contentId: "",
-    pageType: "News",
-    pageValue: "",
-    pageName: "",
-    metaTitle: "",
-    metaKeyword: "",
-    metaDesc: "",
-    otherMeta: "",
-    dealCode: "",
-    dealTitle: "",
-    contentTitle: "",
-    contentData: "",
-    contentImage: "",
-    siteId: "143",
-    status: "",
-    count: "",
-    url: "",
-    modifyBy: "",
-    modifyDate: "",
+    "contentId": "",
+    "pageType": "News",
+    "pageValue": "",
+    "pageName": "",
+    "metaTitle": "",
+    "metaKeyword": "",
+    "metaDesc": "",
+    "otherMeta": "",
+    "dealCode": "",
+    "dealTitle": "",
+    "contentTitle": "",
+    "contentData": "",
+    "contentImage": "",
+    "siteId": siteId,
+    "status": "",
+    "count": "",
+    "url": "",
+    "modifyBy": "",
+    "modifyDate": "",
   });
 
   var requestOptions = {
@@ -367,7 +368,7 @@ export const getStaticPaths = async () => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "143",
+    "siteId": siteId,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",

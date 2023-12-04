@@ -5,6 +5,7 @@ import Footer from '../component/Footer'
 import Header from '../component/Navbar'
 import BlogTile from '../component/BlogTile';
 import Link from "next/link"
+import { siteId } from '../utils/static'
 
 export default function Home(props) {
   return (
@@ -74,7 +75,7 @@ export const getStaticProps = async ({ params }) => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "143",
+    "siteId": siteId,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",

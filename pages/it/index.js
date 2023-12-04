@@ -4,6 +4,7 @@ import Footer from '../../component/it/Footer'
 import Header from '../../component/it/Navbar'
 import BlogTile from '../../component/it/BlogTile';
 import Link from "next/link"
+import { siteId } from '../../utils/static';
 
 export default function Home(props) {
   return (
@@ -73,7 +74,7 @@ export const getStaticProps = async ({ params }) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",

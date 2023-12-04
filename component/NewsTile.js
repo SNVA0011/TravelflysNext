@@ -48,12 +48,14 @@ export default function Blog(props) {
                             
                         </div>
                       </div>
+                        <div>
                       <Link href={`/news/${items.titleUrl}`}>
                         <a className="btn btn-site ripple-effbtn btn-40">
                           Read more{" "}
                           <i className="bi bi-arrow-right ml-1"></i>
                         </a>
                       </Link>
+                         </div>
                     </div>
                   </Col>))}
 

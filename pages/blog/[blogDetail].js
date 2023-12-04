@@ -13,6 +13,7 @@ import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
 import CallUkToast from "../../component/CallUkToast";
 import { getIp } from "../../utils/getip";
+import { siteId } from "../../utils/static";
 
 export default function BlogDetails(props, router) {
   const location = useRouter();
@@ -25,6 +26,8 @@ export default function BlogDetails(props, router) {
     });
     location.events.on("routeChangeComplete", () => setLoading(false));
     location.events.on("routeChangeError", () => setLoading(false));
+
+    
     return () => {
       location.events.off("routeChangeStart", () => {
         window.scrollTo(0, 0);
@@ -105,7 +108,7 @@ export default function BlogDetails(props, router) {
             "reviewRating": event.target.authorrate.value,
             "reviewRpyId": "0",
             "reviewStatus": "Inactive",
-            "siteId": "143",
+            "siteId": siteId,
             "reviewUrl": props.singleblog[0].titleUrl
           }),
         });
@@ -136,7 +139,7 @@ export default function BlogDetails(props, router) {
         method: "POST",
         body: JSON.stringify({
           "countryCode": data.response.countryCode,
-          "siteId": "143",
+          "siteId": siteId,
           "countrytfn": "",
           "status": ""
         }),
@@ -573,7 +576,7 @@ export async function getStaticProps(context) {
     status: "",
     heading: "",
     img_url: "",
-    siteId: "143",
+    siteId: siteId,
     categoryName: "",
     blogdes2: "",
     blogTagsName2: "",
@@ -612,7 +615,7 @@ export async function getStaticProps(context) {
     status: "",
     heading: "",
     img_url: "",
-    siteId: "143",
+    siteId: siteId,
     categoryName: "",
     blogdes2: "",
     blogTagsName2: "",
@@ -650,7 +653,7 @@ export async function getStaticProps(context) {
       "reviewRating": "",
       "reviewRpyId": "",
       "reviewStatus": "",
-      "siteId": "143",
+      "siteId": siteId,
       "reviewUrl": `${params.blogDetail}`
     }),
     redirect: "follow",
@@ -690,7 +693,7 @@ export const getStaticPaths = async () => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "143",
+    "siteId": siteId,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",

@@ -1,17 +1,18 @@
 import { GetServerSideProps } from "next";
 import { getServerSideSitemap, ISitemapField } from "next-sitemap";
+import { siteId } from "../utils/static"; 
+
 
 export const getJsonbyPost = async (url, options) => {
-  let dynrequest = await fetch(url,
+  const dynrequest = await fetch(url,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: options,
       redirect: 'follow'
     });
-
-  dynrequest = await dynrequest.json();
-  let data = dynrequest.response
+  const getjson = await dynrequest.json();
+  const data = getjson.response
   return data
 };
 
@@ -30,7 +31,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "143",
+    "siteId": siteId,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",
@@ -57,7 +58,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",
@@ -80,7 +81,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",
@@ -102,7 +103,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "Articulo",
     "extraTag": "",
     "tfnHeader": "",
@@ -128,7 +129,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",
@@ -151,7 +152,7 @@ export const getServerSideProps = async (ctx) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",
@@ -172,7 +173,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "ArticleRU",
     "extraTag": "",
     "tfnHeader": "",
@@ -193,7 +194,7 @@ export const getServerSideProps = async (ctx) => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "ArticleIT",
     "extraTag": "",
     "tfnHeader": "",
@@ -206,14 +207,13 @@ export const getServerSideProps = async (ctx) => {
 
 
   //============== Static ==============//
-  const staticUrl = [ 
-    { 'url': '', 'time': '2022-11-30T06:47:34+00:00' }, 
-    { 'url': "about-us", 'time': '2022-11-30T06:47:34+00:00' }, 
-    { 'url': "flights", 'time': '2022-11-30T06:47:34+00:00' },
-    { 'url': "blog", 'time': '2022-11-30T06:47:34+00:00' },
+  const staticUrl = [
+    { 'url': '', 'time': '2022-11-30T06:47:34+00:00' },
+    { 'url': "about-us", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "contact", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "privacy", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "terms", 'time': '2022-11-30T06:47:34+00:00' },
+    { 'url': "airlines", 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': 'news', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': 'blog', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': 'flights', 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
@@ -228,15 +228,26 @@ export const getServerSideProps = async (ctx) => {
     { 'url': '', 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "contacto", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "sobre-nosotras", 'time': '2022-11-30T06:47:34+00:00' },
-    { 'url': "vuelos", 'time': '2022-11-30T06:47:34+00:00' },
-    { 'url': "articulos", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "privacidad", 'time': '2022-11-30T06:47:34+00:00' },
     { 'url': "terminos", 'time': '2022-11-30T06:47:34+00:00' },
+    { 'url': "aerolineas", 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': "noticias", 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': "articulos", 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
     { 'url': "vuelos", 'time': new Date().toISOString().split('T')[0] + 'T06:47:34+00:00' },
   ]
-    //============== End Static ==============//
+  //============== End Static ==============//
+
+
+  // Airlines
+  const getAirlines = await getJsonbyPost("https://cms.travomint.com/airline_category/showAirlineCategorybySiteIdAndLanguage?authcode=Trav3103s987876", JSON.stringify({
+    "siteId": 109,
+    "language": "eng"
+  }))
+  const getAirlinesEs = await getJsonbyPost("https://cms.travomint.com/airline_category/showAirlineCategorybySiteIdAndLanguage?authcode=Trav3103s987876", JSON.stringify({
+    "siteId": 109,
+    "language": "es"
+  }))
+
 
   //===== Eng mapping =====//
   const staticSitemaps = staticUrl?.map((item) => ({
@@ -265,7 +276,7 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily'
   }));
 
-    //===== Es mapping =====// 
+  //===== Es mapping =====// 
   const esStaticSitemaps = esStaticUrl?.map((item) => ({
     loc: `${baseUrl}/es/${item.url.replace('&', '&amp;')}`,
     lastmod: item.time,
@@ -276,7 +287,7 @@ export const getServerSideProps = async (ctx) => {
     loc: `${baseUrl}/es/articulos/${item.titleUrl.replace('&', '&amp;')}`,
     lastmod: new Date(item.posttime).toISOString().split('T')[0] + 'T06:47:34+00:00',
     changefreq: 'daily'
-  })); 
+  }));
   // flights
   const esFlightsSitemaps = esFlightsposts && esFlightsposts?.filter((item) => item.status === "Active").filter((item) => item.pageType === "AirlineE").map((item) => ({
     loc: `${baseUrl}/es/vuelos/${item.url.replace('&', '&amp;')}-${item.pageValue.replace('&', '&amp;')}`,
@@ -303,13 +314,31 @@ export const getServerSideProps = async (ctx) => {
     changefreq: 'daily'
   }));
 
+  // Airlines
+  const AirlineSit = getAirlines && getAirlines?.filter((item) => item.status === "Active").map((item) => ({
+    loc: `${baseUrl}/airlines/${item.url.replace('&', '&amp;')}`,
+    lastmod: new Date(item.postTime).toISOString().split('T')[0] + 'T06:47:34+00:00',
+    changefreq: 'daily'
+  }));
+  const esAirlineSit = getAirlinesEs && getAirlinesEs?.filter((item) => item.status === "Active").map((item) => ({
+    loc: `${baseUrl}/es/aerolineas/${item.url.replace('&', '&amp;')}`,
+    lastmod: new Date(item.postTime).toISOString().split('T')[0] + 'T06:47:34+00:00',
+    changefreq: 'daily'
+  }));
+
+
+
+
+
+
   //========== Mix (en + es) ==========//
   const fields = [
     ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps, ...newsSitemaps,
     ...esStaticSitemaps, ...esBlogSitemaps, ...esFlightsSitemaps, ...esNewsSitemaps,
-    ...ruBlogSitemaps, ...itBlogSitemaps
+    ...ruBlogSitemaps, ...itBlogSitemaps,
+    ...AirlineSit, ...esAirlineSit,
   ];
-  
+
   return getServerSideSitemap(ctx, fields);
 };
 

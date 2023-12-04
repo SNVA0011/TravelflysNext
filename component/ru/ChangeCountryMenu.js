@@ -37,7 +37,7 @@ export default function ChangeCountryMenu() {
                             <a className={'btlangst btn'}>
                                 <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" /></div>
                                 <div>English</div>
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i className="bi bi-check-circle-fill"></i>
                             </a>
                         </Dropdown.Item>
                     </Col>
@@ -49,7 +49,7 @@ export default function ChangeCountryMenu() {
                                     <div>Spanish</div>
                                 </div>
                                 <div>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i className="bi bi-check-circle-fill"></i>
                                 </div>
                             </a>
                         </Dropdown.Item>
@@ -63,7 +63,7 @@ export default function ChangeCountryMenu() {
                                 </div>
 
                                 <div>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i className="bi bi-check-circle-fill"></i>
                                 </div>
                             </a>
                         </Dropdown.Item>
@@ -77,7 +77,7 @@ export default function ChangeCountryMenu() {
                                 </div>
 
                                 <div>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i className="bi bi-check-circle-fill"></i>
                                 </div>
                             </a>
                         </Dropdown.Item>

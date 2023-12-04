@@ -13,6 +13,7 @@ import Moment from 'react-moment';
 import Modal from 'react-bootstrap/Modal';
 import CallUkToast from "../../../component/CallUkToast";
 import { getIp } from "../../../utils/getip";
+import { siteId } from "../../../utils/static";
 
 
 export default function BlogDetails(props, router) {
@@ -110,7 +111,7 @@ export default function BlogDetails(props, router) {
             "reviewRating": event.target.authorrate.value,
             "reviewRpyId": "0",
             "reviewStatus": "Inactive",
-            "siteId": "143",
+            "siteId": siteId,
             "reviewUrl": props.singleblog[0].titleUrl
           }),
         });
@@ -125,8 +126,7 @@ export default function BlogDetails(props, router) {
         }
       } catch (err) {
         console.log(err);
-      }
-
+      } 
     }
   };
 
@@ -142,7 +142,7 @@ export default function BlogDetails(props, router) {
         method: "POST",
         body: JSON.stringify({
           "countryCode": data.response.countryCode,
-          "siteId": "143",
+          "siteId": siteId,
           "countrytfn": "",
           "status": ""
         }),
@@ -579,7 +579,7 @@ export async function getStaticProps(context) {
     status: "",
     heading: "",
     categoryName: "",
-    siteId: "143",
+    siteId: siteId,
     pageType: "Articulo",
     extraTag: "",
     tfnHeader: "",
@@ -616,7 +616,7 @@ export async function getStaticProps(context) {
     status: "",
     heading: "",
     categoryName: "",
-    siteId: "143",
+    siteId: siteId,
     pageType: "Articulo",
     extraTag: "",
     tfnHeader: "",
@@ -651,7 +651,7 @@ export async function getStaticProps(context) {
       "reviewRating": "",
       "reviewRpyId": "",
       "reviewStatus": "",
-      "siteId": "143",
+      "siteId": siteId,
       "reviewUrl": `${params.blogDetail}`
     }),
     redirect: "follow",
@@ -692,7 +692,7 @@ export const getStaticPaths = async () => {
     "status": "",
     "heading": "",
     "categoryName": "",
-    "siteId": "143",
+    "siteId": siteId,
     "pageType": "Articulo",
     "extraTag": "",
     "tfnHeader": "",

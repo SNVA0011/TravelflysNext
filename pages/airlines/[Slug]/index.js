@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head';
 import Link from "next/link";
 import Container from 'react-bootstrap/Container';
-import BreadHero from "../../component/BreadHero";
-import Header from '../../component/Navbar'
-import Footer from "../../component/Footer"
-import Pageerror from "../../component/Pageerror"
+import BreadHero from "../../../component/BreadHero";
+import Header from '../../../component/Navbar'
+import Footer from "../../../component/Footer"
+import Pageerror from "../../../component/Pageerror"
 import { useRouter } from "next/router";
-import CallUkToast from '../../component/CallUkToast';
-import { siteId } from '../../utils/static';
+import CallUkToast from '../../../component/CallUkToast';
+import { siteId } from '../../../utils/static';
+import Moment from 'react-moment';
+import { Col, Row } from 'react-bootstrap';
+import OtherOffices from '../../../component/OtherOffices';
+import ReactHtmlParser from 'react-html-parser';
 
 
 
-export default function Airline(props) {
+export default function Slug({ allAirport, MetaAirport }) {
   const location = useRouter();
 
   useEffect(() => {
@@ -26,14 +30,13 @@ export default function Airline(props) {
 
       <div className='text-center full-w my-5 py-5'>
         <div className="spinner-border text-secondary mr-2" role="status">
-        </div>   
+        </div>
       </div>
 
       <Footer />
     </>
   }
-
-
+ 
   return (
     <div className='blogdt-single'>
 
@@ -54,9 +57,7 @@ export default function Airline(props) {
       </div>
 
 
-      {/*------- CallUkToast -------*/}
       <CallUkToast />
-      {/*----- end CallUkToast -----*/}
 
       <a href="tel:+1 (802)-341-3448" className="footer-number-md">
         <div className="tfn-no">
@@ -73,14 +74,14 @@ export default function Airline(props) {
       <Header />
 
       {
-        props.singleflight?.length > 0 ?
+        allAirport?.length > 0 && MetaAirport?.length > 0 ?
           <>
 
             <Head>
-              <title>{props.singleflight[0].metaTitle}</title>
-              <meta name="description" content={props.singleflight[0].metaDesc} />
-              <meta name="keywords" content={props.singleflight[0].metaKeyword} />
-              <link rel="canonical" href={`https://www.travelflys.com/flights/${props.singleflight[0].url}-${props.singleflight[0].pageValue}`} />
+              <title>{ReactHtmlParser(MetaAirport[0].title)}</title>
+              <meta name="description" content={ReactHtmlParser(MetaAirport[0].description)} />
+              <meta name="keywords" content={ReactHtmlParser(MetaAirport[0].keyword)} />
+              <link rel="canonical" href={`https://www.travelflys.com/airlines/${MetaAirport[0].url}`} />
             </Head>
 
 
@@ -90,37 +91,32 @@ export default function Airline(props) {
               <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <div className="page-title__name">Flight Detail</div>
+                    <div className="page-title__name">{ReactHtmlParser(MetaAirport[0].airline)}</div>
                     <p className="page-title__slogan" dangerouslySetInnerHTML={{
-                      __html: props.singleflight[0].metaTitle
-                    }}></p> 
+                      __html: ReactHtmlParser(MetaAirport[0].title)
+                    }}></p>
                   </div>
                 </div>
                 <BreadHero linkhtml={<>
                   <ul className="bradcum container">
                     <li> <Link href="/">Home</Link> </li>
                     <li className='mr-2'>/</li>
-                    <li> <Link href="/flights">FLIGHTS</Link> </li>
+                    <li> <Link href="/airlines">Airlines office</Link> </li>
                     <li className='mr-2'>/</li>
-                    <li aria-current="page">{props.singleflight[0].metaTitle}</li> </ul> </>} />
+                    <li aria-current="page">{ReactHtmlParser(allAirport[0].title)}</li> </ul> </>} />
               </div>
 
+              <OtherOffices
+                  MetaAirport={MetaAirport}
+                  heading={['Top','Offices']}
+                  path={`/airlines`}
+                  readMore={`Read more`}
+                  viewMore={`View more`}
+                  viewMoreBtn={false}
+                  allAirport={allAirport}
+                  relatedBottom={allAirport.length}
+                /> 
 
-              <div className='popular-destination blogaddalist details full-w'>
-                <Container>
-                  <div className='blogaddalist-round'>
-                    <div className='blogaddalist-inner'>
-                      <div className="blog-inner-box2">
-                        {props.singleflight[0].contentData.length == 0 ?
-                          <p className='pb-2'>No Content found</p>
-                          :
-                          <div className='blog-p  mb-5 content-ullist' dangerouslySetInnerHTML={{ __html: props.singleflight[0].contentData }}></div>
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </Container>
-              </div>
             </div>
           </>
           : <Pageerror />
@@ -135,50 +131,43 @@ export default function Airline(props) {
 
 export async function getStaticProps(context) {
   const { params } = context
-  const pageurl = params.Airline
-
-  var cityname = pageurl.split("-")[2]
-  let actualURLParts = pageurl.split("-")
+  const pageurl = params.Slug
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({
-    "contentId": "",
-    "pageType": "Airline",
-    "pageValue": cityname,
-    "pageName": "",
-    "metaTitle": "",
-    "metaKeyword": "",
-    "metaDesc": "",
-    "otherMeta": "",
-    "dealCode": "",
-    "dealTitle": "",
-    "contentTitle": "",
-    "contentData": "",
-    "contentImage": "",
-    "siteId": siteId,
-    "status": "",
-    "count": "",
-    "url": actualURLParts[0] + '-' + actualURLParts[1],
-    "modifyBy": "",
-    "modifyDate": ""
-  });
 
-  var requestOptions = {
+  // Meta Tags 
+  const res = await fetch("https://cms.travomint.com/airline_category/showAirlineCategoryBySiteIdAndUrl?authcode=Trav3103s987876", {
     method: 'POST',
     headers: myHeaders,
-    body: raw,
+    body: JSON.stringify({
+      "siteId": 109,
+      "language": "eng",
+      "url": pageurl
+    }),
     redirect: 'follow'
-  };
+  });
+  const getMeta = await res.json();
 
-  const res = await fetch("https://cms.travomint.com/travoles-content/showcontent?authcode=Trav3103s987876", requestOptions)
-  const json = await res.json()
+
+  // All Airport
+  const resAir = await fetch("https://cms.travomint.com/airline-blog/showAirlineBlogList?authcode=Trav3103s987876", {
+    method: 'POST',
+    headers: myHeaders,
+    body: JSON.stringify({
+      "siteId": 109,
+      "pageType": pageurl
+    }),
+    redirect: 'follow'
+  });
+  const getAirport = await resAir.json();
+
   return {
-    props: { singleflight: json.response },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
+    props: {
+      MetaAirport: getMeta.response,
+      allAirport: getAirport.response
+    }, 
     revalidate: 60, // In seconds
   }
 }
@@ -191,25 +180,8 @@ export const getStaticPaths = async () => {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "contentId": "",
-    "pageType": "",
-    "pageValue": "",
-    "pageName": "",
-    "metaTitle": "",
-    "metaKeyword": "",
-    "metaDesc": "",
-    "otherMeta": "",
-    "dealCode": "",
-    "dealTitle": "",
-    "contentTitle": "",
-    "contentData": "",
-    "contentImage": "",
-    "siteId": siteId,
-    "status": "",
-    "count": "",
-    "url": "",
-    "modifyBy": "",
-    "modifyDate": ""
+    "siteId": 109,
+    "language": "eng"
   });
 
   var requestOptions = {
@@ -227,7 +199,7 @@ export const getStaticPaths = async () => {
 
   data.forEach((post) => {
     paths.push({
-      params: { Airline: post.url + "-" + post.pageValue }
+      params: { Slug: post.url }
     })
   })
 

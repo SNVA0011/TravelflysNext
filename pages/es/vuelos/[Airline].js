@@ -8,6 +8,7 @@ import Footer from "../../../component/es/Footer"
 import Pageerror from "../../../component/es/Pageerror"
 import { useRouter } from "next/router";
 import CallUkToast from '../../../component/CallUkToast';
+import { siteId } from '../../../utils/static';
 
 
 
@@ -143,25 +144,25 @@ export async function getStaticProps(context) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    contentId: "",
-    pageType: "AirlineE",
-    pageValue: cityname,
-    pageName: "",
-    metaTitle: "",
-    metaKeyword: "",
-    metaDesc: "",
-    otherMeta: "",
-    dealCode: "",
-    dealTitle: "",
-    contentTitle: "",
-    contentData: "",
-    contentImage: "",
-    siteId: "143",
-    status: "",
-    count: "",
-    url: actualURLParts[0] + '-' + actualURLParts[1],
-    modifyBy: "",
-    modifyDate: "",
+    "contentId" : "",
+    "pageType" : "AirlineE",
+    "pageValue" : cityname,
+    "pageName" : "",
+    "metaTitle" : "",
+    "metaKeyword" : "",
+    "metaDesc" : "",
+    "otherMeta" : "",
+    "dealCode" : "",
+    "dealTitle" : "",
+    "contentTitle" : "",
+    "contentData" : "",
+    "contentImage" : "",
+    "siteId" : siteId,
+    "status" : "",
+    "count" : "",
+    "url" : actualURLParts[0] + '-' + actualURLParts[1],
+    "modifyBy" : "",
+    "modifyDate" : "",
   });
 
   var requestOptions = {
@@ -203,7 +204,7 @@ export const getStaticPaths = async () => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",

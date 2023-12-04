@@ -8,8 +8,6 @@ class MyDocument extends Document {
     return { ...initialProps, lang };
   }
 
- 
-  
 
   render() {
     const { lang } = this.props;

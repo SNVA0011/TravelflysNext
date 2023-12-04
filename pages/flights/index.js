@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
-import BreadHero from '../component/BreadHero';
+import BreadHero from '../../component/BreadHero';
 import { Button, Col, Row } from 'react-bootstrap';
 import Link from "next/link"
 import Head from 'next/head'
-import Header from '../component/Navbar'
-import Footer from "../component/Footer"
+import Header from '../../component/Navbar'
+import Footer from "../../component/Footer"
 import Image from "next/image"
-import CallUkToast from '../component/CallUkToast';
+import CallUkToast from '../../component/CallUkToast';
+import { siteId } from '../../utils/static';
 
 
 export default function Flights(props) {
@@ -15,6 +16,7 @@ export default function Flights(props) {
     window.scrollTo(0, 0)
   }, [])
 
+ 
   return (
     <>
       <Head>
@@ -185,7 +187,7 @@ export const getStaticProps = async ({ params }) => {
     "contentTitle": "",
     "contentData": "",
     "contentImage": "",
-    "siteId": "143",
+    "siteId": siteId,
     "status": "",
     "count": "",
     "url": "",

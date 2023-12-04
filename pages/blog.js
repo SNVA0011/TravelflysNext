@@ -6,6 +6,7 @@ import Head from 'next/head';
 import BlogTile from '../component/BlogTile';
 import BreadHero from '../component/BreadHero'
 import CallUkToast from '../component/CallUkToast';
+import { siteId } from '../utils/static';
 
 
 
@@ -106,7 +107,7 @@ export const getStaticProps = async ({ params }) => {
     "status": "",
     "heading": "",
     "img_url": "",
-    "siteId": "143",
+    "siteId": siteId,
     "categoryName": "",
     "blogdes2": "",
     "blogTagsName2": "",

@@ -6,6 +6,7 @@ import Header from "../../../component/es/Navbar";
 import BreadHero from "../../../component/es/BreadHero";
 import NewsTile from '../../../component/es/NewsTile';
 import CallUkToast from '../../../component/CallUkToast';
+import { siteId } from '../../../utils/static';
 
 
 export default function News(props) {
@@ -100,25 +101,25 @@ export const getStaticProps = async ({ params }) => {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    contentId: "",
-    pageType: "noticias",
-    pageValue: "",
-    pageName: "",
-    metaTitle: "",
-    metaKeyword: "",
-    metaDesc: "",
-    otherMeta: "",
-    dealCode: "",
-    dealTitle: "",
-    contentTitle: "",
-    contentData: "",
-    contentImage: "",
-    siteId: "143",
-    status: "",
-    count: "",
-    url: "",
-    modifyBy: "",
-    modifyDate: "",
+    "contentId" : "",
+    "pageType" : "noticias",
+    "pageValue" : "",
+    "pageName" : "",
+    "metaTitle" : "",
+    "metaKeyword" : "",
+    "metaDesc" : "",
+    "otherMeta" : "",
+    "dealCode" : "",
+    "dealTitle" : "",
+    "contentTitle" : "",
+    "contentData" : "",
+    "contentImage" : "",
+    "siteId" : siteId,
+    "status" : "",
+    "count" : "",
+    "url" : "",
+    "modifyBy" : "",
+    "modifyDate" : "",
   });
 
   var requestOptions = {

@@ -69,12 +69,11 @@
  .related-post .related-grid { flex-wrap: wrap; }
   .intro__meta, .sidebar { margin-top: 30px; }
   .page-title--small { 
-   background-position: left 47% center; 
-   min-height: 300px;
-}
-.breadcrumb_area ul.bradcum.container {
-   display: none;
-}
+    background-position: left 47% center;
+    min-height: 350px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+} 
  .intro__meta .col-md-4:first-child .intro__meta__item { border-left: 0; }
  .place__amenities span { margin-left: 5px; }
  .shop-details__addcart button { padding: 0 55px; }
@@ -352,6 +351,15 @@
  .home-main .site-banner:after { height: 40px; }
  .home-main .site-banner__content p, .testimonial-item p { font-size: 16px; }
  .place-slider__nav { display: none; }
+ .bog-border{
+   padding: 20px 15px;
+ }
+ body .splitsm-box h3, body .splitsm-box h2, body .splitsm-box h1{
+   font-size: 18px;
+ }
+ .splitsm-box p{
+   font-size: 15px;
+ }
  .title-border-bottom { font-size: 24px; }
  .blogs, .featured-cities, .testimonial, .trending { padding: 75px 0; }
  .blogs .post { margin-bottom: 30px; }
@@ -534,4 +542,12 @@
  .banner-wrap.layout-02 { padding: 40px 0; background-image: inherit !important; }
   .banner-wrap .banner-inner h2 { font-size: 28px; }
  .blogs-wrap.layout-02 { padding: 40px 0; }
+ .bog-border .btn-site {
+   max-width: none;
+   width: 100%;
+}
+.bog-border.airline-bx {
+  background-position: bottom 80px right 18px;
+  background-size: 50px;
+}
  }
