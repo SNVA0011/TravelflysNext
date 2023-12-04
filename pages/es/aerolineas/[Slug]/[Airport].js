@@ -128,8 +128,8 @@ export default function Airport({ singleAirport, allAirport }) {
                                     <p className="locdt-p d-flex">
                                      <i className="bi bi-geo-alt"></i> {singleAirport[0].contactInfo} 
                                     </p>
-                                    <p className="locdt-p d-flex">
-                                      <a href={`mailto:${singleAirport[0].email}`}><i className="bi bi-envelope"></i> {singleAirport[0].email}</a>
+                                    <p className="locdt-p">
+                                      <a href={`mailto:${singleAirport[0].email}`} className='d-flex'><i className="bi bi-envelope"></i> {singleAirport[0].email}</a>
                                     </p>
                                     <p className="locdt-p d-flex">
                                       <i className="bi bi-clock-history"></i> Every day - 24hrs
@@ -137,7 +137,7 @@ export default function Airport({ singleAirport, allAirport }) {
                                     <hr className='my-4'></hr>
                                     <p className="noteinhead">
                                       <strong>Note:</strong>
-                                      <div>
+                                      <div className='noteinhead-inp'>
                                         {singleAirport[0].note}
                                       </div>
                                     </p>
@@ -146,7 +146,7 @@ export default function Airport({ singleAirport, allAirport }) {
                                 <Col xs={12} lg={6} xl={4}>
                                   <div class="locatinner-ldt">
                                     <h4 className='mt-0'>Contact Information :-</h4>
-                                    <a href={singleAirport[0].weblink} target="_blank"><i class="bi bi-globe2"></i>{singleAirport[0].weblink}</a>
+                                    <a href={singleAirport[0].weblink} target="_blank" className='d-flex'><i class="bi bi-globe2"></i>{singleAirport[0].weblink}</a>
                                
                                     <div className='mt-5'>
                                       <h4 class="title-dtair mt-flw">Social Media Links :-</h4>

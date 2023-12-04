@@ -3363,16 +3363,26 @@ body .splitsm-box a:hover h3 {
   background-color: #fbfbfb;
   height: 100%;
 }
-p.locdt-p, .locatinner-ldt a {
+ p.locdt-p, .locatinner-ldt a {
   color: #1a1a1a;
   font-size: 15px;
   font-weight: 500;
 }
+.noteinhead-inp{
+  color: #1a1a1a;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
 p.locdt-p .bi, .locatinner-ldt a .bi {
   margin-right: 11px;
 }
+p.locdt-p .bi, .locatinner-ldt a .bi {
+  color: #00a0e3;
+}
 .locatinner-ldt .footer__top__nav--contact li a .bi {
   margin: 0;
+  color: #fff;
 }
 .locatinner-ldt hr.my-4 {
   border-color: #f3f3f3;
