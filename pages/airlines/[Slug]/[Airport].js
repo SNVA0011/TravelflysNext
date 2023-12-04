@@ -20,9 +20,7 @@ export default function Airport({ singleAirport, allAirport }) {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-
-  console.log(singleAirport[0])
+  }, []) 
  
   if (location.isFallback) {
     return <>
