@@ -49,7 +49,7 @@ const OtherOffices = ({ MetaAirport, allAirport, path, readMore, relatedBottom, 
                                                 </div>
                                             </div>
 
-                                            <div className="flex-grow-1 mb-3">
+                                            <div className="flex-grow-1 mb-4">
                                                 <p dangerouslySetInnerHTML={{ __html: ReactHtmlParser(item.description) }}></p>
                                             </div>
 

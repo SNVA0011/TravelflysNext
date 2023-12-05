@@ -145,7 +145,7 @@ export default function Flights({ allAirlines }) {
                             </div>
                           </div>
 
-                          <div className="flex-grow-1 mb-3">
+                          <div className="flex-grow-1 mb-4">
                             <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
                           </div>
 
