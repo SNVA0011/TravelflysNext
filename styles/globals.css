@@ -701,7 +701,20 @@ visibility: visible;
   display: inline-block;
   border-radius: 0;
   margin-bottom: 12px;
-  margin-top: 9px;
+  margin-top: 17px;
+  position: relative;
+ }
+ .page-title--small .page-title__content p::before{
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: #00a0e3;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: -13px;
+  border-radius: 10px;
  }
 
  .shop__meta { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; margin-bottom: 40px; }
