@@ -10,7 +10,7 @@
  html { border: 0; font-size: 100%; margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
  .h-100vh { height: 100vh; }
  body { border: 0; font-size: 100%; margin: 0; outline: 0; padding: 0; vertical-align: baseline; font-size: 16px;
-   color: #000000; font-weight: 400; 
+   color: #000000; font-weight: 400;  
    font-style: normal; font-stretch: normal; line-height: normal;
     letter-spacing: normal; word-break: break-word; }
  div { border: 0; font-size: 100%; margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
@@ -640,14 +640,26 @@ visibility: visible;
   background-size: cover;
   position: relative; 
  }
- .page-title--small::after{
+ .page-title--small::before{
   content: '';
   height: 100%;
   width: 100%;
   bottom: 0;
   left: 0;
   position: absolute;
-  background: rgb(0 0 0 / 50%)
+  background: rgb(0 51 72 / 61%)
+ }
+ .page-title--small::after{
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  background-image: url('/static/images/wave-search.png');
+  height: 90px;
+  width: 100%;
+  background-position: bottom center;
+  background-size: 100% 100%;
  }
  .page-title--small .page-title__content { position: relative; height: 100%;z-index: 3; }
  b, strong { font-weight: 700; }
@@ -680,18 +692,16 @@ visibility: visible;
 }
 
  .page-title--small .page-title__content p { 
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   letter-spacing: 1.4px;
   display: inline-block;
   border-radius: 0;
   margin-bottom: 12px;
-  border-top: solid 2px #00a0e3;
-  padding-top: 6px;
-  margin-top: 10px;
+  margin-top: 9px;
  }
 
  .shop__meta { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; margin-bottom: 40px; }
@@ -3417,6 +3427,11 @@ hr.my-5.sepair {
   margin-top: 10px;
   margin-bottom: 3px;
 }
+.breadcrumb_area.full-w {
+  display: none;
+}
+
+
  /*-------- responsive --------*/ 
  @media (min-width: 768px) {
    .blogdt-single .new_header_area_empty.full-w {
@@ -3720,6 +3735,9 @@ img.avatar-img {
   height: 38px;
   line-height: normal;
   padding: 0;
+}
+.page-title--small::after{
+  background-size: 160% 100%
 }
  }
  @media screen and (min-device-width: 574px) and (max-device-width: 765px) {
