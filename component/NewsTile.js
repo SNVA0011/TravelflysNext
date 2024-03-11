@@ -7,6 +7,14 @@ import Moment from 'react-moment';
 
 
 export default function Blog(props) {
+
+  const removeHtml = (string) => {
+    const regex = /(<([^>]+)>)/gi;
+    const newString = string?.replaceAll(regex, " ");
+    return newString
+  }
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -40,22 +48,26 @@ export default function Blog(props) {
                               </span>
                             </li>
                           </ul>
-                          {/* <h3 className="post__title">{items.title}</h3> */} 
-                            <div className="blog-p  mb-4 content-ullist">
-                            <div className="d-inline" dangerouslySetInnerHTML={{  __html: items.content.substr(0, 240) }}></div>
-                            <p>...</p>
-                            </div>
-                            
+                          {/* <h3 className="post__title">{items.title}</h3> */}
+                          <div className="blog-p  mb-4 content-ullist">
+                            <Link href={`/news/${items.titleUrl}`}>
+                              <a>
+                                <div dangerouslySetInnerHTML={{ __html: items.title }} className="titleheading-blog"></div>
+                              </a>
+                            </Link>
+                            <p dangerouslySetInnerHTML={{ __html: removeHtml(items.description)?.substring(0, 240) + "..." }}></p>
+                          </div>
+
                         </div>
                       </div>
-                        <div>
-                      <Link href={`/news/${items.titleUrl}`}>
-                        <a className="btn btn-site ripple-effbtn btn-40">
-                          Read more{" "}
-                          <i className="bi bi-arrow-right ml-1"></i>
-                        </a>
-                      </Link>
-                         </div>
+                      <div>
+                        <Link href={`/news/${items.titleUrl}`}>
+                          <a className="btn btn-site ripple-effbtn btn-40">
+                            Read more{" "}
+                            <i className="bi bi-arrow-right ml-1"></i>
+                          </a>
+                        </Link>
+                      </div>
                     </div>
                   </Col>))}
 

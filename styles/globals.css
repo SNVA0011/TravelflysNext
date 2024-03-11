@@ -2147,14 +2147,13 @@ visibility: visible;
  .recent-blogsalide a:hover { color: #0783b7;}
  .recent-blogsalide a.active { color: #0783b7; font-weight: 700;}
  .recent-blogsalide li:last-child { margin-bottom: 0; border: none; }
- .recent-blogsalide {  position: -webkit-sticky;
-  position: -moz-sticky;
+ .recent-blogsalide { position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
   top: 94px;
   margin-bottom: 30px;
-  background: #f8f9fa;
+  border: solid 1px #e3e3e3;
   padding: 20px;
   border-radius: 8px;}
   .blogdt-single .recent-blogsalide{
@@ -2615,10 +2614,17 @@ text-transform: capitalize;}
    width: 100%;
    background: #fbfbfb;
 }
-
+.recent-blogsalide span.count-s .bi {
+  font-size: 19px;
+}
  .call-header a.footer-number-md .tfn-no span { font-size: 14px; font-weight: 700;  color: #ffffff;}
  .call-header a.footer-number-md:hover { background: #383636; }
  time { font-size: 14px;    font-weight: 500; }
+
+ .recent-blogsalide time{
+  font-size: 13px;
+  font-weight: 400;
+ }
  .bog-border .btn-site {     max-width: none;
   width: auto;
   padding: 12px 21px;
@@ -3444,6 +3450,21 @@ hr.my-5.sepair {
   display: none;
 }
 
+.titleheading-blog {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #292d5c;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+}
+.titleheading-blog:hover {
+  color: #00a0e3;
+}
 
  /*-------- responsive --------*/ 
  @media (min-width: 768px) {
@@ -3590,7 +3611,11 @@ display: none;
  .departurevg .fa-plane-departure { height: 60px; width: 60px; line-height: 60px; font-size: 24px; }
  .departurevg .title { font-size: 18px; }
  .enginebanner_sctn .banner-shape-14.w-100, .popular-destination.travellist .ppt-clistaff.mt-shapeneed svg, .shape-bottom.bigbanner-wgb svg { height: 40px; }
- .recent-blogsalide span.count-s { height: 20px; width: 20px; line-height: 20px; margin-right: 6px; font-size: 14px; }
+ .recent-blogsalide span.count-s { height: 16px;
+  width: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  top: 3px; }
  .discover-the-best .Engine-Discover-with { font-size: 36px; text-align: center; margin-bottom: 20px; }
  .discover-the-best .Enginebox-leftrentals { text-align: center; }
  .recent-blogsalide, .site-contact .contact-form { padding-left: 15px; padding-right: 15px; }
@@ -3732,7 +3757,9 @@ img.avatar-img {
 }
  a.footer-number-md .tfn-no p{ display: none; }
  a.footer-number-md i.bi { font-size: 18px; position: static; margin-top: 0; margin-bottom: 0; margin-left: 0px; margin-right: 10px !important; display: inline-block;   }
- 
+ .recent-blogsalide span.count-s .bi {
+  font-size: 15px;
+}
 
  }
  @media (max-width: 575px) {

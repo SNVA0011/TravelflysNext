@@ -13,10 +13,9 @@ export default function Home(props) {
   <>
     <Head>
     <title>Moscas de viaje | Reserve boletos de vuelos con tarifas bajas y autos de alquiler</title>
-      <meta name="description" content="" />
+      <meta name="description" content="Encuentre las mejores tarifas en Travelflys en boletos de vuelos nacionales e internacionales. Encuentre también formas de resolver problemas de servicio al cliente de forma más rápida y sencilla que nunca." />
       <meta name="keywords" content="" />
-      <link rel="canonical" href={'https://www.travelflys.com/es/'} />
-      <link rel="alternate" href={'https://www.travelflys.com/es/'} />
+      <link rel="canonical" href={'https://www.travelflys.com/es'} /> 
     </Head>
 
 

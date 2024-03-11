@@ -327,10 +327,6 @@ export const getServerSideProps = async (ctx) => {
   }));
 
 
-
-
-
-
   //========== Mix (en + es) ==========//
   const fields = [
     ...staticSitemaps, ...blogSitemaps, ...flightsSitemaps, ...newsSitemaps,

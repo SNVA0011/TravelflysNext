@@ -18,78 +18,78 @@ export default function Flights(props) {
 
   return (
 
-        
- <>
-    <Head>
-    <title>Vuelos</title>
-    <meta name="description" content="Get Latest information about Airlines, holiday packages, flight tickets booking deals and the airlines latest policies through our blog." />
-    <meta name="keywords" content="last minute flights, Flight booking online, cheap airlines ticket booking, cheap flight tickets, airlines reservations online, airlines reservations, Flight booking, Airline Tickets, Travel Agency" />
-    <link rel="canonical" href={'https://www.travelflys.com/es/vuelos'} />
-  </Head>
-  
-    <div className='blogdt-single'>
 
-<div className="call-header d-none d-md-block">
-        <div className="container">
-          <a href="tel:+1 (802)-909-0003" className="footer-number-md">
-            <i className="bi bi-telephone mr-2"></i>
-            <div className="tfn-no d-inline-block">(USA) <span>+1 (802)-909-0003</span>
-            </div>
-          </a>
-          <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
-            <i className="bi bi-telephone mr-2"></i>
-            <div className="tfn-no d-inline-block">
-              (UK) <span>+44 (20) 37693132</span>
-            </div>
-          </a>
+    <>
+      <Head>
+        <title>Vuelos</title>
+        <meta name="description" content="Get Latest information about Airlines, holiday packages, flight tickets booking deals and the airlines latest policies through our blog." />
+        <meta name="keywords" content="last minute flights, Flight booking online, cheap airlines ticket booking, cheap flight tickets, airlines reservations online, airlines reservations, Flight booking, Airline Tickets, Travel Agency" />
+        <link rel="canonical" href={'https://www.travelflys.com/es/vuelos'} />
+      </Head>
+
+      <div className='blogdt-single'>
+
+        <div className="call-header d-none d-md-block">
+          <div className="container">
+            <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+              <i className="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">(USA) <span>+1 (802)-909-0003</span>
+              </div>
+            </a>
+            <a href={`tel:+44 (20) 37693132`} className="footer-number-md animdelay-2s">
+              <i className="bi bi-telephone mr-2"></i>
+              <div className="tfn-no d-inline-block">
+                (UK) <span>+44 (20) 37693132</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
 
-      {/*------- CallUkToast -------*/}
-      <CallUkToast />
-      {/*----- end CallUkToast -----*/}
+        {/*------- CallUkToast -------*/}
+        <CallUkToast />
+        {/*----- end CallUkToast -----*/}
 
-      <a href="tel:+1 (802)-909-0003" className="footer-number-md">
-        <div className="tfn-no">
-          <p>
-            <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
-          </p>
-          <span>
-            <i className="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
-          </span>
-        </div>
-      </a>
+        <a href="tel:+1 (802)-909-0003" className="footer-number-md">
+          <div className="tfn-no">
+            <p>
+              <i className="bi bi-telephone"></i> Cómo podemos ayudar ?<small>Siéntete libre de preguntar</small>
+            </p>
+            <span>
+              <i className="bi bi-telephone mr-2 d-md-none"></i> +1 (802)-909-0003
+            </span>
+          </div>
+        </a>
 
 
 
-      <Header />
+        <Header />
 
-      <div className='blogadda'>
+        <div className='blogadda'>
 
-        <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center" >
+          <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center" >
             <div className="container">
               <div className="page-title__content">
-                <h1 className="page-title__name">Vuelos</h1>
+                <div className="page-title__name">Vuelos</div>
                 <p className='page-title__slogan'>Más reciente <span>Vuelos</span></p>
-              
+
               </div>
             </div>
 
-            <BreadHero linkhtml={<><ul className='bradcum container'> 
-                <li > <Link href="/es/">Casa</Link> </li>
-                <li className='mr-2'>/</li> 
-                <li className='breadcrumb-item active text-white' aria-current="page">Vuelos</li> </ul></>} />
+            <BreadHero linkhtml={<><ul className='bradcum container'>
+              <li > <Link href="/es/">Casa</Link> </li>
+              <li className='mr-2'>/</li>
+              <li className='breadcrumb-item active text-white' aria-current="page">Vuelos</li> </ul></>} />
           </div>
 
 
 
-        <div className='popular-destination blogaddalist full-w'>
-          <Container>
+          <div className='popular-destination blogaddalist full-w'>
+            <Container>
 
-          <Row>
-                <Col md="12" id="content" >
-                  <h2>Sea inteligente para obtener las mejores ofertas de vuelos rápidamente</h2>
+              <Row>
+                <Col md="12" id="content" className='blogaddalist-inner'>
+                  <h1 className='mt-0'>Sea inteligente para obtener las mejores ofertas de vuelos rápidamente</h1>
                   <p>Se requiere un vuelo para reservar con anticipación cuando necesita obtener ofertas y ofertas masivas para asegurar su reserva a varios destinos. Si desea elegir el mejor vuelo para reservar a su destino requerido, puede buscar los mejores vuelos con puntos de recompensa que puede usar para obtener las mejores ofertas de vuelos en el momento adecuado. Si tiene curiosidad por ahorrar más y busca orientación para asegurar su reserva, necesita conocer el truco esencial que puede encontrar con el mejor equipo de representantes del cliente para ayudarlo.</p>
                   <h2>¿Cómo conseguir la mejor oferta en vuelo?</h2>
                   <p>Si está dispuesto a obtener la oferta más barata para el vuelo que ha seleccionado para la reserva, debe seguir el truco proporcionado por el equipo profesional. Si está dispuesto a obtener las mejores ofertas en vuelos, puede lograr la oferta más segura para administrar su vuelo que puede reservar a la tarifa más baja sin problemas.</p>
@@ -107,54 +107,54 @@ export default function Flights(props) {
               </Row>
 
 
-            <hr className='my-5'></hr>
-            <h4 className='title title-border-bottom align-center offset-item animate font-weight-bold'>Principales ofertas de vuelos</h4>
+              <hr className='my-5'></hr>
+              <h4 className='title title-border-bottom align-center offset-item animate font-weight-bold'>Principales ofertas de vuelos</h4>
 
 
-            {
-              props.allflights.length > 0 ?
+              {
+                props.allflights.length > 0 ?
 
-                <Row className='alldeals-vi'>
-                  {props.allflights.filter((items) => items.status === "Active").filter((items) => items.pageType === "AirlineE").map((items, i) => ( 
-                    <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
-                      <div className='blogaddalist-inner border px-3 py-4 departurevg'>
-                        <div className='media'>
-                          <i className="fa-solid fa-plane-departure d-flex align-items-center justify-content-center">
-                          <Image src="/images/departures.png" alt='departures' width={40} height={40}></Image>
-                          </i>
-                          <div className='media-body'>
-                            <h3 className='h4 title mt-0'>{items.pageName}-{items.pageValue}</h3>
-                            <hr className="mx-row-hr" />
-                            <Link href={`/es/vuelos/${items.url}-${items.pageValue}`}>
-                              <a className='btn btn-site ripple-effbtn btn-40'>
-                                <span>Lee mas</span>
-                              </a>
-                            </Link>
+                  <Row className='alldeals-vi'>
+                    {props.allflights.filter((items) => items.status === "Active").filter((items) => items.pageType === "AirlineE").map((items, i) => (
+                      <Col xs={12} lg={6} xl={4} className="mb-4" key={i}>
+                        <div className='blogaddalist-inner border px-3 py-4 departurevg'>
+                          <div className='media'>
+                            <i className="fa-solid fa-plane-departure d-flex align-items-center justify-content-center">
+                              <Image src="/images/departures.png" alt='departures' width={40} height={40}></Image>
+                            </i>
+                            <div className='media-body'>
+                              <h3 className='h4 title mt-0'>{items.pageName}-{items.pageValue}</h3>
+                              <hr className="mx-row-hr" />
+                              <Link href={`/es/vuelos/${items.url}-${items.pageValue}`}>
+                                <a className='btn btn-site ripple-effbtn btn-40'>
+                                  <span>Lee mas</span>
+                                </a>
+                              </Link>
+                            </div>
                           </div>
+
+
                         </div>
+                      </Col>
+                    ))}
+                  </Row>
+                  : 'No items found !'
+              }
+            </Container>
+          </div>
 
 
-                      </div>
-                    </Col>
-                  ))}
-                </Row>
-                : 'No items found !'
-            }
-          </Container>
+
+
+
+
+
         </div>
 
-
-
-
-
-
+        <Footer />
 
       </div>
-
-      <Footer />
-
-    </div>
- </>
+    </>
   )
 }
 

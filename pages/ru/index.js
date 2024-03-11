@@ -13,8 +13,7 @@ export default function Home(props) {
     <title>Забронировать дешевые авиабилеты | Бронирование рейсов | бронирование авиабилетов | Трэвелфлай</title>
     <meta name="description" content="Покупка авиабилетов онлайн доступна на Travelflys. Получайте регулярные обновления статуса рейса и невероятные предложения и скидки при бронировании недорогих рейсов." />
     <meta name="keywords" content="Бронирование дешевых авиабилетов онлайн, дешевое бронирование авиабилетов, дешевые авиабилеты онлайн, бронирование авиакомпаний онлайн, бронирование авиабилетов, туристическое агентство Travelflys" />
-    <link rel="canonical" href={'https://www.travelflys.com/ru/'} />
-    <link rel="alternate" href={'https://www.travelflys.com/ru/'} />
+    <link rel="canonical" href={'https://www.travelflys.com/ru'} /> 
   </Head>
   
     <div className='homepage'> 

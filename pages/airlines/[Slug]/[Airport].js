@@ -92,7 +92,7 @@ export default function Airport({ singleAirport, allAirport }) {
               <div className="d-flex align-items-center justify-content-center flex-column page-title page-title--small page-title--blog text-center">
                 <div className="container">
                   <div className="page-title__content">
-                    <div className="page-title__name">{ReactHtmlParser(singleAirport[0].heading)}</div>
+                    <h1 className="page-title__name">{ReactHtmlParser(singleAirport[0].heading)}</h1>
                     <p className="page-title__slogan" dangerouslySetInnerHTML={{
                       __html: ReactHtmlParser(singleAirport[0].title)
                     }}></p>

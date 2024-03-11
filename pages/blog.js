@@ -10,7 +10,7 @@ import { siteId } from '../utils/static';
 
 
 
-export default function Blog(props) {
+export default function Blog(props) { 
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -18,9 +18,9 @@ export default function Blog(props) {
   return (
 <>
 <Head>
-    <title>Blog - Travelflys</title>
-       <meta name="description" content="" />
-       <meta name="keywords" content="" />
+    <title>Online reservation help | online booking – Travelflys.com</title>
+       <meta name="description" content="Get the latest news and information about airlines at Travelflys.com. Also get info about airlines policies and latest deals online flight booking" />
+       <meta name="keywords" content="last minute flights, Flight booking online, cheap airlines ticket booking, cheap flight tickets, airlines reservations online, airlines reservations, Flight booking, Airline Tickets, Travel Agency" />
    <link rel="canonical" href={'https://www.travelflys.com/blog'} />
  </Head>
  

@@ -20,9 +20,9 @@ export default function Flights(props) {
   return (
     <>
       <Head>
-        <title>Fights - Travelflys</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <title>Cheap Flight Tickets | Book Last Minute Flights Online | Travelflys</title>
+        <meta name="description" content="Are you looking for inexpensive plane tickets to a well-known location? Visit travelflys.com to find incredible offers and purchase airline tickets to your preferred destinations." />
+        <meta name="keywords" content="Book last minute flights, cheap flight booking, low budget flight, flight tickets, last minute flight, cheap airfare deals, Low cost fares" />
         <link rel="canonical" href={'https://www.travelflys.com/flights'} />
       </Head>
 

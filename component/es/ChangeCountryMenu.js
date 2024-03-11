@@ -28,7 +28,7 @@ export default function ChangeCountryMenu() {
  
 
     return (
-        <DropdownButton title={<><span><img src="https://flaglog.com/codes/standardized-rectangle-120px/ES.png" className='eps-rec' /> {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
+        <DropdownButton title={<><span><img src="/images/ES.png" className='eps-rec' /> {lang} </span> </>} variant="outline-secondary" className='order-lg-3 ml-auto mr-3 mr-lg-0 ml-0 ml-lg-3 btnlang'>
  
             <div className='curr-block px-2'>
                 <h5 className='mb-4'>Seleccione el idioma</h5>
@@ -36,7 +36,7 @@ export default function ChangeCountryMenu() {
                     <Col xs="6" className='mb-3'>
                         <Dropdown.Item as={Link} href="/">
                             <a className={'btlangst btn'}>
-                                <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" /></div>
+                                <div><img src="/images/GB.png" /></div>
                                 <div>English</div>
                                 <i className="bi bi-check-circle-fill"></i>
                             </a>
@@ -46,7 +46,7 @@ export default function ChangeCountryMenu() {
                         <Dropdown.Item as={Link} href="/es" locale="es">
                             <a className={'d-flex btlangst btn active'}>
                                 <div className='flex-grow-1'>
-                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/ES.png" /></div>
+                                    <div><img src="/images/ES.png" /></div>
                                     <div>Spanish</div>
                                 </div>
                                 <div>
@@ -59,7 +59,7 @@ export default function ChangeCountryMenu() {
                         <Dropdown.Item as={Link} href="/ru" locale="ru">
                             <a className={'d-flex btlangst btn'}>
                                 <div className='flex-grow-1'>
-                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/RU.png" /></div>
+                                    <div><img src="/images/RU.png" /></div>
                                     <div>Russian</div>
                                 </div>
 
@@ -73,7 +73,7 @@ export default function ChangeCountryMenu() {
                         <Dropdown.Item as={Link} href="/it" locale="it">
                             <a className={'d-flex btlangst btn'}>
                                 <div className='flex-grow-1'>
-                                    <div><img src="https://flaglog.com/codes/standardized-rectangle-120px/IT.png" /></div>
+                                    <div><img src="/images/IT.png" /></div>
                                     <div>Italian</div>
                                 </div>
 

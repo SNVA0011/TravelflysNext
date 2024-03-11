@@ -13,10 +13,9 @@ export default function Home(props) {
   
   <Head>
     <title>Travelflys | Travel Agency | Flight Booking | Ticket cancellation | Online Reservation</title>
-    <meta name="description" content="" />
+    <meta name="description" content="Find the best fares at Travelflys on International and domestic flight tickets. Also find the ways to solve customer service issues faster and easier than ever." />
     <meta name="keywords" content="" />
-    <link rel="canonical" href={'https://www.travelflys.com/'} />
-    <link rel="alternate" href={'https://www.travelflys.com/'} />
+    <link rel="canonical" href={'https://www.travelflys.com'} /> 
   </Head>
   
     <div className='homepage'> 
@@ -46,8 +45,7 @@ export default function Home(props) {
           </div>
 
 
-        </main>
-
+        </main> 
       </div>
 
       <Footer />

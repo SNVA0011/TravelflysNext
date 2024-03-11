@@ -21,9 +21,9 @@ export default function Flights({ allAirlines }) {
   return (
     <>
       <Head>
-        <title>Airlines Offices - Travelflys</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <title>Find Airlines Office address; Contact Number - Travelflys</title>
+        <meta name="description" content="Find all the airlines office addresses of travelers around the world, ranked based on exceptional service, safety standards, passenger satisfaction and operational excellence in the aviation industry." />
+        <meta name="keywords" content="airline office address, airline contact number, airline contact information, airline phone number, Airline Toll-Free Numbers, Southwest airline phone number, Copa airline phone number, Qatar phone number" />
         <link rel="canonical" href={'https://www.travelflys.com/airlines'} />
       </Head>
 

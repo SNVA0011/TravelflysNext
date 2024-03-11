@@ -75,7 +75,7 @@ const CallUkToast = ({ numberbyurl }) => {
                                     return (
                                         <a key={index} href={`tel:${item.countrytfn}`} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                             <span className="mr-2"><span className="badge">({countrycode})</span> {item.countrytfn}</span>
-                                            <span><img src={`https://flaglog.com/codes/standardized-rectangle-120px/${countryimg}.png`} /></span>
+                                            <span><img src={`/images/${countryimg}.png`} /></span>
                                         </a>
                                     )
                                 })
@@ -87,14 +87,14 @@ const CallUkToast = ({ numberbyurl }) => {
                             return (
                                 <a key={index} href={`tel:${item.number}`} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                     <span className="mr-2"><span className="badge">({countrycode})</span> {item.number}</span>
-                                    <span><img src={`https://flaglog.com/codes/standardized-rectangle-120px/${countryimg}.png`} /></span>
+                                    <span><img src={`/images/${countryimg}.png`} /></span>
                                 </a>
                             )
                         })}
 
                         <a href={`tel:+44 (20) 37693132`} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <span className="mr-2"><span className="badge">(UK)</span> +44 (20) 37693132</span>
-                            <span><img src="https://flaglog.com/codes/standardized-rectangle-120px/GB.png" /></span> </a>
+                            <span><img src="/images/GB.png" /></span> </a>
                     </div>
                 </Toast.Body>
             </Toast>

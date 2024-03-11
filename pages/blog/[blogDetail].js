@@ -287,24 +287,15 @@ export default function BlogDetails(props, router) {
                         </h3>
                         {props.allblog?.length > 0 ? (
                           <ul>
-                            {props.allblog.slice(0, 5).filter((items) => items.status === "Active").map((items, i) => (
-                              <li key={i}>
+                            {props.allblog.slice(0, 7).filter((items) => items.status === "Active").map((items, i) => (
+                              <li key={i} className={ location.asPath === "/blog/" + items.titleUrl ? "d-none" : "" }>
                                 <div className="text-left float-left">
-                                  <span className="count-s">{i + 1}</span>
+                                  <span className="count-s"><i class="bi bi-arrow-right-short"></i></span>
                                 </div>
                                 <div className="overflow-hidden">
                                   <Link href={`/blog/${items.titleUrl}`}>
-                                    <a
-                                      className={
-                                        location.asPath ===
-                                          "/blog/" + items.titleUrl
-                                          ? "active"
-                                          : "not-active"
-                                      }
-                                    > 
-
+                                    <a> 
                                       <span className="d-block" dangerouslySetInnerHTML={{ __html: items.title }}></span>
-
                                     </a>
                                   </Link>
                                   <ul className="post__category p-0 m-0">
