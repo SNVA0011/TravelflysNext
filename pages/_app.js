@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }) {
     document.addEventListener("contextmenu", disableEvent);
     document.addEventListener("selectstart", disableSelect);
     document.addEventListener("keydown", handleKeyDown);
+    
     return () => {
       document.removeEventListener("copy", disableEvent);
       document.removeEventListener("cut", disableEvent);
