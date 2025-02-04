@@ -13,26 +13,32 @@ function MyApp({ Component, pageProps }) {
   }, [lang]);
 
   useEffect(() => {
-    try {
-      const disableCopy = (event) => event.preventDefault();
-      const disableSelect = () => false;
+    const disableEvent = (event) => event.preventDefault();
+    const disableSelect = () => false;
+    const handleKeyDown = (event) => {
+      if (
+        event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key)) || 
+        (event.ctrlKey && event.key === "U")
+      ) {
+        event.preventDefault();
+      }
+    };
   
-      document.addEventListener("copy", disableCopy);
-      document.addEventListener("cut", disableCopy);
-      document.addEventListener("contextmenu", disableCopy);
-      document.addEventListener("selectstart", disableSelect);
+    document.addEventListener("copy", disableEvent);
+    document.addEventListener("cut", disableEvent);
+    document.addEventListener("contextmenu", disableEvent);
+    document.addEventListener("selectstart", disableSelect);
+    document.addEventListener("keydown", handleKeyDown);
   
-      return () => {
-        document.removeEventListener("copy", disableCopy);
-        document.removeEventListener("cut", disableCopy);
-        document.removeEventListener("contextmenu", disableCopy);
-        document.removeEventListener("selectstart", disableSelect);
-      };
-    } catch (error) {
-      console.error("Error in useEffect:", error);
-    }
+    return () => {
+      document.removeEventListener("copy", disableEvent);
+      document.removeEventListener("cut", disableEvent);
+      document.removeEventListener("contextmenu", disableEvent);
+      document.removeEventListener("selectstart", disableSelect);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
-
 
   return (
     <>
