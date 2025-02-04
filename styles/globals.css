@@ -1,4 +1,12 @@
 *, img { image-rendering: crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; }
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
  .image-w { width: 20px; }
  html { scroll-behavior: smooth; }
  .bradcum { list-style: none; margin-top: 12px; }

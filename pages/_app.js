@@ -11,6 +11,29 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  useEffect(() => {
+    try {
+      const disableCopy = (event) => event.preventDefault();
+      const disableSelect = () => false;
+  
+      document.addEventListener("copy", disableCopy);
+      document.addEventListener("cut", disableCopy);
+      document.addEventListener("contextmenu", disableCopy);
+      document.addEventListener("selectstart", disableSelect);
+  
+      return () => {
+        document.removeEventListener("copy", disableCopy);
+        document.removeEventListener("cut", disableCopy);
+        document.removeEventListener("contextmenu", disableCopy);
+        document.removeEventListener("selectstart", disableSelect);
+      };
+    } catch (error) {
+      console.error("Error in useEffect:", error);
+    }
+  }, []);
+
+
   return (
     <>
       <Head><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no" /></Head>
